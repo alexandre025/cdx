@@ -1,8 +1,6 @@
 module Cdx
   module Generators
     class InstallGenerator < Rails::Generators::Base
-      include Rails::Generators::ResourceHelpers
-
       source_root File.expand_path('../templates', __FILE__)
 
       desc 'Create a Cdx initializer, copy migrations, mount engine'
@@ -12,7 +10,7 @@ module Cdx
       end
 
       def mount_engine
-        route '/'
+        route "mount Cdx::Engine, at: '/'"
       end
     end
   end

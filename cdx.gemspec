@@ -19,6 +19,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.1.2'
 
+  s.add_dependency 'bootstrap-sass', '~> 3.3.6'
+  s.add_dependency 'sass-rails', '>= 3.2'
+
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'

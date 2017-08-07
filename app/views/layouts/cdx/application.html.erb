@@ -2,11 +2,11 @@
 <html>
 <head>
   <title>Cdx</title>
-  <%= stylesheet_link_tag    "cdx/application", media: "all" %>
-  <%= javascript_include_tag "cdx/application" %>
+  <%= stylesheet_link_tag 'cdx/admin', media: 'all' %>
+  <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= "#{controller_name}_#{action_name}" %>">
 
 <%= yield %>
 

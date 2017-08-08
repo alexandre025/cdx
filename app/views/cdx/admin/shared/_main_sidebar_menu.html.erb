@@ -1,0 +1,12 @@
+<% current_main_tree = defined?(current_main_tree) ? current_main_tree : nil %>
+<% current_sub_tree = defined?(current_sub_tree) ? current_sub_tree : nil %>
+
+<%= tag.li class: ('active' if current_main_tree == :home) do %>
+    <%= link_to admin_root_path do %>
+        <%= fa_icon :dashboard %>
+        <%= t('admin.main_sidebar.menu.title.dashboard') %>
+    <% end %>
+<% end %>
+
+<li class="header"><%= t('admin.main_sidebar.menu.title.contents') %></li>
+<li class="header"><%= t('admin.main_sidebar.menu.title.parameters') %></li>

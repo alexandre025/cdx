@@ -3,3 +3,9 @@ en:
     content_header:
       page_title:
         home_index: Dashboard
+    main_sidebar:
+      menu:
+        title:
+          parameters: "Parameters"
+          contents: "Contents"
+          dashboard: "Dashboard"

@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= "#{controller_name}_#{action_name}" %>" class="skin-blue sidebar-mini">
+<body id="<%= context_tag %>" class="skin-blue sidebar-mini">
 <div class="wrapper">
 
   <%= render partial: 'cdx/admin/shared/header' %>

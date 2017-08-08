@@ -1,6 +1,6 @@
 module Cdx
   module Admin
-    module ApplicationHelper
+    module BaseHelper
       include FontAwesome::Rails::IconHelper
 
       def context_tag

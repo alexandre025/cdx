@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cdx</title>
+  <%= stylesheet_link_tag 'cdx/admin', media: 'all' %>
+  <%= javascript_include_tag 'cdx/admin' %>
+  <%= csrf_meta_tags %>
+</head>
+<body id="<%= context_tag %>" class="skin-blue sidebar-mini">
+<div class="wrapper">
+
+  <%= render partial: 'cdx/admin/shared/header' %>
+  <%= render partial: 'cdx/admin/shared/main_sidebar' %>
+
+  <div class="content-wrapper">
+
+    <%= render partial: 'cdx/admin/shared/content_header' %>
+
+    <section class="content">
+      <div class="row">
+        <%= yield %>
+      </div>
+    </section>
+  </div>
+
+</div>
+</body>
+</html>

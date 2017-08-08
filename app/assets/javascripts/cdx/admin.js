@@ -13,4 +13,5 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap-sprockets
+//= require cdx/adminlte/adminlte.min
 //= require_tree .

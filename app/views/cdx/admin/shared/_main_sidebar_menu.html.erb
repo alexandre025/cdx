@@ -1,0 +1,7 @@
+<% current_main_tree = defined?(current_main_tree) ? current_main_tree : nil %>
+<% current_sub_tree = defined?(current_sub_tree) ? current_sub_tree : nil %>
+
+<%= main_sidebar_menu_simple_item(current_main_tree, :home, :dashboard, admin_root_path, t('admin.main_sidebar.menu.title.dashboard')) %>
+
+<li class="header"><%= t('admin.main_sidebar.menu.title.contents') %></li>
+<li class="header"><%= t('admin.main_sidebar.menu.title.parameters') %></li>

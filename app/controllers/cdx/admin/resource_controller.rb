@@ -4,6 +4,8 @@ module Cdx
 
       before_action :load_resource
 
+      helper_method :member_action?
+
       def index
 
       end
@@ -43,7 +45,8 @@ module Cdx
 
       def load_resource
         if member_action? # Load member action
-
+          @object ||= load_resource_instance
+          instance_variable_set("@#{resource.object_name}", @object)
         else # Load collection
           @collection ||= collection
           instance_variable_set("@#{controller_name}", @collection)
@@ -58,6 +61,28 @@ module Cdx
         return @resource if @resource
         parent_model_name = parent_data[:model_name] if parent_data
         @resource = Cdx::Admin::Resource.new controller_path, controller_name, parent_model_name, object_name
+      end
+
+      def load_resource_instance
+        if new_actions.include? action_name.to_sym
+          build_resource
+        elsif params[:id]
+          find_resource
+        end
+      end
+
+      def build_resource
+        if parent_data.present?
+        else
+          model_class.new
+        end
+      end
+
+      def find_resource
+        if parent_data.present?
+        else
+          model_class.find(params[:id])
+        end
       end
 
       def parent_data
@@ -75,6 +100,10 @@ module Cdx
 
       def collection_actions
         [:index]
+      end
+
+      def new_actions
+        [:new, :create]
       end
 
       def member_action?

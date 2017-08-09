@@ -1,4 +1,10 @@
 <section class="content-header">
   <h1><%= content_for(:content_header_page_title) ? yield(:content_header_page_title) : content_header_page_title %></h1>
-  <ol class="breadcrumb"><%= yield :content_header_breadcrumb %></ol>
+  <ol class="breadcrumb">
+    <li>
+      <%= fa_icon :dashboard %>
+      <%= link_to 'Home', admin_root_path %>
+    </li>
+    <%= content_for(:content_header_breadcrumb) ? yield(:content_header_breadcrumb) : tag.li(t("admin.content_header.breadcrumb.#{context_tag}")) %>
+  </ol>
 </section>

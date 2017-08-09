@@ -1,7 +1,21 @@
 <% render_main_sidebar_menu %>
 
-<% @users.each do |user| %>
-
-    <%= user.email %>
-
-<% end %>
+<div class="col-md-12">
+  <div class="box">
+    <table class="table table-striped">
+      <tr>
+        <th><%= Cdx::User.human_attribute_name :email %></th>
+        <th></th>
+      </tr>
+      <% @users.each do |user| %>
+          <tr>
+            <%= tag.td user.email %>
+            <td>
+              <%= link_to_edit user %>
+              <%= link_to_delete user %>
+            </td>
+          </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

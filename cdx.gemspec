@@ -24,6 +24,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails', '>= 3.2'
   s.add_dependency 'font-awesome-rails'
 
+  s.add_dependency 'devise'
+
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'

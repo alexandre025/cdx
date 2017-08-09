@@ -1,0 +1,14 @@
+en:
+  activerecord:
+    models:
+      cdx/user:
+        one: User
+        other: Users
+
+    attributes:
+      cdx/user:
+        email: Email
+        password: Password
+
+
+

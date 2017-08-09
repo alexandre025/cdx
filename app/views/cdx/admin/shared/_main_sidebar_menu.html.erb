@@ -4,4 +4,6 @@
 <%= main_sidebar_menu_simple_item(current_main_tree, :home, :dashboard, admin_root_path, t('admin.main_sidebar.menu.title.dashboard')) %>
 
 <li class="header"><%= t('admin.main_sidebar.menu.title.contents') %></li>
+<%= main_sidebar_menu_simple_item(current_main_tree, :users, :user, admin_users_path, t('activerecord.models.cdx/user.other')) %>
+
 <li class="header"><%= t('admin.main_sidebar.menu.title.parameters') %></li>

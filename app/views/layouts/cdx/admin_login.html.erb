@@ -6,21 +6,18 @@
   <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= context_tag %>" class="skin-blue sidebar-mini">
+<body id="<%= context_tag %>" class="hold-transition login-page">
 <div class="wrapper">
 
-  <%= render partial: 'cdx/admin/shared/header' %>
-  <%= render partial: 'cdx/admin/shared/main_sidebar' %>
-
-  <div class="content-wrapper">
-
-    <%= render partial: 'cdx/admin/shared/content_header' %>
-
-    <section class="content">
-      <div class="row">
-        <%= yield %>
-      </div>
-    </section>
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="#">
+        <b>Admin</b>CDX
+      </a>
+    </div>
+    <div class="login-box-body">
+     <%= yield %>
+    </div>
   </div>
 
 </div>

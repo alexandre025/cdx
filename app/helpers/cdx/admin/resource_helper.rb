@@ -4,7 +4,7 @@ module Cdx
 
       def content_header_page_title
         # TODO : Parent data ?
-        if member_action?
+        if member_action? && @object.persisted?
           "#{t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.one")} #{@object.content_header_title}"
         else
           t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.other")
@@ -15,7 +15,7 @@ module Cdx
         # TODO : Parent data ?
         content_for :content_header_breadcrumb do
           concat tag.li link_to(@resource.model_class.model_name.human.pluralize, admin_users_path)
-          concat tag.li link_to(@object.content_header_title, edit_admin_user_path(@object)) if member_action?
+          concat tag.li link_to(@object.content_header_title, edit_admin_user_path(@object)) if (member_action? && @object.persisted?)
           concat tag.li t("admin.content_header.page_title.actions.#{action_name}")
         end
       end

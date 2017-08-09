@@ -74,6 +74,7 @@ module Cdx
       def build_resource
         if parent_data.present?
         else
+          # This line should be overridden when custom resource initializer is needed
           model_class.new
         end
       end
@@ -81,6 +82,7 @@ module Cdx
       def find_resource
         if parent_data.present?
         else
+          # TODO : Friendly ID (conditional)
           model_class.find(params[:id])
         end
       end
@@ -95,7 +97,6 @@ module Cdx
 
       # This method should be overridden when object_name does not match the controller name
       def object_name
-
       end
 
       def collection_actions

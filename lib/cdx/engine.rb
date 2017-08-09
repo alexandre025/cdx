@@ -7,5 +7,9 @@ module Cdx
       g.fixture_replacement :factory_girl, dir: 'spec/factories'
       g.helper false
     end
+
+    initializer 'cdx.action_controller.include_all_helpers' do |app|
+      app.config.action_controller.include_all_helpers = false
+    end
   end
 end

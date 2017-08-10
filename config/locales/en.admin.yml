@@ -17,3 +17,7 @@ en:
           parameters: "Parameters"
           contents: "Contents"
           dashboard: "Dashboard"
+    actions:
+      new: "New"
+      cancel: "Cancel"
+      all: "Actions"

@@ -23,14 +23,14 @@ module Cdx
       def link_to_edit(resource, options = {})
         # TODO : Dev edit_object_url
         url = options[:url] || edit_admin_user_path(resource)
-        options[:class] = 'btn btn-info'
+        options[:class] = 'btn-sm btn-info'
         link_to fa_icon(:pencil), url, options
       end
 
       def link_to_delete(resource, options = {})
         # TODO : Dev object_url
         url = options[:url] || admin_user_path(resource)
-        options[:class] = %w(btn btn-danger)
+        options[:class] = %w(btn-sm btn-danger)
         options[:data] ||= {method: :delete, confirm: 'Are you sure ?'}
         link_to fa_icon(:trash), url, options
       end

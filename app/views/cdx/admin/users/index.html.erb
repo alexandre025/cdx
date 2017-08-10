@@ -2,20 +2,30 @@
 
 <div class="col-md-12">
   <div class="box">
-    <table class="table table-striped">
-      <tr>
-        <th><%= Cdx::User.human_attribute_name :email %></th>
-        <th></th>
-      </tr>
-      <% @users.each do |user| %>
-          <tr>
-            <%= tag.td user.email %>
-            <td>
-              <%= link_to_edit user %>
-              <%= link_to_delete user %>
-            </td>
-          </tr>
+
+    <div class="box-header with-border">
+      <%= link_to new_admin_user_path, class: 'btn-sm btn-info pull-right' do %>
+          <%= fa_icon :plus %>
+          <%= t('admin.actions.new') %>
       <% end %>
-    </table>
+    </div>
+
+    <div class="box-body">
+      <table class="table table-striped">
+        <tr>
+          <th><%= Cdx::User.human_attribute_name :email %></th>
+          <th><%= t('admin.actions.all')%></th>
+        </tr>
+        <% @users.each do |user| %>
+            <tr>
+              <%= tag.td user.email %>
+              <td>
+                <%= link_to_edit user %>
+                <%= link_to_delete user %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
   </div>
 </div>

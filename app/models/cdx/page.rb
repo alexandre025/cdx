@@ -2,10 +2,10 @@ module Cdx
   class Page < ApplicationRecord
     include Cdx::Admin::ResourceRecord
 
-    ### Validators
+    # Validators
     validates :name, presence: true
 
-    ### Methods
+    # Methods
     def content_header_title
       name
     end

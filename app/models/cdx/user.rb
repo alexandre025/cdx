@@ -10,11 +10,9 @@ module Cdx
     store_accessor :settings, :theme
 
     # Validators
-
     validates :email, :first_name, :last_name, presence: true
 
     # Methods
-
     def content_header_title
       email
     end

@@ -6,7 +6,7 @@ module Cdx
     before_save :one_default_site
 
     ### Validators
-    validates :name, presence: true
+    validates :name, :domain, presence: true
 
     ### Methods
     def content_header_title

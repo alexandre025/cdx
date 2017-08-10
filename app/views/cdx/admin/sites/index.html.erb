@@ -15,7 +15,7 @@
           <%= tag.th Cdx::Site.human_attribute_name(:domain) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
-        <% @collection.each do |object| %>
+        <% @collection.order(:name).each do |object| %>
             <tr>
               <%= tag.td object.name %>
               <%= tag.td object.acronym %>

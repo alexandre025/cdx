@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-rails'
 
   s.add_dependency 'devise'
+  s.add_dependency 'simple_form'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'

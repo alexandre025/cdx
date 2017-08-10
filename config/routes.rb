@@ -11,5 +11,7 @@ Cdx::Engine.routes.draw do
                  sessions: 'cdx/admin/devise/sessions',
                  passwords: 'cdx/admin/devise/passwords'
                }
+
+    resources :users, except: :show
   end
 end

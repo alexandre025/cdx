@@ -3,9 +3,21 @@ en:
     content_header:
       page_title:
         home_index: Dashboard
+        actions:
+          edit: Edit
+          update: Edit
+          new: New
+          create: New
+          index: Index
+      breadcrumb:
+        home_index: Dashboard
     main_sidebar:
       menu:
         title:
           parameters: "Parameters"
           contents: "Contents"
           dashboard: "Dashboard"
+    actions:
+      new: "New"
+      cancel: "Cancel"
+      all: "Actions"

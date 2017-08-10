@@ -1,0 +1,28 @@
+<% render_main_sidebar_menu; render_content_header_breadcrumb %>
+
+<div class="col-md-12">
+  <div class="box">
+
+    <div class="box-header with-border">
+      <%= link_to_new %>
+    </div>
+
+    <div class="box-body">
+      <table class="table table-striped">
+        <tr>
+          <th><%= Cdx::User.human_attribute_name :email %></th>
+          <th><%= t('admin.actions.all') %></th>
+        </tr>
+        <% @collection.each do |object| %>
+            <tr>
+              <%= tag.td object.email %>
+              <td>
+                <%= link_to_edit object %>
+                <%= link_to_delete object %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>

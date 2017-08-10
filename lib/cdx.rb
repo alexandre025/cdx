@@ -4,6 +4,7 @@ require 'bootstrap-sass'
 require 'font-awesome-rails'
 
 require 'devise'
+require 'simple_form'
 
 require 'cdx/engine'
 

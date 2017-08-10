@@ -10,16 +10,17 @@
     <div class="box-body">
       <table class="table table-striped">
         <tr>
-          <%= tag.th Cdx::User.human_attribute_name(:email) %>
+          <%= tag.th Cdx::Site.human_attribute_name(:name) %>
+          <%= tag.th Cdx::Site.human_attribute_name(:acronym) %>
+          <%= tag.th Cdx::Site.human_attribute_name(:domain) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
         <% @collection.each do |object| %>
             <tr>
-              <%= tag.td object.email %>
-              <td>
-                <%= link_to_edit object %>
-                <%= link_to_delete object %>
-              </td>
+              <%= tag.td object.name %>
+              <%= tag.td object.acronym %>
+              <%= tag.td object.domain %>
+              <%= tag.td link_to_edit(object) %>
             </tr>
         <% end %>
       </table>

@@ -1,0 +1,13 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <%= f.input :name %>
+      <%= f.input :acronym %>
+      <%= f.input :domain %>
+      <%= f.input :is_default, wrapper: :horizontal_boolean %>
+    </div>
+    <div class="box-footer">
+      <%= link_to_cancel %>
+      <%= f.button :submit %>
+    </div>
+
+<% end %>

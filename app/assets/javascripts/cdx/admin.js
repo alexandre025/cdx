@@ -13,6 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
+//= require 'icheck'
 //= require cdx/adminlte/adminlte.min
+//= require cdx/shared/checkbox.js
 //= require_tree .
-

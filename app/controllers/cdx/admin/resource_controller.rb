@@ -67,10 +67,10 @@ module Cdx
       def load_resource
         if member_action? # Load member action
           @object ||= load_resource_instance
-          instance_variable_set("@#{resource.object_name}", @object)
+          # instance_variable_set("@#{resource.object_name}", @object)
         else # Load collection
           @collection ||= collection
-          instance_variable_set("@#{controller_name}", @collection)
+          # instance_variable_set("@#{controller_name}", @collection)
         end
       end
 

@@ -18,3 +18,4 @@ en:
         name: Name
         acronym: Acronym
         domain: Domain
+        is_default : Default site ?

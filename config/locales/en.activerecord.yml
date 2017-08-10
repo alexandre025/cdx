@@ -5,10 +5,16 @@ en:
         one: User
         other: Users
 
+      cdx/site:
+        one: Site
+        other: Sites
+
     attributes:
       cdx/user:
         email: Email
         password: Password
 
-
-
+      cdx/site:
+        name: Name
+        acronym: Acronym
+        domain: Domain

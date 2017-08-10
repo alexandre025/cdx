@@ -13,5 +13,7 @@ Cdx::Engine.routes.draw do
                }
 
     resources :users, except: :show
+
+    resources :sites, except: :show
   end
 end

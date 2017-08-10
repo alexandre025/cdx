@@ -1,0 +1,11 @@
+<% render_main_sidebar_menu; render_content_header_breadcrumb %>
+
+<div class="col-md-12">
+  <div class="box">
+
+    <%= simple_form_for([:admin, @object], html: {class: 'form-horizontal'}, wrapper: :horizontal_form) do |form| %>
+        <%= render partial: 'cdx/admin/sites/form', locals: { f: form } %>
+    <% end %>
+
+  </div>
+</div>

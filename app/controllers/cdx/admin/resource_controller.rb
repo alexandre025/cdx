@@ -4,7 +4,7 @@ module Cdx
 
       before_action :load_resource
 
-      helper_method :member_action?
+      helper_method :member_action?, :new_object_url, :edit_object_url, :object_url, :collection_url
 
       def index
 
@@ -109,6 +109,39 @@ module Cdx
 
       def member_action?
         !collection_actions.include? action_name.to_sym
+      end
+
+      def new_object_url(options = {})
+        if parent_data.present?
+
+        else
+
+        end
+      end
+
+      def edit_object_url(object, options = {})
+        if parent_data.present?
+
+        else
+          cdx.send "edit_admin_#{resource.object_name}_url", object, options
+        end
+      end
+
+      def object_url(object = nil, options = {})
+        target = object ? object : @object
+        if parent_data.present?
+
+        else
+          cdx.send "edit_admin_#{resource.object_name}_url", target, options
+        end
+      end
+
+      def collection_url(options = {})
+        if parent_data.present?
+
+        else
+
+        end
       end
 
     end

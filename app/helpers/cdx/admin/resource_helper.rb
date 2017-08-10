@@ -21,8 +21,7 @@ module Cdx
       end
 
       def link_to_edit(resource, options = {})
-        # TODO : Dev edit_object_url
-        url = options[:url] || edit_admin_user_path(resource)
+        url = options[:url] || edit_object_url(resource)
         options[:class] = 'btn-sm btn-info'
         link_to fa_icon(:pencil), url, options
       end

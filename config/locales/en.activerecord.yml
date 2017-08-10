@@ -13,6 +13,10 @@ en:
       cdx/user:
         email: Email
         password: Password
+        first_name: First name
+        last_name: Last name
+        full_name: Full name
+        theme: Theme
 
       cdx/site:
         name: Name

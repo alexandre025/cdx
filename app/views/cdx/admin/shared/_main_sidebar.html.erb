@@ -5,7 +5,7 @@
         <%= image_tag current_admin_user.gravatar_url, class: 'img-circle' %>
       </div>
       <div class="pull-left info">
-        <p><%= truncate(current_admin_user.email, length: 20) %></p>
+        <p><%= current_admin_user.full_name %></p>
       </div>
     </div>
     <ul class="sidebar-menu tree" data-widget="tree">

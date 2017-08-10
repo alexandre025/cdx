@@ -13,7 +13,19 @@
     </a>
 
     <div class="navbar-custom-menu">
-
+      <ul class="nav navbar-nav">
+        <li class="dropdown user user-menu">
+          <%= link_to '#', class: %w(dropdown-toggle), data: { toggle: :dropdown } do %>
+              <%= image_tag current_admin_user.gravatar_url, class: %w(user-image) %>
+              <%= tag.span current_admin_user.full_name %>
+          <% end %>
+          <ul class="dropdown-menu">
+            <li class="user-header"></li>
+            <li class="user-body"></li>
+            <li class="user-footer"></li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </nav>
 </div>

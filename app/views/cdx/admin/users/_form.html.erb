@@ -1,13 +1,17 @@
 <% if defined?(f) %>
     <div class="box-body">
+      <h3><%= t('admin.general') %></h3>
       <%= f.input :email, as: :email %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :theme if current_admin_user == f.object %>
+      <hr>
+      <h3><%= t('admin.password') %></h3>
       <%= f.input :password, as: :password %>
       <%= f.input :password_confirmation, as: :password %>
-      <%= f.input :theme if current_admin_user == f.object %>
     </div>
     <div class="box-footer">
       <%= link_to_cancel %>
       <%= f.button :submit %>
     </div>
-
 <% end %>

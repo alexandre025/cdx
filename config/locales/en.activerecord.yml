@@ -9,6 +9,10 @@ en:
         one: Site
         other: Sites
 
+      cdx/page:
+        one: Page
+        other: Pages
+
     attributes:
       cdx/user:
         email: Email

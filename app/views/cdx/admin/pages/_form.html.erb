@@ -1,0 +1,11 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <%= f.input :name %>
+      <%= f.input :content %>
+    </div>
+    <div class="box-footer">
+      <%= link_to_cancel %>
+      <%= f.button :submit %>
+    </div>
+
+<% end %>

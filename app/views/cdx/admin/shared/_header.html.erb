@@ -15,14 +15,23 @@
     <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
         <li class="dropdown user user-menu">
-          <%= link_to '#', class: %w(dropdown-toggle), data: { toggle: :dropdown } do %>
+          <%= link_to '#', class: %w(dropdown-toggle), data: {toggle: :dropdown} do %>
               <%= image_tag current_admin_user.gravatar_url, class: %w(user-image) %>
               <%= tag.span current_admin_user.full_name %>
           <% end %>
           <ul class="dropdown-menu">
-            <li class="user-header"></li>
-            <li class="user-body"></li>
-            <li class="user-footer"></li>
+            <li>
+              <%= link_to edit_admin_user_path(current_admin_user) do %>
+                  <%= fa_icon :user %>
+                  <%= t('admin.profile') %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to destroy_admin_user_session_path, data: { method: :delete } do %>
+                  <%= fa_icon 'sign-out' %>
+                  <%= t('admin.signout') %>
+              <% end %>
+            </li>
           </ul>
         </li>
       </ul>

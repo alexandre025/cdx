@@ -22,3 +22,6 @@ en:
       cancel: "Cancel"
       all: "Actions"
     general: "General"
+    online: "Online"
+    signout: "Sign out"
+    profile: "Profile"

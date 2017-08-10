@@ -19,15 +19,29 @@ module Cdx
       end
 
       def update
-
+        if @object.update_attributes permitted_resource_params
+          redirect_to location_after_save
+        else
+          render :edit
+        end
       end
 
       def create
-
+        if @object.update_attributes permitted_resource_params
+          redirect_to location_after_save
+        else
+          render :new
+        end
       end
 
       def destroy
+        if @object.destroy
 
+        else
+
+        end
+
+        redirect_to location_after_destroy
       end
 
       protected
@@ -41,6 +55,13 @@ module Cdx
           @parent_data[:model_class] = model_name.to_s.classify.constantize
           @parent_data[:find_by] = options[:find_by] || :id
         end
+      end
+
+      # Allow all attributes to be updatable.
+      #
+      # Other controllers can, should, override it to set custom logic
+      def permitted_resource_params
+        params[resource.object_name].present? ? params.require(resource.object_name).permit! : ActionController::Parameters.new
       end
 
       def load_resource
@@ -132,7 +153,7 @@ module Cdx
         if parent_data.present?
 
         else
-          cdx.send "edit_admin_#{resource.object_name}_url", target, options
+          cdx.send "admin_#{resource.object_name}_url", target, options
         end
       end
 
@@ -142,6 +163,14 @@ module Cdx
         else
           cdx.polymorphic_url [:admin, model_class], options
         end
+      end
+
+      def location_after_destroy
+        collection_url
+      end
+
+      def location_after_save
+        edit_object_url(@object)
       end
 
     end

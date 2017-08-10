@@ -7,15 +7,24 @@ module Cdx
 
     include Cdx::Admin::ResourceRecord
 
+    store_accessor :settings, :theme
+
+    # Validators
+
+    validates :email, :first_name, :last_name, presence: true
+
+    # Methods
+
     def content_header_title
       email
     end
-
-    store_accessor :settings, :theme
 
     def gravatar_url
       "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}"
     end
 
+    def full_name
+      "#{first_name} #{last_name}".strip
+    end
   end
 end

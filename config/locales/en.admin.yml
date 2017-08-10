@@ -25,3 +25,5 @@ en:
     online: "Online"
     signout: "Sign out"
     profile: "Profile"
+    custom_validators:
+      must_have_one_default_site: One default site is required

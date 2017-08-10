@@ -9,6 +9,10 @@ en:
         one: Site
         other: Sites
 
+      cdx/page:
+        one: Page
+        other: Pages
+
     attributes:
       cdx/user:
         email: Email
@@ -23,3 +27,7 @@ en:
         acronym: Acronym
         domain: Domain
         is_default : Default ?
+
+      cdx/page:
+        name: Name
+        content: Page content

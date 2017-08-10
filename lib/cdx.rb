@@ -3,6 +3,7 @@ require 'sprockets/rails'
 require 'bootstrap-sass'
 require 'font-awesome-rails'
 require 'icheck-rails'
+require 'bootstrap-wysihtml5-rails'
 
 require 'devise'
 require 'simple_form'

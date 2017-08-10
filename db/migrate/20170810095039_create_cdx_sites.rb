@@ -5,6 +5,7 @@ class CreateCdxSites < ActiveRecord::Migration[5.1]
       t.string :acronym, limit: 45, null: false
       t.string :domain, limit: 45, null: false
       t.json :settings
+      t.boolean :is_default, default: false
     end
   end
 end

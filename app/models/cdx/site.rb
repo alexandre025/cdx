@@ -13,13 +13,14 @@ module Cdx
       name
     end
 
-    def one_default_site
-      if is_default
-        Cdx::Site.all.each do |s|
-          s.is_default = false
-          s.save
+    private
+      def one_default_site
+        if is_default
+          Cdx::Site.all.each do |s|
+            s.is_default = false
+            s.save
+          end
         end
       end
-    end
   end
 end

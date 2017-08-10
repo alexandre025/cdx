@@ -1,7 +1,7 @@
 class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
   layout 'cdx/admin_login'
 
-  include Cdx::Admin::BaseHelper
+  helper Cdx::Admin::BaseHelper
 
   # before_action :configure_sign_in_params, only: [:create]
 

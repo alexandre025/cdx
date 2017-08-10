@@ -1,6 +1,6 @@
 class Cdx::Admin::Devise::ConfirmationsController < Devise::ConfirmationsController
 
-  include Cdx::Admin::BaseHelper
+  helper Cdx::Admin::BaseHelper
 
   # GET /resource/confirmation/new
   # def new

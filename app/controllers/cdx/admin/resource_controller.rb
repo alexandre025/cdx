@@ -115,7 +115,7 @@ module Cdx
         if parent_data.present?
 
         else
-
+          cdx.new_polymorphic_url [:admin, model_class], options
         end
       end
 
@@ -140,7 +140,7 @@ module Cdx
         if parent_data.present?
 
         else
-
+          cdx.polymorphic_url [:admin, model_class], options
         end
       end
 

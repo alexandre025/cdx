@@ -20,6 +20,14 @@ module Cdx
         end
       end
 
+      def link_to_new(options = {})
+        url = options[:url] || new_object_url
+        options[:class] = 'btn-sm btn-info pull-right'
+        link_to url, options do
+          fa_icon(:plus) + ' ' + t('admin.actions.new')
+        end
+      end
+
       def link_to_edit(resource, options = {})
         url = options[:url] || edit_object_url(resource)
         options[:class] = 'btn-sm btn-info'
@@ -27,11 +35,16 @@ module Cdx
       end
 
       def link_to_delete(resource, options = {})
-        # TODO : Dev object_url
-        url = options[:url] || admin_user_path(resource)
+        url = options[:url] || object_url(resource)
         options[:class] = %w(btn-sm btn-danger)
         options[:data] ||= {method: :delete, confirm: 'Are you sure ?'}
         link_to fa_icon(:trash), url, options
+      end
+
+      def link_to_cancel(options = {})
+        url = options[:url] || collection_url
+        options[:class] = %w(btn btn-default)
+        link_to t('admin.actions.cancel'), url, options
       end
 
     end

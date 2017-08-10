@@ -4,17 +4,14 @@
   <div class="box">
 
     <div class="box-header with-border">
-      <%= link_to new_admin_user_path, class: 'btn-sm btn-info pull-right' do %>
-          <%= fa_icon :plus %>
-          <%= t('admin.actions.new') %>
-      <% end %>
+      <%= link_to_new %>
     </div>
 
     <div class="box-body">
       <table class="table table-striped">
         <tr>
           <th><%= Cdx::User.human_attribute_name :email %></th>
-          <th><%= t('admin.actions.all')%></th>
+          <th><%= t('admin.actions.all') %></th>
         </tr>
         <% @users.each do |user| %>
             <tr>

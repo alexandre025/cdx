@@ -13,12 +13,12 @@
           <th><%= Cdx::User.human_attribute_name :email %></th>
           <th><%= t('admin.actions.all') %></th>
         </tr>
-        <% @users.each do |user| %>
+        <% @collection.each do |object| %>
             <tr>
-              <%= tag.td user.email %>
+              <%= tag.td object.email %>
               <td>
-                <%= link_to_edit user %>
-                <%= link_to_delete user %>
+                <%= link_to_edit object %>
+                <%= link_to_delete object %>
               </td>
             </tr>
         <% end %>

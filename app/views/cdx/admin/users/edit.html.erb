@@ -3,5 +3,9 @@
 <div class="col-md-12">
   <div class="box">
 
+    <%= simple_form_for([:admin, @object], html: {class: 'form-horizontal'}, wrapper: :horizontal_form) do |form| %>
+        <%= render partial: 'cdx/admin/users/form', locals: {f: form} %>
+    <% end %>
+
   </div>
 </div>

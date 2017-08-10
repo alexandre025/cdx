@@ -24,6 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sass-rails', '>= 3.2'
   s.add_dependency 'font-awesome-rails'
   s.add_dependency 'icheck-rails', '~> 1.0'
+  s.add_dependency 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
 
   s.add_dependency 'devise'
   s.add_dependency 'simple_form'

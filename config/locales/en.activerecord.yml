@@ -27,3 +27,7 @@ en:
         acronym: Acronym
         domain: Domain
         is_default : Default site ?
+
+      cdx/page:
+        name: Name
+        content: Page content

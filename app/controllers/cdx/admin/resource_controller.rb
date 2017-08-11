@@ -182,7 +182,7 @@ module Cdx
       end
 
       def location_after_save
-        edit_object_url(@object)
+        collection_url
       end
 
     end

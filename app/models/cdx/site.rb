@@ -3,15 +3,29 @@ module Cdx
     include Cdx::Admin::ResourceRecord
 
     # Callbacks
-    before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }
+    before_save {Cdx::Site.where.not(id: id).update_all(default: false) if default}
 
     # Validators
     validates :name, :domain, presence: true
-    validate  :must_have_one_default_site
+    validate :must_have_one_default_site
+
+    # Scope
+    scope :by_domain, -> (domain) {where('domain like ?', domain)}
 
     # Methods
     def content_header_title
       name
+    end
+
+    def self.current(domain = nil)
+      current_site = domain ? Site.by_domain(domain).first : nil
+      current_site || Site.default
+    end
+
+    def self.default
+      Rails.cache.fetch('default_site') do
+        where(default: true).first_or_initialize
+      end
     end
 
     private

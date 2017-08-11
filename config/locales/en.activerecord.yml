@@ -39,7 +39,8 @@ en:
       cdx/page:
         title: Title
         content: Page content
-        published_at: Published at
+        state: State
+        published_on: Published on
         slug: Slug
 
       cdx/taxonomy:

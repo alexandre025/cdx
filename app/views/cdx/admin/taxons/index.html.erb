@@ -14,11 +14,11 @@
           <%= tag.th Cdx::Taxon.human_attribute_name(:description) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
-        <% @collection.by_taxonomy(@taxonomy).each do |object| %>
+        <% @collection.each do |object| %>
             <tr>
               <%= tag.td object.name %>
               <%= tag.td object.description %>
-              <%#= tag.td link_to_edit(object) %>
+              <%= tag.td link_to_edit(object) %>
             </tr>
         <% end %>
       </table>

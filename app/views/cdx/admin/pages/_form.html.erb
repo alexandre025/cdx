@@ -3,8 +3,7 @@
       <%= f.input :title %>
       <%# TODO : FriendlyId %>
       <%= f.input :slug, disabled: true if f.object.persisted? %>
-      <%= f.input :content, input_html: { class: 'page-content' } %>
-      <%= f.input :published_at %>
+      <%= f.input :content, as: :wysiwyg %>
     </div>
     <div class="box-footer">
       <%= link_to_cancel %>

@@ -1,6 +1,6 @@
 module Cdx
   module Admin
-    class PagesController < ResourceController
+    class PagesController < PublishableResourceController
     end
   end
 end

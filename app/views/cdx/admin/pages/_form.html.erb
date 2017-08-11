@@ -7,6 +7,6 @@
     </div>
     <div class="box-footer">
       <%= link_to_cancel %>
-      <%= f.button :submit %>
+      <%= render partial: 'cdx/admin/shared/publishable/form_actions', locals: {f: f} %>
     </div>
 <% end %>

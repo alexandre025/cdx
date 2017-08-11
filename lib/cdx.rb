@@ -7,6 +7,8 @@ require 'bootstrap-wysihtml5-rails'
 
 require 'devise'
 require 'simple_form'
+require 'friendly_id'
+require 'state_machines-activerecord'
 
 require 'cdx/engine'
 

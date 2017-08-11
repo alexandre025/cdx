@@ -11,12 +11,17 @@
       <table class="table table-striped">
         <tr>
           <%= tag.th Cdx::Site.human_attribute_name(:name) %>
+          <%= tag.th Cdx::Site.human_attribute_name(:slug) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
-        <% @collection.order(:name).each do |object| %>
+        <% @collection.each do |object| %>
             <tr>
-              <%= tag.td object.name %>
-              <%= tag.td link_to_edit(object) %>
+              <%= tag.td object.title %>
+              <%= tag.td object.slug %>
+              <td>
+                <%= link_to_edit(object) %>
+                <%= link_to_destroy(object) %>
+              </td>
             </tr>
         <% end %>
       </table>

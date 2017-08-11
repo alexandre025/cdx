@@ -105,8 +105,7 @@ module Cdx
         if parent_data.present?
           parent.send(controller_name).find(params[:id])
         else
-          # TODO : Friendly ID (conditional)
-          model_class.find(params[:id])
+          model_class.respond_to?(:friendly) ? model_class.friendly.find(params[:id]) : model_class.find(params[:id])
         end
       end
 

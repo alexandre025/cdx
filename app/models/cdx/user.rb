@@ -1,12 +1,14 @@
 module Cdx
   class User < ApplicationRecord
+    include Cdx::Admin::ResourceRecord
+
+    # Devise
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
 
-    include Cdx::Admin::ResourceRecord
-
+    # Settings
     store_accessor :settings, :theme
 
     # Validators

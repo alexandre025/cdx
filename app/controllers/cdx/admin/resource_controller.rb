@@ -103,8 +103,7 @@ module Cdx
       def find_resource
         if parent_data.present?
         else
-          # TODO : Friendly ID (conditional)
-          model_class.find(params[:id])
+          model_class.respond_to?(:friendly) ? model_class.friendly.find(params[:id]) : model_class.find(params[:id])
         end
       end
 

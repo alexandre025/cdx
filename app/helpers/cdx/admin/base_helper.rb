@@ -26,6 +26,10 @@ module Cdx
         end
       end
 
+      def ld(date)
+        l date unless date.nil?
+      end
+
     end
   end
 end

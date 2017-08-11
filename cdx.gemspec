@@ -28,6 +28,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'devise'
   s.add_dependency 'simple_form'
+  s.add_dependency 'friendly_id'
+  s.add_dependency 'state_machines-activerecord'
 
   s.add_development_dependency 'pg'
   s.add_development_dependency 'rspec-rails'

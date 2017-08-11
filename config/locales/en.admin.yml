@@ -1,16 +1,19 @@
 en:
   admin:
+    generic_states:
+      published: "Published"
+      draft: "Draft"
     content_header:
       page_title:
-        home_index: Dashboard
+        home_index: "Dashboard"
         actions:
-          edit: Edit
-          update: Edit
-          new: New
-          create: New
-          index: Index
+          edit: "Edit"
+          update: "Edit"
+          new: "New"
+          create: "New"
+          index: "Index"
       breadcrumb:
-        home_index: Dashboard
+        home_index: "Dashboard"
     main_sidebar:
       menu:
         title:
@@ -21,9 +24,12 @@ en:
       new: "New"
       cancel: "Cancel"
       all: "Actions"
+      publish: "Publish"
+      draft: "Draft"
+      unpublish: "Unpublish"
     general: "General"
     online: "Online"
     signout: "Sign out"
     profile: "Profile"
     custom_validators:
-      must_have_one_default_site: One default site is required
+      must_have_one_default_site: "One default site is required"

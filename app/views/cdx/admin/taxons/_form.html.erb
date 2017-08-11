@@ -2,6 +2,8 @@
     <div class="box-body">
       <%= f.input :name %>
       <%= f.input :description %>
+      <%= f.input :taxonomy_id, as: :hidden, input_html: { value: @taxonomy.id } %>
+      <%= f.association :parent, collection: @available_parent_taxons, label_method: :name, value_method: :id %>
     </div>
     <div class="box-footer">
       <%= link_to_cancel(url: admin_taxonomy_taxons_path) %>

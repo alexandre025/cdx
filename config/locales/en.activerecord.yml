@@ -24,7 +24,7 @@ en:
 
       cdx/site:
         name: Name
-        acronym: Acronym
+        code: Code
         domain: Domain
         default : Default ?
 

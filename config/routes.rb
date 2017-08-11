@@ -1,5 +1,5 @@
 Cdx::Engine.routes.draw do
-  namespace :admin do
+  namespace :admin, path: Cdx.admin_path do
     root to: 'home#index'
 
     devise_for :users,

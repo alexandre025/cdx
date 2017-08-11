@@ -10,8 +10,8 @@
     <div class="box-body">
       <table class="table table-striped">
         <tr>
-          <%= tag.th Cdx::Site.human_attribute_name(:name) %>
-          <%= tag.th Cdx::Site.human_attribute_name(:description) %>
+          <%= tag.th Cdx::Taxonomy.human_attribute_name(:name) %>
+          <%= tag.th Cdx::Taxonomy.human_attribute_name(:description) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
         <% @collection.order(:name).each do |object| %>

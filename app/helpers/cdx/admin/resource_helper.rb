@@ -28,6 +28,12 @@ module Cdx
         end
       end
 
+      def link_to_show(resource, options = {})
+        url = options[:url] || object_url(resource)
+        options[:class] = 'btn-sm btn-success'
+        link_to fa_icon(:eye), url, options
+      end
+
       def link_to_edit(resource, options = {})
         url = options[:url] || edit_object_url(resource)
         options[:class] = 'btn-sm btn-info'

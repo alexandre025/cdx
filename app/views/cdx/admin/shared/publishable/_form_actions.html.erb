@@ -1,11 +1,9 @@
-<div class="btn-group pull-right">
-  <%= f.submit nil, class: 'btn btn-info' %>
-  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
-    <span class="caret"></span>
-    <span class="sr-only">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu" role="menu">
-    <%= f.submit t('admin.actions.unpublish'), name: :unpublish, class: 'btn-link' unless f.object.draft? %>
-    <%= f.submit t('admin.actions.publish'), name: :publish, class: 'btn-link' unless f.object.published? %>
-  </ul>
+<div class="pull-right">
+  <% if f.object.published? %>
+      <%= f.submit t('admin.actions.unpublish'), name: :unpublish, class: 'btn btn-default' unless f.object.draft? %>
+      <%= f.submit nil, class: 'btn btn-info' %>
+  <% else %>
+      <%= f.submit nil, class: 'btn btn-default' %>
+      <%= f.submit t('admin.actions.publish'), name: :publish, class: 'btn btn-info' %>
+  <% end %>
 </div>

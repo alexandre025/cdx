@@ -1,7 +1,6 @@
 <% if defined?(f) %>
     <div class="box-body">
       <%= f.input :title %>
-      <%# TODO : FriendlyId %>
       <%= f.input :slug, disabled: true if f.object.persisted? %>
       <%= f.input :content, as: :wysiwyg %>
     </div>

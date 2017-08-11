@@ -20,7 +20,7 @@
             <tr>
               <%= tag.td object.title %>
               <%= tag.td object.slug %>
-              <%= tag.td object.state %>
+              <%= tag.td t("admin.generic_states.#{object.state}") %>
               <%= tag.td ld(object.published_on) %>
               <td>
                 <%= link_to_edit(object) %>

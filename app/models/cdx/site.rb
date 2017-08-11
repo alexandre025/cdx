@@ -3,7 +3,7 @@ module Cdx
     include Cdx::Admin::ResourceRecord
 
     # Callbacks
-    before_save { Cdx::Site.where.not(id: id).update_all(is_default: false) if is_default }
+    before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }
 
     # Validators
     validates :name, :domain, presence: true
@@ -17,8 +17,8 @@ module Cdx
     private
 
     def must_have_one_default_site
-      if !is_default && !Cdx::Site.where.not(id: id).exists?(is_default: true)
-        errors.add(:is_default, I18n.t('admin.custom_validators.must_have_one_default_site'))
+      if !default && !Cdx::Site.where.not(id: id).exists?(default: true)
+        errors.add(:default, I18n.t('admin.custom_validators.must_have_one_default_site'))
       end
     end
   end

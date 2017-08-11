@@ -7,7 +7,7 @@ module Cdx
 
     # Methods
     def content_header_title
-      name
+      title
     end
   end
 end

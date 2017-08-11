@@ -26,8 +26,10 @@ en:
         name: Name
         acronym: Acronym
         domain: Domain
-        is_default : Default ?
+        default : Default ?
 
       cdx/page:
-        name: Name
+        title: Title
         content: Page content
+        published_at: Published at
+        slug: Slug

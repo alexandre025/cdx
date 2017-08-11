@@ -41,10 +41,10 @@ module Cdx
         link_to fa_icon(:trash), url, options
       end
 
-      def link_to_cancel(options = {})
+      def link_to_return(options = {})
         url = options[:url] || collection_url
         options[:class] = %w(btn btn-default)
-        link_to t('admin.actions.cancel'), url, options
+        link_to t('admin.actions.return'), url, options
       end
 
     end

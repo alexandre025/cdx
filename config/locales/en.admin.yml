@@ -22,7 +22,7 @@ en:
           dashboard: "Dashboard"
     actions:
       new: "New"
-      cancel: "Cancel"
+      return: "Return"
       all: "Actions"
       publish: "Publish"
       draft: "Draft"

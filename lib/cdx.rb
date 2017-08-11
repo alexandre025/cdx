@@ -13,7 +13,14 @@ require 'state_machines-activerecord'
 require 'cdx/engine'
 
 module Cdx
-  # Your code goes here...
+
+  mattr_accessor :admin_path
+  @@admin_path = 'admin'
+
+  def self.setup
+    yield self
+  end
+
 end
 
 require 'cdx/controller_helpers/site'

@@ -12,12 +12,14 @@
         <tr>
           <%= tag.th Cdx::Site.human_attribute_name(:title) %>
           <%= tag.th Cdx::Site.human_attribute_name(:slug) %>
+          <%= tag.th Cdx::Site.human_attribute_name(:published_at) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
         <% @collection.each do |object| %>
             <tr>
               <%= tag.td object.title %>
               <%= tag.td object.slug %>
+              <%= l tag.td object.published_at %>
               <td>
                 <%= link_to_edit(object) %>
                 <%= link_to_destroy(object) %>

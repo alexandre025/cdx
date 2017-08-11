@@ -4,14 +4,14 @@
   <div class="box">
 
     <div class="box-header with-border">
-      <%= link_to_new %>
+      <%= link_to_new(url: new_admin_taxonomy_taxon_path) %>
     </div>
 
     <div class="box-body">
       <table class="table table-striped">
         <tr>
-          <%= tag.th Cdx::Taxonomy.human_attribute_name(:name) %>
-          <%= tag.th Cdx::Taxonomy.human_attribute_name(:description) %>
+          <%= tag.th Cdx::Taxon.human_attribute_name(:name) %>
+          <%= tag.th Cdx::Taxon.human_attribute_name(:description) %>
           <%= tag.th t('admin.actions.all') %>
         </tr>
         <% @collection.order(:name).each do |object| %>
@@ -20,7 +20,6 @@
               <%= tag.td object.description %>
               <td>
                 <%= link_to_edit object %>
-                <%= link_to_show(object, {url: admin_taxonomy_taxons_path(object)}) %>
               </td>
             </tr>
         <% end %>

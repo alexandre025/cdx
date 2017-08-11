@@ -1,0 +1,10 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <%= f.input :name %>
+      <%= f.input :description %>
+    </div>
+    <div class="box-footer">
+      <%= link_to_cancel(url: admin_taxonomy_taxons_path) %>
+      <%= f.button :submit %>
+    </div>
+<% end %>

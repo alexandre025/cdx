@@ -17,6 +17,10 @@ en:
         one: Taxonomy
         other: Taxonomies
 
+      cdx/taxon:
+        one: Taxon
+        other: Taxons
+
     attributes:
       cdx/user:
         email: Email
@@ -37,5 +41,9 @@ en:
         content: Page content
 
       cdx/taxonomy:
+        name: Name
+        description: Description
+
+      cdx/taxon:
         name: Name
         description: Description

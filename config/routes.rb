@@ -18,6 +18,8 @@ Cdx::Engine.routes.draw do
 
     resources :pages, except: :show
 
-    resources :taxonomies
+    resources :taxonomies do
+      resources :taxons, except: :show
+    end
   end
 end

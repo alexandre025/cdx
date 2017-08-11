@@ -13,6 +13,10 @@ en:
         one: Page
         other: Pages
 
+      cdx/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
+
     attributes:
       cdx/user:
         email: Email
@@ -31,3 +35,7 @@ en:
       cdx/page:
         name: Name
         content: Page content
+
+      cdx/taxonomy:
+        name: Name
+        description: Description

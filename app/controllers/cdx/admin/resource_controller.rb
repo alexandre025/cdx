@@ -94,6 +94,7 @@ module Cdx
 
       def build_resource
         if parent_data.present?
+          parent.send(controller_name).build
         else
           # This line should be overridden when custom resource initializer is needed
           model_class.new
@@ -102,6 +103,7 @@ module Cdx
 
       def find_resource
         if parent_data.present?
+          parent.send(controller_name).find(params[:id])
         else
           # TODO : Friendly ID (conditional)
           model_class.find(params[:id])
@@ -110,6 +112,17 @@ module Cdx
 
       def parent_data
         self.class.parent_data
+      end
+
+      def parent
+        if parent_data.present?
+          @parent ||= parent_data[:model_class].
+            # Don't use `find_by_attribute_name` to workaround globalize/globalize#423 bug
+            send(:find_by, parent_data[:find_by].to_s => params["#{resource.model_name}_id"])
+          # instance_variable_set("@#{resource.model_name}", @parent)
+        else
+          nil
+        end
       end
 
       def model_class
@@ -134,7 +147,7 @@ module Cdx
 
       def new_object_url(options = {})
         if parent_data.present?
-
+          cdx.new_polymorphic_url([:admin, parent, model_class], options)
         else
           cdx.new_polymorphic_url [:admin, model_class], options
         end
@@ -142,7 +155,7 @@ module Cdx
 
       def edit_object_url(object, options = {})
         if parent_data.present?
-
+          cdx.send "edit_admin_#{resource.model_name}_#{resource.object_name}_url", parent, object, options
         else
           cdx.send "edit_admin_#{resource.object_name}_url", object, options
         end
@@ -151,7 +164,7 @@ module Cdx
       def object_url(object = nil, options = {})
         target = object ? object : @object
         if parent_data.present?
-
+          cdx.send "admin_#{resource.model_name}_#{resource.object_name}_url", parent, target, options
         else
           cdx.send "admin_#{resource.object_name}_url", target, options
         end
@@ -159,7 +172,7 @@ module Cdx
 
       def collection_url(options = {})
         if parent_data.present?
-
+          cdx.polymorphic_url([:admin, parent, model_class], options)
         else
           cdx.polymorphic_url [:admin, model_class], options
         end

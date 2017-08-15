@@ -1,6 +1,7 @@
 module Cdx
   module Admin
     class ResourceController < BaseController
+      before_action :authenticate_admin_user!
 
       before_action :load_resource
 

@@ -3,10 +3,11 @@ module Cdx
     include Cdx::Admin::ResourceRecord
 
     # Callbacks
-    before_save {Cdx::Site.where.not(id: id).update_all(default: false) if default}
+    before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }
 
     # Validators
     validates :name, :domain, presence: true
+    validates :code, uniqueness: true
     validate :must_have_one_default_site
 
     # Scope

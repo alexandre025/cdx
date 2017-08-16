@@ -1,28 +1,20 @@
 # Cdx
-Short description and motivation.
 
-## Usage
-How to use my plugin.
+[![Build Status](https://travis-ci.com/alexandre025/cdx.svg?token=in8sSsy4MxZn4XxNavha&branch=master)](https://travis-ci.com/alexandre025/cdx)
 
 ## Installation
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cdx'
+gem 'cdx', github: 'alexandre025/cdx'
 ```
 
 And then execute:
 ```bash
 $ bundle
+$ bundle exec rails cdx:install:migrations
+$ bundle exec g cdx:install
 ```
-
-Or install it yourself as:
-```bash
-$ gem install cdx
-```
-
-## Contributing
-Contribution directions go here.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).

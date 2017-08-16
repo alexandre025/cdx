@@ -8,3 +8,4 @@ spec/dummy/tmp/
 .idea/
 .DS_Store
 /.byebug_history
+/spec/dummy/public/assets

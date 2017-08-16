@@ -50,3 +50,4 @@ en:
       cdx/taxon:
         name: Name
         description: Description
+        parent: Parent

@@ -13,7 +13,7 @@
 //= require jquery
 //= require rails-ujs
 //= require bootstrap-sprockets
-//= require 'icheck'
+//= require icheck
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require_tree .

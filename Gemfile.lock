@@ -66,6 +66,7 @@ GEM
     bootstrap-wysihtml5-rails (0.3.3.8)
       railties (>= 3.0)
     builder (3.2.3)
+    byebug (9.0.6)
     capybara (2.14.4)
       addressable
       mime-types (>= 1.16)
@@ -221,6 +222,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   capybara
   cdx!
   factory_girl_rails

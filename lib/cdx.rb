@@ -9,6 +9,7 @@ require 'devise'
 require 'simple_form'
 require 'friendly_id'
 require 'state_machines-activerecord'
+require 'byebug'
 
 require 'cdx/engine'
 

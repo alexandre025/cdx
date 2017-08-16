@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810143518) do
+ActiveRecord::Schema.define(version: 20170811082558) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,20 @@ ActiveRecord::Schema.define(version: 20170810143518) do
     t.boolean "default", default: false
   end
 
+  create_table "cdx_taxonomies", force: :cascade do |t|
+    t.string "name", limit: 45, null: false
+    t.text "description"
+  end
+
+  create_table "cdx_taxons", force: :cascade do |t|
+    t.string "name", limit: 45, null: false
+    t.text "description"
+    t.bigint "taxonomy_id", null: false
+    t.bigint "parent_id"
+    t.index ["parent_id"], name: "index_cdx_taxons_on_parent_id"
+    t.index ["taxonomy_id"], name: "index_cdx_taxons_on_taxonomy_id"
+  end
+
   create_table "cdx_users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -54,4 +68,6 @@ ActiveRecord::Schema.define(version: 20170810143518) do
     t.index ["reset_password_token"], name: "index_cdx_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cdx_taxons", "cdx_taxonomies", column: "taxonomy_id"
+  add_foreign_key "cdx_taxons", "cdx_taxons", column: "parent_id"
 end

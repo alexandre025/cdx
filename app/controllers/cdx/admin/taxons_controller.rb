@@ -9,9 +9,9 @@ module Cdx
       # Methods
       private
 
-      def available_parent_taxons
-        @available_parent_taxons = @object.new_record? ? Cdx::Taxon.by_taxonomy(@parent) : Cdx::Taxon.by_taxonomy(@parent).where.not(id: @object.children.ids.push(@object.id))
-      end
+        def available_parent_taxons
+          @available_parent_taxons = @object.new_record? ? Cdx::Taxon.by_taxonomy(@parent) : Cdx::Taxon.by_taxonomy(@parent).where.not(id: @object.children.ids.push(@object.id))
+        end
     end
   end
 end

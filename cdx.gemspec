@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = 'Summary of Cdx.'
   s.description = 'Description of Cdx.'
   s.license     = 'MIT'
-  s.test_files = Dir['spec/**/*']
+  s.test_files  = Dir['spec/**/*']
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
@@ -39,4 +39,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rails-controller-testing', '~> 1.0.2'
   s.add_development_dependency 'byebug', '~> 9.0.6'
   s.add_development_dependency 'puma', '~> 3.9.1'
+  s.add_development_dependency 'rubocop-rails', '~> 1.0.1'
 end

@@ -14,14 +14,12 @@ require 'byebug'
 require 'cdx/engine'
 
 module Cdx
-
   mattr_accessor :admin_path
   @@admin_path = 'admin'
 
   def self.setup
     yield self
   end
-
 end
 
 require 'cdx/controller_helpers/site'

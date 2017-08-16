@@ -11,7 +11,7 @@ module Cdx
     validate :must_have_one_default_site
 
     # Scope
-    scope :by_domain, -> (domain) {where('domain like ?', domain)}
+    scope :by_domain, -> (domain) { where('domain like ?', domain) }
 
     # Methods
     def content_header_title
@@ -31,10 +31,10 @@ module Cdx
 
     private
 
-    def must_have_one_default_site
-      if !default && !Cdx::Site.where.not(id: id).exists?(default: true)
-        errors.add(:default, I18n.t('admin.custom_validators.must_have_one_default_site'))
+      def must_have_one_default_site
+        if !default && !Cdx::Site.where.not(id: id).exists?(default: true)
+          errors.add(:default, I18n.t('admin.custom_validators.must_have_one_default_site'))
+        end
       end
-    end
   end
 end

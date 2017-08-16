@@ -29,11 +29,11 @@ module Cdx
 
     describe '#POST create' do
       context 'when success' do
-        it { expect(post :create, params: {user: FactoryGirl.attributes_for(:cdx_user) }).to have_http_status(302) }
+        it { expect(post :create, params: { user: FactoryGirl.attributes_for(:cdx_user) }).to have_http_status(302) }
       end
 
       context 'when failed' do
-        it { expect(post :create, params: {user: {} }).to have_http_status(200) }
+        it { expect(post :create, params: { user: {} }).to have_http_status(200) }
       end
     end
   end

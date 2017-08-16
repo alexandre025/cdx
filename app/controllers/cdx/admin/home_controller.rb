@@ -4,9 +4,7 @@ module Cdx
       before_action :authenticate_admin_user!
 
       def index
-
       end
-
     end
   end
 end

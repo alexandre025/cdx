@@ -39,7 +39,7 @@ module Cdx
 
     describe '#POST create' do
       context 'when success' do
-        let(:page) { build(:cdx_page)}
+        let(:page) { build(:cdx_page) }
 
         it { expect(post :create, params: { page: page.attributes }).to have_http_status(302) }
 
@@ -56,7 +56,7 @@ module Cdx
       end
 
       context 'when failed' do
-        it { expect(post :create, params: {page: {} }).to have_http_status(200) }
+        it { expect(post :create, params: { page: {} }).to have_http_status(200) }
       end
     end
   end

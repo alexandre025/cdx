@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     class BaseController < Cdx::ApplicationController
-
       layout 'cdx/admin'
 
       def authenticate_admin_user!
@@ -11,7 +10,6 @@ module Cdx
           redirect_to new_admin_user_session_path
         end
       end
-
     end
   end
 end

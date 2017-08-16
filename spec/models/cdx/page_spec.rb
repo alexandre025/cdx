@@ -3,7 +3,7 @@ require 'rails_helper'
 module Cdx
   RSpec.describe Page, type: :model do
 
-    let(:page) { create(:cdx_page) }
+    subject(:page) { create(:cdx_page) }
 
     describe '#save!' do
       it { expect(build(:cdx_page).save!).to eq(true) }

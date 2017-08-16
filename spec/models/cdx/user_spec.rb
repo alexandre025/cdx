@@ -3,7 +3,7 @@ require 'rails_helper'
 module Cdx
   RSpec.describe User, type: :model do
 
-    let(:user) { create(:cdx_user) }
+    subject(:user) { create(:cdx_user) }
 
     describe '#save!' do
       it { expect(build(:cdx_user).save!).to eq(true) }

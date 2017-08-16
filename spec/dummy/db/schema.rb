@@ -44,7 +44,13 @@ ActiveRecord::Schema.define(version: 20170811082558) do
     t.text "description"
     t.bigint "taxonomy_id", null: false
     t.bigint "parent_id"
+    t.integer "lft", null: false
+    t.integer "rgt", null: false
+    t.integer "depth", default: 0, null: false
+    t.integer "children_count", default: 0, null: false
+    t.index ["lft"], name: "index_cdx_taxons_on_lft"
     t.index ["parent_id"], name: "index_cdx_taxons_on_parent_id"
+    t.index ["rgt"], name: "index_cdx_taxons_on_rgt"
     t.index ["taxonomy_id"], name: "index_cdx_taxons_on_taxonomy_id"
   end
 

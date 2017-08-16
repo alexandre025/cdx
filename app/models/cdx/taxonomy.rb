@@ -3,7 +3,7 @@ module Cdx
     include Cdx::Admin::ResourceRecord
 
     # Associations
-    has_many :taxons
+    has_many :taxons, dependent: :destroy
 
     # Validators
     validates :name, presence: true

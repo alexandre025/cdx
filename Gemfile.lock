@@ -4,15 +4,15 @@ PATH
     cdx (0.0.1)
       bootstrap-sass (~> 3.3.6)
       bootstrap-wysihtml5-rails (~> 0.3.3.8)
-      devise
-      font-awesome-rails
-      friendly_id
+      devise (~> 4.3.0)
+      font-awesome-rails (~> 4.7.0.2)
+      friendly_id (~> 5.2.1)
       icheck-rails (~> 1.0)
       jquery-rails (~> 4.3.1)
       rails (~> 5.1.2)
       sass-rails (>= 3.2)
-      simple_form
-      state_machines-activerecord
+      simple_form (~> 3.5.0)
+      state_machines-activerecord (~> 0.5.0)
 
 GEM
   remote: https://rubygems.org/
@@ -123,6 +123,7 @@ GEM
     orm_adapter (0.5.0)
     pg (0.21.0)
     public_suffix (2.0.5)
+    puma (3.9.1)
     rack (2.0.3)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -222,14 +223,15 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  byebug
-  capybara
+  byebug (~> 9.0.6)
+  capybara (~> 2.14.4)
   cdx!
-  factory_girl_rails
-  faker
-  pg
-  rails-controller-testing
-  rspec-rails
+  factory_girl_rails (~> 4.8.0)
+  faker (~> 1.8.4)
+  pg (~> 0.21.0)
+  puma (~> 3.9.1)
+  rails-controller-testing (~> 1.0.2)
+  rspec-rails (~> 3.6.0)
 
 BUNDLED WITH
    1.15.3

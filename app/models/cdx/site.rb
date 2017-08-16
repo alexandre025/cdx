@@ -6,7 +6,7 @@ module Cdx
     before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }
 
     # Validators
-    validates :name, :domain, presence: true
+    validates :name, :code, :domain, presence: true
     validates :code, uniqueness: true
     validate :must_have_one_default_site
 

@@ -20,6 +20,16 @@ module Cdx
     describe '#PATCH update' do
       context 'when sucess' do
         it { expect(patch :update, params: { id: page, page: FactoryGirl.attributes_for(:cdx_page) }).to have_http_status(302) }
+
+        it 'can be published' do
+          patch :update, params: { id: page, publish: :publish }
+          expect(assigns(:object).state).to eq('published')
+        end
+
+        it 'can be unpublished' do
+          patch :update, params: { id: page, unpublish: :unpublish }
+          expect(assigns(:object).state).to eq('draft')
+        end
       end
 
       context 'when failed' do
@@ -41,6 +51,7 @@ module Cdx
         it 'can be published' do
           post :create, params: { page: page.attributes, publish: :publish }
           expect(assigns(:object).state).to eq('published')
+          expect(assigns(:object).published_on).not_to eq(nil)
         end
       end
 

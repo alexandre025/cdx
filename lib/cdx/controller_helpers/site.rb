@@ -10,7 +10,6 @@ module Cdx
       def current_site
         @current_site ||= Cdx::Site.current(request.env['SERVER_NAME'])
       end
-
     end
   end
 end

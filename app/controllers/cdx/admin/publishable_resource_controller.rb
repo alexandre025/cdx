@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     class PublishableResourceController < ResourceController
-
       def update
         @object.assign_attributes permitted_resource_params
 
@@ -24,11 +23,11 @@ module Cdx
 
       private
 
-      def current_action
-        action = :publish if params[:publish]
-        action = :unpublish if params[:unpublish]
-        action ||= :save
-      end
+        def current_action
+          action = :publish if params[:publish]
+          action = :unpublish if params[:unpublish]
+          action ||= :save
+        end
     end
   end
 end

@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     module ResourceHelper
-
       def content_header_page_title
         # TODO : Parent data ?
         if member_action? && @object.persisted?
@@ -37,7 +36,7 @@ module Cdx
       def link_to_delete(resource, options = {})
         url = options[:url] || object_url(resource)
         options[:class] = %w(btn-sm btn-danger)
-        options[:data] ||= {method: :delete, confirm: 'Are you sure ?'}
+        options[:data] ||= { method: :delete, confirm: 'Are you sure ?' }
         link_to fa_icon(:trash), url, options
       end
 
@@ -46,7 +45,6 @@ module Cdx
         options[:class] = %w(btn btn-default)
         link_to t('admin.actions.return'), url, options
       end
-
     end
   end
 end

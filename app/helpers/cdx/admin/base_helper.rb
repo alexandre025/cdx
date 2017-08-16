@@ -13,7 +13,7 @@ module Cdx
 
       def render_main_sidebar_menu
         content_for :main_sidebar_menu do
-          render partial: 'cdx/admin/shared/main_sidebar_menu', locals: {current_main_tree: controller_name.to_sym}
+          render partial: 'cdx/admin/shared/main_sidebar_menu', locals: { current_main_tree: controller_name.to_sym }
         end
       end
 
@@ -29,7 +29,6 @@ module Cdx
       def ld(date)
         l date unless date.nil?
       end
-
     end
   end
 end

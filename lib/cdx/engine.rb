@@ -13,7 +13,8 @@ module Cdx
     end
 
     initializer 'cdx.assets.precompile' do |app|
-      app.config.assets.precompile += %w[cdx/admin.js cdx/admin.css cdx/*.png cdx/*.jpg]
+      app.config.assets.precompile += %w[cdx/admin.js cdx/admin.css cdx/*.png cdx/*.jpg ]
+      app.config.assets.precompile =~ /vendor\/assets\/(images|fonts)\/<%= gem.short_name %>/ && !%w(.js .css).include?(File.extname(path))
     end
   end
 end

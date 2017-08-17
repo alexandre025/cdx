@@ -1,6 +1,6 @@
 module Cdx
   class User < ApplicationRecord
-    include Cdx::Admin::ResourceRecord
+    include Cdx::Admin::Resourceable
 
     # Devise
     # Include default devise modules. Others available are:

@@ -13,6 +13,14 @@ en:
         one: Page
         other: Pages
 
+      cdx/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
+
+      cdx/taxon:
+        one: Taxon
+        other: Taxons
+
     attributes:
       cdx/user:
         email: Email
@@ -34,3 +42,12 @@ en:
         state: State
         published_on: Published on
         slug: Slug
+
+      cdx/taxonomy:
+        name: Name
+        description: Description
+
+      cdx/taxon:
+        name: Name
+        description: Description
+        parent: Parent

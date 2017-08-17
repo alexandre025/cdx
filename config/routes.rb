@@ -17,5 +17,9 @@ Cdx::Engine.routes.draw do
     resources :sites, except: :show
 
     resources :pages, except: :show
+
+    resources :taxonomies do
+      resources :taxons, except: :show
+    end
   end
 end

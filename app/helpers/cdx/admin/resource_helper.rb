@@ -4,16 +4,19 @@ module Cdx
       def content_header_page_title
         # TODO : Parent data ?
         if member_action? && @object.persisted?
-          "#{t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.one")} #{@object.content_header_title}"
+          "#{t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.one")} : #{@object.content_header_title}"
         else
           t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.other")
         end
       end
 
       def render_content_header_breadcrumb
-        # TODO : Parent data ?
         content_for :content_header_breadcrumb do
-          concat tag.li link_to(@resource.model_class.model_name.human.pluralize, admin_users_path)
+          if @parent
+            concat tag.li link_to(@parent.model_name.human.pluralize, parent_collection_url)
+            concat tag.li link_to(@parent.content_header_title, edit_parent_object_url)
+          end
+          concat tag.li link_to(@resource.model_class.model_name.human.pluralize, collection_url)
           concat tag.li link_to(@object.content_header_title, edit_object_url(@object)) if (member_action? && @object.persisted?)
           concat tag.li t("admin.content_header.page_title.actions.#{action_name}")
         end
@@ -25,6 +28,12 @@ module Cdx
         link_to url, options do
           fa_icon(:plus) + ' ' + t('admin.actions.new')
         end
+      end
+
+      def link_to_show(resource, options = {})
+        url = options[:url] || object_url(resource)
+        options[:class] = 'btn-sm btn-success'
+        link_to fa_icon(:eye), url, options
       end
 
       def link_to_edit(resource, options = {})

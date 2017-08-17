@@ -1,6 +1,6 @@
 module Cdx
   class Site < ApplicationRecord
-    include Cdx::Admin::ResourceRecord
+    include Cdx::Admin::Resourceable
 
     # Callbacks
     before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }

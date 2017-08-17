@@ -1,6 +1,6 @@
 module Cdx
   module Admin
-    module ResourceRecord
+    module Resourceable
       extend ActiveSupport::Concern
 
       def content_header_title

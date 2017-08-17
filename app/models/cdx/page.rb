@@ -1,7 +1,7 @@
 module Cdx
   class Page < ApplicationRecord
-    include Cdx::Admin::ResourceRecord
-    include Cdx::Admin::PublishableRecord
+    include Cdx::Admin::Resourceable
+    include Cdx::Admin::Publishable
 
     extend FriendlyId
     friendly_id :title, use: :slugged

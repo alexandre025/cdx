@@ -1,0 +1,12 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :taxonomy_id, as: :hidden, input_html: { value: @parent.id } %>
+      <%= f.association :parent, collection: @available_parent_taxons, label_method: :name, input_html: { class: %w(select2-simple) } %>
+    </div>
+    <div class="box-footer">
+      <%= link_to_return(url: admin_taxonomy_taxons_path) %>
+      <%= f.button :submit %>
+    </div>
+<% end %>

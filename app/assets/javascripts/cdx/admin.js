@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require cdx/admin/all
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require icheck

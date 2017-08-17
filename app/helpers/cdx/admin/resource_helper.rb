@@ -11,9 +11,12 @@ module Cdx
       end
 
       def render_content_header_breadcrumb
-        # TODO : Parent data ?
         content_for :content_header_breadcrumb do
-          concat tag.li link_to(@resource.model_class.model_name.human.pluralize, admin_users_path)
+          if @parent
+            concat tag.li link_to(@parent.model_name.human.pluralize, parent_collection_url)
+            concat tag.li link_to(@parent.content_header_title, object_url(@parent))
+          end
+          concat tag.li link_to(@resource.model_class.model_name.human.pluralize, collection_url)
           concat tag.li link_to(@object.content_header_title, edit_object_url(@object)) if (member_action? && @object.persisted?)
           concat tag.li t("admin.content_header.page_title.actions.#{action_name}")
         end

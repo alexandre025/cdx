@@ -18,7 +18,8 @@ module Cdx
       end
 
       def main_sidebar_menu_simple_item(current_main_tree, target, icon, path, label)
-        tag.li class: ('active' if current_main_tree == target) do
+        target = Array(target)
+        tag.li class: ('active' if target.include?(current_main_tree)) do
           link_to path do
             concat fa_icon icon
             concat tag.span label

@@ -11,6 +11,7 @@ require 'friendly_id'
 require 'state_machines-activerecord'
 require 'awesome_nested_set'
 require 'byebug'
+require 'web-console'
 
 require 'cdx/engine'
 

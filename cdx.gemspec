@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'faker', '~> 1.8.4'
   s.add_development_dependency 'rails-controller-testing', '~> 1.0.2'
   s.add_development_dependency 'byebug', '~> 9.0.6'
+  s.add_development_dependency 'web-console'
   s.add_development_dependency 'puma', '~> 3.9.1'
   s.add_development_dependency 'rubocop-rails', '~> 1.0.1'
 end

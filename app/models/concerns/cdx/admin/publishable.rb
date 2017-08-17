@@ -1,6 +1,6 @@
 module Cdx
   module Admin
-    module PublishableRecord
+    module Publishable
       extend ActiveSupport::Concern
 
       included do

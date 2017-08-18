@@ -17,4 +17,5 @@
 //= require icheck
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
-//= require_tree .
+//= require jstree
+//= require_tree ./admin

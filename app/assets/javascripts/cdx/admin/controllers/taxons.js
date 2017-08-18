@@ -20,6 +20,10 @@ $(document).ready(function () {
 function taxons_jstree(data) {
     $('#taxonomy_tree').jstree({
         core: {
+            themes: {
+                name: 'proton',
+                responsive: true
+            },
             data: function(obj, cb) {
                 cb.call(this, data);
             }

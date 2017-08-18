@@ -14,6 +14,10 @@ module Cdx
         end
       end
 
+      def update_position
+
+      end
+
       private
 
       def available_parent_taxons

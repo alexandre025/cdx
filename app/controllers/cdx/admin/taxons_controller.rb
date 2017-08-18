@@ -3,15 +3,23 @@ module Cdx
     class TaxonsController < ResourceController
       belongs_to 'cdx/taxonomy'
 
-      # Callbacks
       before_action :available_parent_taxons, only: [:new, :edit]
 
-      # Methods
+      def index
+        respond_to do |format|
+          format.json do
+            @collection = @collection.where(depth: 0).includes(:children)
+          end
+          format.html
+        end
+      end
+
       private
 
-        def available_parent_taxons
-          @available_parent_taxons = @object.new_record? ? Cdx::Taxon.by_taxonomy(@parent) : Cdx::Taxon.by_taxonomy(@parent).where.not(id: @object.children.ids.push(@object.id))
-        end
+      def available_parent_taxons
+        @available_parent_taxons = @object.new_record? ? Cdx::Taxon.by_taxonomy(@parent) : Cdx::Taxon.by_taxonomy(@parent).where.not(id: @object.children.ids.push(@object.id))
+      end
+
     end
   end
 end

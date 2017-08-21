@@ -118,7 +118,7 @@ function taxons_jstree(data) {
                         }
                     }),
                     success: function (response, statusText, xhr) {
-                        $('#taxonomy_tree').jstree().set_id(data.node, response['id'])
+                        $('#taxonomy_tree').jstree().set_id(node.id, response['id'])
                     },
                     error: function (response, statusText, xhr) {
                         handle_ajax_error(response, statusText, xhr)

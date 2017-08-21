@@ -45,6 +45,7 @@ module Cdx
       def link_to_delete(resource, options = {})
         url                      = options[:url] || object_url(resource)
         options[:class]          = %w(btn-sm btn-danger)
+        options[:data]           ||= {}
         options[:data][:method]  ||= :delete
         options[:data][:confirm] ||= 'Are you sure ?'
         # TODO : I18n

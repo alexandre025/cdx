@@ -12,9 +12,13 @@ module Cdx
       app.config.action_controller.include_all_helpers = false
     end
 
-    initializer 'cdx.assets.precompile' do |app|
+    initializer 'cdx.assets.precompile', group: :all do |app|
       app.config.assets.precompile += %w[cdx/admin.js cdx/admin.css cdx/*.png cdx/*.jpg ]
-      app.config.assets.precompile =~ /vendor\/assets\/(images|fonts)\/<%= gem.short_name %>/ && !%w(.js .css).include?(File.extname(path))
+
+      app.config.assets.precompile << Proc.new do |path, fn|
+        fn =~ /vendor\/assets\/(images|fonts)\/<%= gem.short_name %>/ && !%w(.js .css).include?(File.extname(path))
+      end
+
     end
   end
 end

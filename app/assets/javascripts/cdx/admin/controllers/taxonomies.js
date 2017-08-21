@@ -7,7 +7,7 @@ $(document).ready(function () {
             type: 'GET',
             dataType: 'json',
             success: function (response, statusText, xhr) {
-                taxons_jstree(response['tree'])
+                taxons_jstree(response)
             },
             error: function (response, statusText, xhr) {
                 alert(statusText);
@@ -20,11 +20,13 @@ $(document).ready(function () {
 function taxons_jstree(data) {
     var last_rollback = null;
 
+    var collection_create_url = data['create_url'];
+
     $('#taxonomy_tree').jstree({
         core: {
             check_callback: true,
             data: function (obj, cb) {
-                cb.call(this, data);
+                cb.call(this, data['tree']);
             },
             themes: {
                 name: 'proton',
@@ -43,17 +45,17 @@ function taxons_jstree(data) {
         last_rollback = data.old_instance;
 
         Rails.ajax({
-            url: 'update_position',
+            url: data.node.data.update_position_url,
             type: 'POST',
             dataType: 'json',
-            data: {
-                 data: data
-            },
-            success: function(response, statusText, xhr) {
+            data: $.param({
+                node: data.node
+            }),
+            success: function (response, statusText, xhr) {
 
             },
             error: function (response, statusText, xhr) {
-
+                // handle_ajax_error(response, statusText, xhr)
             }
         });
     }

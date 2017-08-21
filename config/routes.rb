@@ -20,7 +20,7 @@ Cdx::Engine.routes.draw do
 
     resources :taxonomies do
       resources :taxons, except: :show, controller: 'taxonomies/taxons' do
-        collection do
+        member do
           post 'update_position', to: 'taxonomies/taxons#update_position'
         end
       end

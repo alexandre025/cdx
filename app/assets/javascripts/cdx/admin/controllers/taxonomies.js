@@ -20,7 +20,7 @@ $(document).ready(function () {
 function taxons_jstree(data) {
     var last_rollback = null;
 
-    var collection_create_url = data['create_url'];
+    var create_or_update_url = data['create_or_update_url'];
 
     $('#taxonomy_tree').jstree({
         core: {
@@ -36,14 +36,12 @@ function taxons_jstree(data) {
         plugins: ['contextmenu', 'dnd', 'json_data']
     })
         .bind('move_node.jstree', handle_move)
-        .bind('remove.jstree', handle_delete)
-        .bind('create.jstree', handle_create)
-        .bind('rename.jstree', handle_rename);
+        .bind('remove_node.jstree', handle_delete)
+        .bind('create_node.jstree', handle_create)
+        .bind('rename_node.jstree', handle_rename);
 
     function handle_move(e, data) {
         console.log(data);
-        last_rollback = data.old_instance;
-
         Rails.ajax({
             url: data.node.data.update_position_url,
             type: 'POST',
@@ -60,16 +58,29 @@ function taxons_jstree(data) {
         });
     }
 
-    function handle_delete(e, data) {
-
-    }
-
     function handle_create(e, data) {
 
     }
 
-    function handle_rename(e, data) {
+    function handle_delete(e, data) {
 
+    }
+
+    function handle_rename(e, data) {
+        Rails.ajax({
+            url: create_or_update_url,
+            type: 'POST',
+            dataType: 'json',
+            data: $.param({
+                node: data.node
+            }),
+            success: function (response, statusText, xhr) {
+                $('#taxonomy_tree').jstree().set_id(data.node, response['id'])
+            },
+            error: function (response, statusText, xhr) {
+                // handle_ajax_error(response, statusText, xhr)
+            }
+        });
     }
 
     function handle_ajax_error(response, statusText, xhr) {

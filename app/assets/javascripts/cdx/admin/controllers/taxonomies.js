@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
-    if ($('#taxons_index').is('*')) {
+    if ($('#taxonomies_edit').is('*')) {
 
         Rails.ajax({
-            url: '', // Self
+            url: $('#taxonomy_tree').data('init-url'), // Self
             type: 'GET',
             dataType: 'json',
             success: function (response, statusText, xhr) {

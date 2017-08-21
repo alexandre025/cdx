@@ -1,6 +1,12 @@
 <% render_main_sidebar_menu; render_content_header_breadcrumb %>
 
-<div class="col-md-12">
+<div class="col-md-6">
+  <div class="box">
+    <div id="taxonomy_tree" data-init-url="<%= admin_taxonomy_taxons_url(@object) %>"></div>
+  </div>
+</div>
+
+<div class="col-md-6">
   <div class="box">
 
     <%= simple_form_for([:admin, @object], html: {class: 'form-horizontal'}, wrapper: :horizontal_form) do |form| %>

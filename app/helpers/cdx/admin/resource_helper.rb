@@ -23,7 +23,7 @@ module Cdx
       end
 
       def link_to_new(options = {})
-        url = options[:url] || new_object_url
+        url             = options[:url] || new_object_url
         options[:class] = 'btn-sm btn-info pull-right'
         link_to url, options do
           fa_icon(:plus) + ' ' + t('admin.actions.new')
@@ -31,26 +31,28 @@ module Cdx
       end
 
       def link_to_show(resource, options = {})
-        url = options[:url] || object_url(resource)
+        url             = options[:url] || object_url(resource)
         options[:class] = 'btn-sm btn-success'
         link_to fa_icon(:eye), url, options
       end
 
       def link_to_edit(resource, options = {})
-        url = options[:url] || edit_object_url(resource)
+        url             = options[:url] || edit_object_url(resource)
         options[:class] = 'btn-sm btn-info'
         link_to fa_icon(:pencil), url, options
       end
 
       def link_to_delete(resource, options = {})
-        url = options[:url] || object_url(resource)
-        options[:class] = %w(btn-sm btn-danger)
-        options[:data] ||= { method: :delete, confirm: 'Are you sure ?' }
+        url                      = options[:url] || object_url(resource)
+        options[:class]          = %w(btn-sm btn-danger)
+        options[:data][:method]  ||= :delete
+        options[:data][:confirm] ||= 'Are you sure ?'
+        # TODO : I18n
         link_to fa_icon(:trash), url, options
       end
 
       def link_to_return(options = {})
-        url = options[:url] || collection_url
+        url             = options[:url] || collection_url
         options[:class] = %w(btn btn-default)
         link_to t('admin.actions.return'), url, options
       end

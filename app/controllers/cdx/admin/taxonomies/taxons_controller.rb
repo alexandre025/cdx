@@ -3,7 +3,7 @@ module Cdx
     class Taxonomies::TaxonsController < BaseController
       before_action :load_taxonomy
 
-      before_action :load_taxon, only: [:update_position]
+      before_action :load_taxon, only: [:update_position, :destroy]
 
       respond_to :json
 
@@ -20,8 +20,16 @@ module Cdx
 
         @taxon.assign_attributes(parent_id: parent_from_params, name: params[:node][:text])
 
-        if @taxon.save!
+        if @taxon.save
           render json: @taxon
+        else
+          render json: { errors: @taxon.errors.full_messages }, status: 422
+        end
+      end
+
+      def destroy
+        if @taxon.destroy
+
         else
           render json: { errors: @taxon.errors.full_messages }, status: 422
         end

@@ -12,7 +12,12 @@ module Cdx
       end
 
       def update_position
-        @taxon.update(parent_id: parent_from_params)
+        if parent_from_params
+          @taxon.move_to_child_with_index(Taxon.find(parent_from_params), params[:node][:position].to_i)
+        else
+          @taxon.move_to_root
+          # TODO : Create a root taxon to allow first level taxons to be ordered
+        end
       end
 
       def create_or_update

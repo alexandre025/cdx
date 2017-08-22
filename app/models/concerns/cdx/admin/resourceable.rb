@@ -4,7 +4,7 @@ module Cdx
       extend ActiveSupport::Concern
 
       def content_header_title
-        email
+        title
       end
     end
   end

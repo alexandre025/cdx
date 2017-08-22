@@ -33,3 +33,6 @@ en:
     profile: "Profile"
     custom_validators:
       must_have_one_default_site: "One default site is required"
+    ujs_confirm:
+      delete: "Are you sure you want to delete : %{o} ?"
+      default: "Are you sure ?"

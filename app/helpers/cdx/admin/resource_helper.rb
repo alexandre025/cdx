@@ -47,8 +47,7 @@ module Cdx
         options[:class]          = %w(btn-sm btn-danger)
         options[:data]           ||= {}
         options[:data][:method]  ||= :delete
-        options[:data][:confirm] ||= 'Are you sure ?'
-        # TODO : I18n
+        options[:data][:confirm] ||= resource&.content_header_title ? t('admin.ujs_confirm.delete', o: resource.content_header_title) : t('admin.ujs_confirm.default')
         link_to fa_icon(:trash), url, options
       end
 

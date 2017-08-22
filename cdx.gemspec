@@ -25,12 +25,14 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-rails', '~> 4.7.0.2'
   s.add_dependency 'icheck-rails', '~> 1.0'
   s.add_dependency 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
+  s.add_dependency 'jstree-rails-4'
 
   s.add_dependency 'devise', '~> 4.3.0'
   s.add_dependency 'simple_form', '~> 3.5.0'
   s.add_dependency 'friendly_id', '~> 5.2.1'
   s.add_dependency 'state_machines-activerecord', '~> 0.5.0'
   s.add_dependency 'awesome_nested_set'
+  s.add_dependency 'jbuilder'
 
   s.add_development_dependency 'pg', '~> 0.21.0'
   s.add_development_dependency 'rspec-rails', '~> 3.6.0'

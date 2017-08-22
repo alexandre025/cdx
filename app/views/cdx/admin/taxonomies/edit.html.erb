@@ -1,8 +1,21 @@
 <% render_main_sidebar_menu; render_content_header_breadcrumb %>
 
-<div class="col-md-12">
+<div class="col-md-6">
   <div class="box">
+    <div class="box-header">
+      <div class="box-title"><%= t('activerecord.models.cdx/taxon.other') %></div>
+      <%= link_to_new(url: create_or_update_admin_taxonomy_taxons_url(@object), data: {'tree-action': :create_node}) %>
+    </div>
 
+    <div class="box-body" id="taxonomy_tree" data-tree-url="<%= admin_taxonomy_taxons_url(@object) %>"></div>
+  </div>
+</div>
+
+<div class="col-md-6">
+  <div class="box">
+    <div class="box-header">
+      <div class="box-title"><%= Cdx::Taxonomy.model_name.human %></div>
+    </div>
     <%= simple_form_for([:admin, @object], html: {class: 'form-horizontal'}, wrapper: :horizontal_form) do |form| %>
         <%= render partial: 'cdx/admin/taxonomies/form', locals: { f: form } %>
     <% end %>

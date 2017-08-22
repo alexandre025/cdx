@@ -22,7 +22,10 @@
               <%= tag.td object.code %>
               <%= tag.td object.domain %>
               <%= tag.td object.default %>
-              <%= tag.td link_to_edit(object) %>
+              <td>
+                <%= link_to_edit object %>
+                <%= link_to_delete object %>
+              </td>
             </tr>
         <% end %>
       </table>

@@ -6,6 +6,7 @@ require 'font-awesome-rails'
 require 'icheck-rails'
 require 'bootstrap-wysihtml5-rails'
 require 'jstree-rails-4'
+require 'toastr-rails'
 
 require 'devise'
 require 'jbuilder'

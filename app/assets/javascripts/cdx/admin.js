@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require turbolinks
 //= require jquery
 //= require cdx/admin/all
 //= require rails-ujs
@@ -18,6 +19,8 @@
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require jstree
+//= require ./admin/adminlte
+//= require ./admin/cdx
 //= require_tree ./admin
 
 

@@ -1,6 +1,8 @@
 module Cdx
   module Admin
     class Taxonomies::TaxonsController < BaseController
+      before_action :authenticate_admin_user!
+
       before_action :load_taxonomy
 
       before_action :load_taxon, only: [:update_position, :destroy]
@@ -18,6 +20,8 @@ module Cdx
           @taxon.move_to_root
           # TODO : Create a root taxon to allow first level taxons to be ordered
         end
+
+        render json: @taxon
       end
 
       def create_or_update

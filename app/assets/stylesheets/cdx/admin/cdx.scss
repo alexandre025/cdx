@@ -3,11 +3,13 @@
 
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900');
 
-@import 'adminlte/adminlte';
-@import 'adminlte/skins/_all-skins';
-
 @import 'icheck/flat/blue';
 
 @import 'shared/checkbox';
 
 @import 'controllers/taxonomies/edit';
+
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: #ffffff;
+}

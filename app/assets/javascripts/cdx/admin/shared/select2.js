@@ -1,4 +1,4 @@
-$(document).ready(function () {
+Cdx.ready(function () {
 
     $('.select2-simple').select2({
         minimumResultsForSearch: Infinity

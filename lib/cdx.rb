@@ -1,3 +1,4 @@
+require 'turbolinks'
 require 'jquery-rails'
 require 'sprockets/rails'
 require 'bootstrap-sass'

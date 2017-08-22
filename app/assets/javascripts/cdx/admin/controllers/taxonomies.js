@@ -1,4 +1,4 @@
-$(document).ready(function () {
+Cdx.ready(function () {
 
     if ($('#taxonomies_edit').is('*')) {
 

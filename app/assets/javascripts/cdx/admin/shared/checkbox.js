@@ -1,5 +1,5 @@
-$(document).ready(function(){
-  $('input[type=checkbox]').iCheck({
-    checkboxClass: 'icheckbox_flat-blue',
-  });
+Cdx.ready(function () {
+    $('input[type=checkbox]').iCheck({
+        checkboxClass: 'icheckbox_flat-blue',
+    });
 });

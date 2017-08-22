@@ -11,3 +11,8 @@
 @import 'shared/checkbox';
 
 @import 'controllers/taxonomies/edit';
+
+.turbolinks-progress-bar {
+  height: 3px;
+  background-color: #ffffff;
+}

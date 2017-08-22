@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.1.2'
 
+  s.add_dependency 'turbolinks', '~> 5.0.0'
   s.add_dependency 'jquery-rails', '~> 4.3.1'
   s.add_dependency 'bootstrap-sass', '~> 3.3.6'
   s.add_dependency 'sass-rails', '>= 3.2'

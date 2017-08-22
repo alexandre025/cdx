@@ -12,14 +12,13 @@
 //
 //= require turbolinks
 //= require jquery
-//= require cdx/admin/all
+//= require cdx/admin/vendor
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require icheck
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
 //= require jstree
-//= require ./admin/adminlte
 //= require ./admin/cdx
 //= require_tree ./admin
 

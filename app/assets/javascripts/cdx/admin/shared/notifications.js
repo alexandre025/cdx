@@ -5,8 +5,6 @@ Cdx.ready(function () {
 
         message = element.html();
 
-        console.log(element.data('toastr'));
-
         switch (element.data('toastr')) {
             case 'success':
                 toastr.success(message);

@@ -3,9 +3,13 @@
       <%= f.input :title %>
       <%= f.input :slug, disabled: true if f.object.persisted? %>
       <%= f.input :content, as: :wysiwyg %>
+
+      <%= f.simple_fields_for :taxon_object, (f.object.taxon_object || f.object.build_taxon_object) do |to| %>
+          <%= to.input :taxon_id, collection: Cdx::Taxon.all.map { |t| ["#{t.full_path_tag} -> #{t.name}", t.id] }, input_html: { class: 'select2-simple' } %>
+      <% end %>
     </div>
     <div class="box-footer">
       <%= link_to_return %>
-      <%= render partial: 'cdx/admin/shared/publishable/form_actions', locals: {f: f} %>
+      <%= render partial: 'cdx/admin/shared/publishable/form_actions', locals: { f: f } %>
     </div>
 <% end %>

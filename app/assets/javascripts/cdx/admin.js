@@ -15,9 +15,10 @@
 //= require cdx/admin/vendor
 //= require rails-ujs
 //= require bootstrap-sprockets
-//= require icheck
 //= require bootstrap-wysihtml5
 //= require bootstrap-wysihtml5/locales
+//= require icheck
+//= require toastr
 //= require jstree
 //= require ./admin/cdx
 //= require_tree ./admin

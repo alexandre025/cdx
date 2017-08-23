@@ -36,3 +36,21 @@ en:
     ujs_confirm:
       delete: "Are you sure you want to delete : %{o} ?"
       default: "Are you sure ?"
+
+    flash:
+      default:
+        create:
+          success: "%{n} successfully created"
+          error: "%{n} cannot be created"
+        update:
+          success: "%{n} successfully updated"
+          error: "%{n} cannot be created"
+        destroy:
+          success: "%{n} successfully destroyed"
+          error: "%{n} cannot be destroyed"
+        publish:
+          success: "%{n} successfully published"
+          error: "%{n} cannot be published"
+        unpublish:
+          success: "%{n} successfully unpublished"
+          error: "%{n} cannot be unpublished"

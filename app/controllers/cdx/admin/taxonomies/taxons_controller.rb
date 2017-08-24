@@ -15,12 +15,7 @@ module Cdx
       end
 
       def update_position
-        if parent_from_params
-          @taxon.move_to_child_with_index(Taxon.find(parent_from_params), params[:position].to_i)
-        else
-          @taxon.move_to_root
-          # TODO : Create a root taxon to allow first level taxons to be ordered
-        end
+        @taxon.move_to_child_with_index(Taxon.find(parent_from_params), params[:position].to_i)
 
         load_collection
         render :index
@@ -50,11 +45,11 @@ module Cdx
       private
 
       def load_collection
-        @collection = Taxon.includes(:children).by_taxonomy(@taxonomy).where(depth: 0)
+        @collection = @taxonomy.root.children
       end
 
       def parent_from_params
-        params[:node][:parent] == '#' ? nil : params[:node][:parent]
+        params[:node][:parent] == '#' ? @taxonomy.root.id : params[:node][:parent]
       end
 
       def load_taxonomy

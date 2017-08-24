@@ -7,11 +7,8 @@ module Cdx
         extend ActiveSupport::Concern
 
         included do
-          has_one :taxon_object, as: :object, dependent: :destroy
-          has_one :taxon, through: :taxon_object
+          belongs_to :taxon
           has_one :taxonomy, through: :taxon
-
-          accepts_nested_attributes_for :taxon_object
         end
       end
 

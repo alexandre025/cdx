@@ -48,13 +48,14 @@ function taxons_jstree(data) {
         .bind('loaded.jstree', handle_loaded);
 
     function handle_move(e, data) {
-        console.log(data);
+
         Rails.ajax({
             url: data.node.data.update_position_url,
             type: 'POST',
             dataType: 'json',
             data: $.param({
-                node: data.node
+                node: data.node,
+                position: data.position
             }),
             error: function (response, statusText, xhr) {
                 handle_ajax_error(response, statusText, xhr);
@@ -73,6 +74,7 @@ function taxons_jstree(data) {
                 }
             }),
             success: function (response, statusText, xhr) {
+
             },
             error: function (response, statusText, xhr) {
                 handle_ajax_error(response, statusText, xhr)
@@ -93,10 +95,10 @@ function taxons_jstree(data) {
                 }
             }),
             success: function (response, statusText, xhr) {
-                $('#taxonomy_tree').jstree().set_id(data.node, response['id'])
+                refresh_from_response(response);
             },
             error: function (response, statusText, xhr) {
-                // handle_ajax_error(response, statusText, xhr)
+                handle_ajax_error(response, statusText, xhr)
             }
         });
     }
@@ -118,14 +120,20 @@ function taxons_jstree(data) {
                         }
                     }),
                     success: function (response, statusText, xhr) {
-                        $('#taxonomy_tree').jstree().set_id(node.id, response['id'])
+                        refresh_from_response(response);
                     },
                     error: function (response, statusText, xhr) {
-                        handle_ajax_error(response, statusText, xhr)
+                        handle_ajax_error(response, statusText, xhr);
                     }
                 });
             });
         });
+    }
+
+    function refresh_from_response(response) {
+        console.log(response);
+        $('#taxonomy_tree').jstree().settings.core.data = response['tree'];
+        $('#taxonomy_tree').jstree().refresh();
     }
 
     function handle_ajax_error(response, statusText, xhr) {

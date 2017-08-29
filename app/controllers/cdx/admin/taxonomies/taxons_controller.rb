@@ -5,23 +5,20 @@ module Cdx
 
       before_action :load_taxonomy
 
+      before_action :load_collection, only: :index
+
       before_action :load_taxon, only: [:update_position, :destroy]
 
       respond_to :json
 
       def index
-        @collection = Taxon.by_taxonomy(@taxonomy).where(depth: 0).includes(:children)
       end
 
       def update_position
-        if parent_from_params
-          @taxon.move_to_child_with_index(Taxon.find(parent_from_params), params[:node][:position].to_i)
-        else
-          @taxon.move_to_root
-          # TODO : Create a root taxon to allow first level taxons to be ordered
-        end
+        @taxon.move_to_child_with_index(Taxon.find(parent_from_params), params[:position].to_i)
 
-        render json: @taxon
+        load_collection
+        render :index
       end
 
       def create_or_update
@@ -30,7 +27,8 @@ module Cdx
         @taxon.assign_attributes(parent_id: parent_from_params, name: params[:node][:text])
 
         if @taxon.save
-          render json: @taxon
+          load_collection
+          render :index
         else
           render json: { errors: @taxon.errors.full_messages }, status: 422
         end
@@ -46,8 +44,12 @@ module Cdx
 
       private
 
+      def load_collection
+        @collection = @taxonomy.root.children
+      end
+
       def parent_from_params
-        params[:node][:parent] == '#' ? nil : params[:node][:parent]
+        params[:node][:parent] == '#' ? @taxonomy.root.id : params[:node][:parent]
       end
 
       def load_taxonomy

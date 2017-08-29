@@ -14,19 +14,12 @@ module Cdx
     end
 
     def full_path_tag
-      parent_path_tag(parent, '')
+      parent_path_tag(self, name)
     end
 
     def parent_path_tag(taxon, string)
-      if taxon
-        if string.blank?
-          parent_path_tag(taxon.parent, "#{taxon.name}")
-        else
-          parent_path_tag(taxon.parent, "#{taxon.name} -> #{string}")
-        end
-      else
-        "#{taxonomy.name} -> #{string}"
-      end
+      return string unless taxon.parent
+      parent_path_tag(taxon.parent, "#{taxon.parent.name} -> #{string}")
     end
   end
 end

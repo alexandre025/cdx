@@ -3,7 +3,7 @@
       <%= f.input :title %>
       <%= f.input :slug, disabled: true if f.object.persisted? %>
       <%= f.input :content, as: :wysiwyg %>
-      <%= f.association :taxon, collection: Cdx::Taxon.all.map { |t| ["#{t.full_path_tag} -> #{t.name}", t.id] }, input_html: { class: 'select2-simple' } %>
+      <%= f.association :taxon, collection: Cdx::Taxon.all.map { |t| [t.full_path_tag, t.id] }, input_html: { class: 'select2-simple' } %>
     </div>
     <div class="box-footer">
       <%= link_to_return %>

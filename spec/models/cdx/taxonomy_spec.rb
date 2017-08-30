@@ -9,5 +9,9 @@ module Cdx
       it { expect(build(:cdx_taxonomy).save!).to eq(true) }
     end
 
+    describe 'root' do
+      it { expect(taxonomy.root).not_to eq(nil) }
+    end
+
   end
 end

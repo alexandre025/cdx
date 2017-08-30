@@ -5,13 +5,12 @@ module Cdx
 
       before_action :load_taxonomy
 
-      before_action :load_collection, only: :index
-
       before_action :load_taxon, only: [:update_position, :destroy]
 
       respond_to :json
 
       def index
+        load_collection
       end
 
       def update_position

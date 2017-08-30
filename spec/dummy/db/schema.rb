@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170824074318) do
+ActiveRecord::Schema.define(version: 20170830090129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 20170824074318) do
     t.datetime "updated_at", null: false
     t.bigint "taxon_id"
     t.index ["taxon_id"], name: "index_cdx_pages_on_taxon_id"
+  end
+
+  create_table "cdx_settings", force: :cascade do |t|
+    t.string "acronym"
+    t.string "default_theme"
+    t.string "default_locale"
+    t.string "available_locales", default: [], array: true
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "cdx_sites", force: :cascade do |t|

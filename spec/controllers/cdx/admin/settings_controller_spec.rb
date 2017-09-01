@@ -22,7 +22,13 @@ module Cdx
     end
 
     describe '#POST clear_cache' do
-      it { expect(post :clear_cache).to have_http_status(302) }
+      before :each do
+        post :clear_cache
+      end
+
+      it { expect(response).to have_http_status(200) }
+      it { expect(json['flash']['type']).to eq('success') }
+      it { expect(json['flash']['message'].blank?).to eq(false) }
     end
   end
 end

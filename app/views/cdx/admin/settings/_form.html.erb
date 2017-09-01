@@ -3,7 +3,7 @@
       <%= f.input :acronym %>
       <%= f.input :default_theme %>
       <%= f.input :default_locale, collection: I18n.available_locales, input_html: { class: 'select2-simple-search' } %>
-      <%= f.input :available_locales, collection: I18n.available_locales, input_html: { class: 'select2-multiple' } %>
+      <%= f.input :available_locales, collection: I18n.available_locales, input_html: { class: 'select2-multiple', multiple: true } %>
     </div>
     <div class="box-footer">
       <%= f.button :submit %>

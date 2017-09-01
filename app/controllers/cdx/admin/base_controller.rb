@@ -5,6 +5,8 @@ module Cdx
 
       layout 'cdx/admin'
 
+      before_action :set_locale
+
       def authenticate_admin_user!
         if admin_user_signed_in?
           super
@@ -14,6 +16,10 @@ module Cdx
       end
 
       private
+
+      def set_locale
+        I18n.locale = current_settings.default_locale || I18n.default_locale
+      end
 
       def flash_message(object, action, context)
         flash[context] = t("admin.flash.#{object.class.name.demodulize.downcase}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object.class.name.demodulize.capitalize))

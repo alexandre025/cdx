@@ -11,6 +11,9 @@ module Cdx
 
       def update
         if @settings.update_attributes setting_params
+
+          I18n.locale = @settings.default_locale
+
           flash_message(@settings, :update, :success)
           redirect_to location_after_save
         else

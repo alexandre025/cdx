@@ -1,11 +1,32 @@
 <% render_main_sidebar_menu %>
 
-<div class="col-md-12">
+<%= content_for :content_header_page_title do %>
+  <%= t('admin.content_header.page_title.settings') %>
+<% end %>
+
+<div class="col-md-9">
   <div class="box">
 
     <%= simple_form_for([:admin, @settings], html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |form| %>
         <%= render partial: 'cdx/admin/settings/form', locals: { f: form } %>
     <% end %>
 
+  </div>
+
+
+</div>
+
+<div class="col-md-3">
+  <div class="box">
+    <div class="box-header">
+      <h3 class="box-title"><%= t('admin.settings.cache') %></h3>
+    </div>
+    <div class="box-body">
+      <div class="alert alert-warning">
+        <h4><i class="icon fa fa-warning"></i> Alert!</h4>
+        Warning alert preview. This alert is dismissable.
+      </div>
+      <%= link_to t('admin.settings.clear_cache'), clear_cache_admin_setting_path, data: { remote: true, method: :post, flash: true}, class: 'btn btn-info pull-right' %>
+    </div>
   </div>
 </div>

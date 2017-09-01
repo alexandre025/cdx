@@ -12,6 +12,7 @@ en:
           new: "New"
           create: "New"
           index: "Index"
+        settings: "Settings"
       breadcrumb:
         home_index: "Dashboard"
     main_sidebar:
@@ -61,3 +62,6 @@ en:
           error: "Settings cannot be created"
         clear_cache:
           success: "Cache successfully cleared"
+    settings:
+      clear_cache: "Clear cache"
+      cache: "Cache"

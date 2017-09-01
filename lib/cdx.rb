@@ -28,3 +28,4 @@ module Cdx
 end
 
 require 'cdx/controller_helpers/site'
+require 'cdx/controller_helpers/settings'

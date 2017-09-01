@@ -2,10 +2,22 @@ require 'rails_helper'
 
 module Cdx
   RSpec.describe Setting, type: :model do
-    subject(:setting) { create(:cdx_setting) }
+    subject(:settings) { create(:setting, acronym: 'cdx') }
 
     describe '#save!' do
-      it { expect(build(:cdx_setting).save!).to eq(true) }
+      it { expect(build(:setting).save!).to eq(true) }
+    end
+
+    describe '#acronym' do
+      it 'uppercase value' do
+        expect(settings.acronym).to eq('CDX')
+      end
+    end
+
+    describe '#available_locales' do
+      it 'concat default_locale' do
+        expect(settings.available_locales).to eq(%w(fr es en))
+      end
     end
 
     describe '::current' do

@@ -18,29 +18,29 @@ module Cdx
 
       def update
         if @object.update_attributes permitted_resource_params
-          flash_message(:update, :success)
+          flash_message(@object,:update, :success)
           redirect_to location_after_save
         else
-          flash_message(:update, :error)
+          flash_message(@object,:update, :error)
           render :edit
         end
       end
 
       def create
         if @object.update_attributes permitted_resource_params
-          flash_message(:create, :success)
+          flash_message(@object,:create, :success)
           redirect_to location_after_save
         else
-          flash_message(:create, :error)
+          flash_message(@object,:create, :error)
           render :new
         end
       end
 
       def destroy
         if @object.destroy
-          flash_message(:destroy, :success)
+          flash_message(@object,:destroy, :success)
         else
-          flash_message(:destroy, :error)
+          flash_message(@object,:destroy, :error)
         end
 
         redirect_to location_after_destroy
@@ -196,10 +196,6 @@ module Cdx
 
       def location_after_save
         collection_url
-      end
-
-      def flash_message(action, context)
-        flash[context] = t("admin.flash.#{resource.object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: resource.object_name.capitalize))
       end
     end
   end

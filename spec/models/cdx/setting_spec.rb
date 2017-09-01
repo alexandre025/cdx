@@ -9,13 +9,13 @@ module Cdx
     end
 
     describe '#acronym' do
-      it 'uppercase value' do
+      it 'upcase value' do
         expect(settings.acronym).to eq('CDX')
       end
     end
 
     describe '#available_locales' do
-      it 'concat default_locale' do
+      it '<< default_locale' do
         expect(settings.available_locales).to eq(%w(fr es en))
       end
     end

@@ -61,4 +61,3 @@ en:
           error: "Settings cannot be created"
         clear_cache:
           success: "Cache successfully cleared"
-          error: "Cache cannot be cleared"

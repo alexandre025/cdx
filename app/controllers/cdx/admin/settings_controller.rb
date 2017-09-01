@@ -23,7 +23,8 @@ module Cdx
       end
 
       def clear_cache
-
+        Rails.cache.clear
+        render json: { flash: { type: :success, message: t('admin.flash.settings.clear_cache.success')} }
       end
 
       private

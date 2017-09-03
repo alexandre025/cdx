@@ -29,9 +29,9 @@ ActiveRecord::Schema.define(version: 20170830090129) do
   end
 
   create_table "cdx_settings", force: :cascade do |t|
-    t.string "acronym"
-    t.string "default_theme"
-    t.string "default_locale"
+    t.string "acronym", null: false
+    t.string "default_theme", null: false
+    t.string "default_locale", null: false
     t.string "available_locales", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -5,10 +5,10 @@ module Cdx
         @object.assign_attributes permitted_resource_params
 
         if @object.send current_action
-          flash_message(@object,(current_action == :save ? :update : current_action), :success)
+          flash_message(@object, (current_action == :save ? :update : current_action), :success)
           redirect_to location_after_save
         else
-          flash_message(@object,(current_action == :save ? :update : current_action), :error)
+          flash_message(@object, (current_action == :save ? :update : current_action), :error)
           render :edit
         end
       end
@@ -17,10 +17,10 @@ module Cdx
         @object.assign_attributes permitted_resource_params
 
         if @object.send current_action
-          flash_message(@object,:create, :success)
+          flash_message(@object, :create, :success)
           redirect_to location_after_save
         else
-          flash_message(@object,:create, :error)
+          flash_message(@object, :create, :error)
           render :new
         end
       end

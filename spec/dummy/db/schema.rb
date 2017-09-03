@@ -21,16 +21,16 @@ ActiveRecord::Schema.define(version: 20170830090129) do
     t.string "locale", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "title", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
+    t.string "title", limit: 255
+    t.string "slug", limit: 255
     t.text "content"
     t.index ["cdx_page_id"], name: "index_cdx_page_translations_on_cdx_page_id"
     t.index ["locale"], name: "index_cdx_page_translations_on_locale"
   end
 
   create_table "cdx_pages", force: :cascade do |t|
-    t.string "title", limit: 255, null: false
-    t.string "slug", limit: 255, null: false
+    t.string "title", limit: 255
+    t.string "slug", limit: 255
     t.string "state", limit: 45, null: false
     t.text "content"
     t.date "published_on"

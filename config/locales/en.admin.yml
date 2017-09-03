@@ -12,6 +12,7 @@ en:
           new: "New"
           create: "New"
           index: "Index"
+        settings: "Settings"
       breadcrumb:
         home_index: "Dashboard"
     main_sidebar:
@@ -54,3 +55,13 @@ en:
         unpublish:
           success: "%{n} successfully unpublished"
           error: "%{n} cannot be unpublished"
+
+      settings:
+        update:
+          success: "Settings successfully updated"
+          error: "Settings cannot be created"
+        clear_cache:
+          success: "Cache successfully cleared"
+    settings:
+      clear_cache: "Clear cache"
+      cache: "Cache"

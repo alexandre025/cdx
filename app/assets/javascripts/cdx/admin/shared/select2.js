@@ -4,4 +4,13 @@ Cdx.ready(function () {
         minimumResultsForSearch: Infinity
     });
 
+    $('.select2-simple-search').select2({
+        minimumResultsForSearch: 1
+    });
+
+    $('.select2-multiple').select2({
+        minimumResultsForSearch: 1,
+        multiple: true
+    });
+
 });

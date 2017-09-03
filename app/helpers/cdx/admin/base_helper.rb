@@ -3,6 +3,16 @@ module Cdx
     module BaseHelper
       include FontAwesome::Rails::IconHelper
 
+      def theme_class
+        if current_admin_user&.theme && !current_admin_user.theme.blank?
+          "skin-#{current_admin_user.theme}"
+        elsif current_settings
+          "skin-#{current_settings.default_theme}"
+        else
+          'skin-yellow'
+        end
+      end
+
       def context_tag
         "#{controller_name}_#{action_name}"
       end

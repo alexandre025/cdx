@@ -12,6 +12,10 @@ Cdx::Engine.routes.draw do
                  passwords: 'cdx/admin/devise/passwords'
                }
 
+    resource :setting, path: :settings, only: [:edit, :update] do
+      post 'clear_cache'
+    end
+
     resources :users, except: :show
 
     resources :sites, except: :show

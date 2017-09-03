@@ -21,6 +21,10 @@ en:
         one: Taxon
         other: Taxons
 
+      cdx/setting:
+        one: Setting
+        other: Settings
+
     attributes:
       cdx/user:
         email: Email

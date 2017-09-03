@@ -43,22 +43,21 @@ module Cdx
 
       private
 
-      def load_collection
-        @collection = @taxonomy.root.children
-      end
+        def load_collection
+          @collection = @taxonomy.root.children
+        end
 
-      def parent_from_params
-        params[:node][:parent] == '#' ? @taxonomy.root.id : params[:node][:parent]
-      end
+        def parent_from_params
+          params[:node][:parent] == '#' ? @taxonomy.root.id : params[:node][:parent]
+        end
 
-      def load_taxonomy
-        @taxonomy ||= Taxonomy.find(params[:taxonomy_id])
-      end
+        def load_taxonomy
+          @taxonomy ||= Taxonomy.find(params[:taxonomy_id])
+        end
 
-      def load_taxon
-        @taxon ||= Taxon.find(params[:id])
-      end
-
+        def load_taxon
+          @taxon ||= Taxon.find(params[:id])
+        end
     end
   end
 end

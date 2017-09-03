@@ -10,3 +10,4 @@
 
 <li class="header"><%= t('admin.main_sidebar.menu.title.parameters') %></li>
 <%= main_sidebar_menu_simple_item(current_main_tree, :sites, :sitemap, admin_sites_path, t('activerecord.models.cdx/site.other')) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, :settings, :wrench, edit_admin_setting_path, t('activerecord.models.cdx/setting.other')) %>

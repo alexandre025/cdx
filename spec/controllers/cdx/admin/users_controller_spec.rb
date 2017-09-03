@@ -23,7 +23,7 @@ module Cdx
       end
 
       context 'when failed' do
-        it { expect(patch :update, params: { id: user, user: { email: 'fake' } }).to have_http_status(200) }
+        it { expect(patch :update, params: { id: user, user: { email: 'faker' } }).to have_http_status(200) }
       end
     end
 

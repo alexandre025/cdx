@@ -6,7 +6,7 @@
   <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
 </head>
-<body id="<%= context_tag %>" class="skin-<%= current_admin_user&.theme || 'blue' %> sidebar-mini">
+<body id="<%= context_tag %>" class="<%= theme_class %> sidebar-mini">
 <div class="wrapper">
 
   <%= render partial: 'cdx/admin/shared/header' %>

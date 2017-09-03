@@ -4,8 +4,10 @@ module Cdx
     include Cdx::Admin::Publishable
     include Cdx::Admin::Taxonomisable::Simple
 
+    translates :title, :slug, :content
+
     extend FriendlyId
-    friendly_id :title, use: :slugged
+    friendly_id :title, use: :globalize
 
     # Validators
     validates :title, :state, presence: true

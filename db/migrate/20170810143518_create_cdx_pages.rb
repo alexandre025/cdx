@@ -8,5 +8,18 @@ class CreateCdxPages < ActiveRecord::Migration[5.1]
       t.date :published_on
       t.timestamps
     end
+
+    reversible do |dir|
+      dir.up do
+        Cdx::Page.create_translation_table!(
+            title: { type: :string, limit: 255, null: false },
+            slug: { type: :string, limit: 255, null: false },
+            content: :text
+        )
+      end
+      dir.down do
+        Cdx::Page.drop_translation_table!
+      end
+    end
   end
 end

@@ -8,6 +8,9 @@ require 'bootstrap-wysihtml5-rails'
 require 'jstree-rails-4'
 require 'toastr-rails'
 
+
+require 'globalize'
+require 'friendly_id/globalize'
 require 'devise'
 require 'jbuilder'
 require 'simple_form'

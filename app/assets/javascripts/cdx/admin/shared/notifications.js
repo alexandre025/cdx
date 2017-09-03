@@ -2,7 +2,7 @@ Cdx.ready(function () {
 
     $('div[data-toastr]').each(function () {
         var element = $(this);
-        triggerToastr(element.html(), element.data('toastr'));
+        triggerToastr(element.data('toastr'), element.html());
 
     });
 

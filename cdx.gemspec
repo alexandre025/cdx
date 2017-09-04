@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'friendly_id-globalize'
   s.add_dependency 'globalize'
+  s.add_dependency 'globalize-accessors'
   s.add_dependency 'devise', '~> 4.3.0'
   s.add_dependency 'simple_form', '~> 3.5.0'
   s.add_dependency 'friendly_id', '~> 5.2.1'

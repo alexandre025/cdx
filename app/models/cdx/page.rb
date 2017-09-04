@@ -5,9 +5,12 @@ module Cdx
     include Cdx::Admin::Taxonomisable::Simple
 
     translates :title, :slug, :content
+    globalize_accessors
 
     extend FriendlyId
     friendly_id :title, use: :globalize
+
+    accepts_nested_attributes_for :translations
 
     # Validators
     validates :title, :state, presence: true

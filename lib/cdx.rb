@@ -11,6 +11,7 @@ require 'toastr-rails'
 
 require 'globalize'
 require 'friendly_id/globalize'
+require 'globalize-accessors'
 require 'devise'
 require 'jbuilder'
 require 'simple_form'

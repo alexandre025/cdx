@@ -7,7 +7,6 @@ module Cdx
           options[:input_html]                                   ||= {}
           options[:input_html][:data]                            ||= {}
           options[:input_html][:data][:'translation-for-locale'] = locale
-          puts options
           concat form_object.input :"#{field}_#{locale}", options
         end
       end

@@ -8,6 +8,20 @@ module Cdx
       g.helper false
     end
 
+    # config.to_prepare do
+    #   ['app', 'lib'].each do |dir|
+    #     Dir.glob(Rails.root + "#{dir}/**/*_decorator*.rb").each do |c|
+    #       require_dependency(c)
+    #     end
+    #   end
+    # end
+
+    config.to_prepare do
+      Dir.glob(Rails.root + "lib/**/*_decorator*.rb").each do |c|
+        require_dependency(c)
+      end
+    end
+
     initializer 'cdx.action_controller.include_all_helpers' do |app|
       app.config.action_controller.include_all_helpers = false
     end

@@ -4,7 +4,7 @@ module Cdx
       extend ActiveSupport::Concern
 
       def content_header_title
-        title
+        title_was
       end
     end
   end

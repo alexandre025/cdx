@@ -7,6 +7,9 @@ require 'icheck-rails'
 require 'bootstrap-wysihtml5-rails'
 require 'jstree-rails-4'
 require 'toastr-rails'
+require 'emoji_flag'
+
+require 'rails-i18n'
 
 require 'friendly_id'
 require 'hstore_translate'

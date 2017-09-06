@@ -31,11 +31,18 @@ module FriendlyId
     end
 
     def should_generate_new_friendly_id?
-      Cdx::Setting.current.available_locales.each do |locale|
-        return true if !self.slug_translations[locale] || self.slug_translations[locale].blank? || self.title_translations_changed?
+      translations = get_field_translations_hash
+      return true unless translations
+
+      if self.respond_to?("#{friendly_id_config.base}_translations")
+        return self.send "#{friendly_id_config.base}_translations_changed?"
+      else
+        return self.send "#{friendly_id_config.base}_changed?"
       end
+
       false
     end
+
 
     def set_slug(normalized_slug = nil)
       Cdx::Setting.current.available_locales.each do |locale|

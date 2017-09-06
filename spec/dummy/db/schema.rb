@@ -29,7 +29,10 @@ ActiveRecord::Schema.define(version: 20170830090129) do
   end
 
   create_table "cdx_pages", force: :cascade do |t|
+    t.string "title", limit: 255
+    t.string "slug", limit: 255
     t.string "state", limit: 45, null: false
+    t.text "content"
     t.date "published_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

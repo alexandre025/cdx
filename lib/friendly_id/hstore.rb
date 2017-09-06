@@ -31,25 +31,22 @@ module FriendlyId
     end
 
     def should_generate_new_friendly_id?
-      translations = get_field_translations_hash
-      return (translations.blank? || translations[::I18n.locale.to_s].nil?)
+      Cdx::Setting.current.available_locales.each do |locale|
+        return true if !self.slug_translations[locale] || self.slug_translations[locale].blank? || self.title_translations_changed?
+      end
+      false
     end
 
     def set_slug(normalized_slug = nil)
-      translations = get_field_translations_hash
-      if !translations.blank? && translations.size > 1
-        translations.each do |locale, value|
-          execute_with_locale(locale) { super_set_slug(normalized_slug) }
-        end
-      else
-        execute_with_locale(::I18n.locale) { super_set_slug(normalized_slug) }
+      Cdx::Setting.current.available_locales.each do |locale|
+        execute_with_locale(locale) { super_set_slug(normalized_slug) }
       end
     end
 
     def super_set_slug(normalized_slug = nil)
       if should_generate_new_friendly_id?
         candidates = FriendlyId::Candidates.new(self, normalized_slug || send(friendly_id_config.base))
-        slug = slug_generator.generate(candidates) || resolve_friendly_id_conflict(candidates)
+        slug       = slug_generator.generate(candidates) || resolve_friendly_id_conflict(candidates)
         self.send("#{friendly_id_config.query_field}=", slug)
       end
     end

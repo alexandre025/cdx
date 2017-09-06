@@ -3,6 +3,8 @@ module Cdx
     module BaseHelper
       include FontAwesome::Rails::IconHelper
 
+      include FormHelper
+
       def theme_class
         if current_admin_user&.theme && !current_admin_user.theme.blank?
           "skin-#{current_admin_user.theme}"

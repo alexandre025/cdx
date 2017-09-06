@@ -15,7 +15,7 @@ module Cdx
 
     # Methods
     def content_header_title
-      name
+      name_was
     end
 
     def self.current(domain = nil)

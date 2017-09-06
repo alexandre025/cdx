@@ -19,6 +19,8 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.1.2'
 
+  s.add_dependency 'rails-i18n'
+
   s.add_dependency 'turbolinks', '~> 5.0.0'
   s.add_dependency 'jquery-rails', '~> 4.3.1'
   s.add_dependency 'bootstrap-sass', '~> 3.3.6'
@@ -29,6 +31,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'jstree-rails-4'
   s.add_dependency 'toastr-rails'
 
+  s.add_dependency 'emoji_flag'
+  s.add_dependency 'hstore_translate'
   s.add_dependency 'devise', '~> 4.3.0'
   s.add_dependency 'simple_form', '~> 3.5.0'
   s.add_dependency 'friendly_id', '~> 5.2.1'

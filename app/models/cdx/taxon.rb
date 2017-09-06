@@ -10,7 +10,7 @@ module Cdx
 
     # Methods
     def content_header_title
-      name
+      name_was
     end
 
     def full_path_tag

@@ -17,7 +17,7 @@ module Cdx
       end
 
       def update
-        if @object.update_attributes permitted_resource_params
+        if @object.update permitted_resource_params
           flash_message(@object, :update, :success)
           redirect_to location_after_save
         else
@@ -27,7 +27,7 @@ module Cdx
       end
 
       def create
-        if @object.update_attributes permitted_resource_params
+        if @object.update permitted_resource_params
           flash_message(@object, :create, :success)
           redirect_to location_after_save
         else

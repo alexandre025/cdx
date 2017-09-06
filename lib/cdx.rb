@@ -8,12 +8,17 @@ require 'bootstrap-wysihtml5-rails'
 require 'jstree-rails-4'
 require 'toastr-rails'
 
+require 'friendly_id'
+require 'hstore_translate'
+require 'friendly_id/hstore'
+
 require 'devise'
 require 'jbuilder'
 require 'simple_form'
-require 'friendly_id'
+
 require 'state_machines-activerecord'
 require 'awesome_nested_set'
+
 require 'byebug'
 
 require 'cdx/engine'

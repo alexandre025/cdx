@@ -5,7 +5,9 @@ module Cdx
     include Cdx::Admin::Taxonomisable::Simple
 
     extend FriendlyId
-    friendly_id :title, use: :slugged
+
+    translates :title, :slug, :content
+    friendly_id :title, use: :hstore
 
     # Validators
     validates :title, :state, presence: true
@@ -15,8 +17,8 @@ module Cdx
       title
     end
 
-    def should_generate_new_friendly_id?
-      title_changed?
-    end
+    # def should_generate_new_friendly_id?
+    #   title_changed?
+    # end
   end
 end

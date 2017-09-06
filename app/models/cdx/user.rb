@@ -16,7 +16,7 @@ module Cdx
 
     # Methods
     def content_header_title
-      email
+      email_was
     end
 
     def gravatar_url

@@ -1,3 +1,5 @@
+# TODO : Remove this module and use _decorator
+
 module Globalize
   module ActiveRecord
     module ClassMethods

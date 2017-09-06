@@ -10,8 +10,6 @@ module Cdx
     extend FriendlyId
     friendly_id :title, use: :globalize
 
-    accepts_nested_attributes_for :translations
-
     # Validators
     validates :title, :state, presence: true
 

@@ -45,7 +45,7 @@ en:
           error: "%{n} cannot be created"
         update:
           success: "%{n} successfully updated"
-          error: "%{n} cannot be created"
+          error: "%{n} cannot be updated"
         destroy:
           success: "%{n} successfully destroyed"
           error: "%{n} cannot be destroyed"

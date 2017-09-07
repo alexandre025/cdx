@@ -10,3 +10,4 @@ spec/dummy/tmp/
 /.byebug_history
 /spec/dummy/public/assets
 /spec/dummy/.byebug_history
+/coverage

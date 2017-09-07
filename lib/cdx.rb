@@ -12,7 +12,7 @@ require 'emoji_flag'
 require 'rails-i18n'
 
 require 'friendly_id'
-require 'hstore_translate'
+require 'json_translate'
 require 'friendly_id/hstore'
 
 require 'devise'

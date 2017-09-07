@@ -3,11 +3,10 @@ module Cdx
     module FormHelper
 
       def translated_field(form_object, field, options = {})
+        concat form_object.input field, options
         current_settings.available_locales.each do |locale|
-          if locale == current_settings.default_locale
-            concat form_object.input field, options
-          else
-            options[:label]                                        ||= form_object.object.class.human_attribute_name(field) + ' ' + EmojiFlag.new(locale)
+          unless locale.to_sym == current_settings.default_locale.to_sym
+            options[:label]                                        = form_object.object.class.human_attribute_name(field) + ' ' + EmojiFlag.new(locale)
             options[:input_html]                                   ||= {}
             options[:input_html][:data]                            ||= {}
             options[:input_html][:data][:'translation-for-locale'] = locale

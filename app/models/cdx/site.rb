@@ -2,6 +2,8 @@ module Cdx
   class Site < ApplicationRecord
     include Cdx::Admin::Resourceable
 
+    translates :name
+
     # Callbacks
     before_save { Cdx::Site.where.not(id: id).update_all(default: false) if default }
 
@@ -15,7 +17,7 @@ module Cdx
 
     # Methods
     def content_header_title
-      name_was
+      name
     end
 
     def self.current(domain = nil)

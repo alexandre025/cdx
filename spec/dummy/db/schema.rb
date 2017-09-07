@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20170830090129) do
   end
 
   create_table "cdx_sites", force: :cascade do |t|
-    t.string "name", limit: 45, null: false
+    t.jsonb "name_translations", default: {}, null: false
     t.string "code", limit: 45, null: false
     t.string "domain", limit: 45, null: false
     t.json "settings"

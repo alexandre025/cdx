@@ -13,7 +13,7 @@ require 'rails-i18n'
 
 require 'friendly_id'
 require 'json_translate'
-require 'friendly_id/hstore'
+require 'friendly_id/json_translate'
 
 require 'devise'
 require 'jbuilder'

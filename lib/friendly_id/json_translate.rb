@@ -1,7 +1,7 @@
 # Source : https://github.com/simplelogica/friendly_id-hstore/blob/master/lib/friendly_id/hstore.rb
 
 module FriendlyId
-  module Hstore
+  module JsonTranslate
     class << self
 
       def setup(model_class)
@@ -17,7 +17,7 @@ module FriendlyId
         unless model.respond_to?('translated_attribute_names') ||
             model.translated_attribute_names.exclude?(field.to_sym)
           raise "[FriendlyId] You need to translate the '#{field}' field with " \
-            "hstore_translates (add 'translates :#{field}' in your model '#{model.name}')"
+            "json_translates (add 'translates :#{field}' in your model '#{model.name}')"
         end
       end
 

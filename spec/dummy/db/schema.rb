@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20170830090129) do
   enable_extension "hstore"
 
   create_table "cdx_pages", force: :cascade do |t|
-    t.hstore "title_translations"
-    t.hstore "slug_translations"
+    t.jsonb "title_translations", default: {}, null: false
+    t.jsonb "slug_translations", default: {}, null: false
     t.string "state", limit: 45, null: false
-    t.hstore "content_translations"
+    t.jsonb "content_translations", default: {}, null: false
     t.date "published_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

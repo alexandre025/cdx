@@ -7,7 +7,7 @@ module Cdx
     extend FriendlyId
 
     translates :title, :slug, :content
-    friendly_id :title, use: :hstore
+    friendly_id :title, use: :json_translate
 
     # Validators
     validates :title, :state, presence: true

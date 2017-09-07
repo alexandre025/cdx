@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     class BaseController < Cdx::ApplicationController
-
       layout 'cdx/admin'
 
       before_action :set_locale

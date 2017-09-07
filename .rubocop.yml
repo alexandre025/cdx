@@ -4,10 +4,10 @@ inherit_gem:
 
 AllCops:
  TargetRubyVersion: 2.3
+ Exclude:
+   - spec/dummy/**/*
+   - bin/*
 
 Style/StringLiterals:
   Enabled: true
   EnforcedStyle: single_quotes
-  Exclude:
-    - '**/bin/*'
-    - '**/db/schema.rb'

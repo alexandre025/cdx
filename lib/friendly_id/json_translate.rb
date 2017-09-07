@@ -3,7 +3,6 @@
 module FriendlyId
   module JsonTranslate
     class << self
-
       def setup(model_class)
         model_class.friendly_id_config.use :slugged
       end
@@ -64,7 +63,7 @@ module FriendlyId
 
     # Auxiliar function to execute a block with other locale set
     #
-    def execute_with_locale(locale=::I18n.locale, &block)
+    def execute_with_locale(locale = ::I18n.locale, &block)
       actual_locale = ::I18n.locale
       ::I18n.locale = locale
 

@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     class BaseController < Cdx::ApplicationController
-      include Cdx::ControllerHelpers::Settings
 
       layout 'cdx/admin'
 

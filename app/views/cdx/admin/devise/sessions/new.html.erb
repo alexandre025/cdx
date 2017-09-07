@@ -13,6 +13,13 @@
       <span class="glyphicon glyphicon-lock form-control-feedback"></span>
     </div>
 
+
+    <% if flash[:alert] %>
+        <div class="row">
+          <%= tag.p flash[:alert], class: 'text-red col-md-12' %>
+        </div>
+    <% end %>
+
     <div class="row">
       <div class="col-xs-8">
         <% if devise_mapping.rememberable? -%>

@@ -10,10 +10,15 @@ require 'rspec/rails'
 require 'factory_girl_rails'
 require 'faker'
 require 'rails-controller-testing'
+require 'capybara'
+require 'capybara/poltergeist'
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+
+  Capybara.javascript_driver = :poltergeist
+
   config.use_transactional_fixtures = true
 
   config.infer_base_class_for_anonymous_controllers = false

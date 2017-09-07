@@ -2,7 +2,7 @@ require 'rails_helper'
 
 module Cdx
   RSpec.describe Setting, type: :model do
-    subject(:settings) { create(:setting, acronym: 'cdx') }
+    subject(:settings) { Setting.current }
 
     describe '#save!' do
       it { expect(build(:setting).save!).to eq(true) }

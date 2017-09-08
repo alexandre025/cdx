@@ -3,6 +3,10 @@ module Cdx
     class UsersController < ResourceController
       before_action :update_without_password, only: :update
 
+      def edit
+        @object.avatar ||= Asset.new
+      end
+
       private
 
         def update_without_password

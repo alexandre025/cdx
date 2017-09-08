@@ -17,10 +17,10 @@ Gem::Specification.new do |s|
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '~> 5.1.2'
-
-  s.add_dependency 'rails-i18n'
-  s.add_dependency 'kaminari'
+  s.add_dependency 'rails', '~> 5.1.3'
+  s.add_dependency 'shrine', '~> 2.6.1'
+  s.add_dependency 'rails-i18n', '~> 5.0.4'
+  s.add_dependency 'kaminari', '~> 1.0.1'
   s.add_dependency 'kaminari-i18n', '~> 0.4.0'
   s.add_dependency 'turbolinks', '~> 5.0.0'
   s.add_dependency 'jquery-rails', '~> 4.3.1'
@@ -29,16 +29,16 @@ Gem::Specification.new do |s|
   s.add_dependency 'font-awesome-rails', '~> 4.7.0.2'
   s.add_dependency 'icheck-rails', '~> 1.0'
   s.add_dependency 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
-  s.add_dependency 'jstree-rails-4'
-  s.add_dependency 'toastr-rails'
+  s.add_dependency 'jstree-rails-4', '~> 3.3.4'
+  s.add_dependency 'toastr-rails', '~> 1.0.3'
 
-  s.add_dependency 'emoji_flag'
-  s.add_dependency 'json_translate'
+  s.add_dependency 'emoji_flag', '~> 0.0.1'
+  s.add_dependency 'json_translate', '~> 3.0.1'
   s.add_dependency 'devise', '~> 4.3.0'
   s.add_dependency 'simple_form', '~> 3.5.0'
   s.add_dependency 'friendly_id', '~> 5.2.1'
   s.add_dependency 'state_machines-activerecord', '~> 0.5.0'
-  s.add_dependency 'awesome_nested_set'
+  s.add_dependency 'awesome_nested_set', '~> 3.1.3'
   s.add_dependency 'jbuilder', '~> 2.7.0'
 
   s.add_development_dependency 'pg', '~> 0.21.0'

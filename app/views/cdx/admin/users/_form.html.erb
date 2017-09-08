@@ -6,6 +6,10 @@
       <%= f.input :last_name %>
       <%= f.input :theme if current_admin_user == f.object %>
       <hr>
+      <%= f.fields_for :avatar do |avatar_form| %>
+          <%= avatar_form.input :file, as: :file %>
+      <% end %>
+      <hr>
       <h4><%= t('admin.password') %></h4>
       <%= f.input :password, as: :password %>
       <%= f.input :password_confirmation, as: :password %>

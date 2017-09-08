@@ -1,15 +1,18 @@
 Cdx::Engine.routes.draw do
+
+  # mount Cdx::AssetUploader::UploadEndpoint => 'shrine'
+
   namespace :admin, path: Cdx.admin_path do
     root to: 'home#index'
 
     devise_for :users,
-               class_name: 'Cdx::User',
-               path: 'auth',
-               path_names: { sign_in: 'login', sign_out: 'logout', confirmation: 'verification' },
-               skip: %i[unlocks omniauth_callbacks registrations],
+               class_name:  'Cdx::User',
+               path:        'auth',
+               path_names:  { sign_in: 'login', sign_out: 'logout', confirmation: 'verification' },
+               skip:        %i[unlocks omniauth_callbacks registrations],
                controllers: {
-                 sessions: 'cdx/admin/devise/sessions',
-                 passwords: 'cdx/admin/devise/passwords'
+                   sessions:  'cdx/admin/devise/sessions',
+                   passwords: 'cdx/admin/devise/passwords'
                }
 
     resource :setting, path: :settings, only: [:edit, :update] do

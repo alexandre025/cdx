@@ -19,6 +19,10 @@ module Cdx
       email_was
     end
 
+    def avatar_url
+      avatar&.file_url || gravatar_url
+    end
+
     def gravatar_url
       "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}"
     end
@@ -26,5 +30,16 @@ module Cdx
     def full_name
       "#{first_name} #{last_name}".strip
     end
+
+    # Attachment
+
+    has_one :avatar_attachment, -> { where(name: :avatar) }, as: :record, class_name: 'Attachment', dependent: :destroy
+    has_one :avatar, through: :avatar_attachment, class_name: 'Asset', source: :asset
+
+    def avatar
+      @avatar ||= Asset.new
+    end
+
+    accepts_nested_attributes_for :avatar, reject_if: :all_blank, allow_destroy: true
   end
 end

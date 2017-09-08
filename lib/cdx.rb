@@ -10,7 +10,8 @@ require 'toastr-rails'
 require 'emoji_flag'
 
 require 'rails-i18n'
-
+require 'kaminari'
+require 'kaminari-i18n'
 require 'friendly_id'
 require 'json_translate'
 require 'friendly_id/json_translate'

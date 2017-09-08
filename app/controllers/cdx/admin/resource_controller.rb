@@ -8,6 +8,7 @@ module Cdx
       helper_method :member_action?, :new_object_url, :edit_object_url, :object_url, :collection_url, :parent_collection_url, :parent_object_url, :edit_parent_object_url
 
       def index
+        @collection = @collection.page(params[:page])
       end
 
       def new

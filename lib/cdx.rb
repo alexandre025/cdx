@@ -9,6 +9,7 @@ require 'jstree-rails-4'
 require 'toastr-rails'
 require 'emoji_flag'
 
+require 'shrine'
 require 'rails-i18n'
 require 'kaminari'
 require 'kaminari-i18n'

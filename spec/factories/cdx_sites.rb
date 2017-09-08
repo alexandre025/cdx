@@ -4,5 +4,11 @@ FactoryGirl.define do
     code { Faker::Internet.slug }
     domain { Faker::Internet.domain_name }
     default false
+
+    trait :wrong_attributes do
+      name ''
+      code ''
+      domain ''
+    end
   end
 end

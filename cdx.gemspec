@@ -40,6 +40,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'state_machines-activerecord', '~> 0.5.0'
   s.add_dependency 'awesome_nested_set'
   s.add_dependency 'jbuilder', '~> 2.7.0'
+  s.add_dependency 'ajax-datatables-rails', '~> 0.4.0'
 
   s.add_development_dependency 'pg', '~> 0.21.0'
   s.add_development_dependency 'rspec-rails', '~> 3.6.0'

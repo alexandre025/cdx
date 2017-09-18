@@ -3,6 +3,13 @@ module Cdx
     class UsersController < ResourceController
       before_action :update_without_password, only: :update
 
+      def index
+        respond_to do |format|
+          format.html
+          format.json { render json: Cdx::UserDatatable.new(view_context) }
+        end
+      end
+
       private
 
         def update_without_password

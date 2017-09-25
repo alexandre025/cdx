@@ -11,10 +11,10 @@
       <table id="pages-table" data-source="<%= admin_pages_path(format: :json) %>" class="table table-bordered table-hover dataTable">
         <thead>
           <tr>
-            <%= tag.th Cdx::Site.human_attribute_name(:title) %>
-            <%= tag.th Cdx::Site.human_attribute_name(:slug) %>
-            <%= tag.th Cdx::Site.human_attribute_name(:state) %>
-            <%= tag.th Cdx::Site.human_attribute_name(:published_on) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:title) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:slug) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:state) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:published_on) %>
             <%= tag.th t('admin.actions.all') %>
           </tr>
         </thead>

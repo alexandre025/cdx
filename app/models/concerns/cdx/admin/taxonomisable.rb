@@ -7,7 +7,7 @@ module Cdx
         extend ActiveSupport::Concern
 
         included do
-          belongs_to :taxon
+          belongs_to :taxon, required: false
           has_one :taxonomy, through: :taxon
         end
       end

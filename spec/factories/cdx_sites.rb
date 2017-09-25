@@ -3,12 +3,13 @@ FactoryGirl.define do
     name { Faker::App.name }
     code { Faker::Internet.slug }
     domain { Faker::Internet.domain_name }
-    default false
+    default true
 
     trait :wrong_attributes do
       name ''
       code ''
       domain ''
+      default false
     end
   end
 end

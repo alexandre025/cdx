@@ -1,12 +1,20 @@
 module Cdx
   module Admin
     module ResourceHelper
+
       def content_header_page_title
-        # TODO : Parent data ?
-        if member_action? && @object.persisted?
-          "#{t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.one")} : #{@object.content_header_title}"
+        # Work arround with Ransack issue, where all helpers are available
+        # even with our initializer : include_all_helpers = false
+        if @object && try(:member_action?)
+          # TODO : Parent data ?
+          if member_action? && @object.persisted?
+            "#{t("activerecord.models.#{@resource.model_class.model_name.to_s.underscore}.one")} : #{@object.content_header_title}"
+          else
+            t("activerecord.models.#{@resource.model_class.model_name.to_s.underscore}.other")
+          end
         else
-          t("activerecord.models.cdx/#{@resource.model_class.model_name.human.downcase}.other")
+
+          t("admin.content_header.page_title.#{context_tag}")
         end
       end
 

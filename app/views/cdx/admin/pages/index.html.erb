@@ -8,31 +8,19 @@
     </div>
 
     <div class="box-body">
-      <table class="table table-striped">
-        <tr>
-          <%= tag.th Cdx::Site.human_attribute_name(:title) %>
-          <%= tag.th Cdx::Site.human_attribute_name(:slug) %>
-          <%= tag.th Cdx::Site.human_attribute_name(:state) %>
-          <%= tag.th Cdx::Site.human_attribute_name(:published_on) %>
-          <%= tag.th t('admin.actions.all') %>
-        </tr>
-        <% @collection.each do |object| %>
-            <tr>
-              <%= tag.td object.title %>
-              <%= tag.td object.slug %>
-              <%= tag.td t("admin.generic_states.#{object.state}") %>
-              <%= tag.td ld(object.published_on) %>
-              <td>
-                <%= link_to_edit(object) %>
-                <%= link_to_delete(object) %>
-              </td>
-            </tr>
-        <% end %>
+      <table id="pages-table" data-source="<%= admin_pages_path(format: :json) %>" class="table table-bordered table-hover dataTable">
+        <thead>
+          <tr>
+            <%= tag.th Cdx::Page.human_attribute_name(:title) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:slug) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:state) %>
+            <%= tag.th Cdx::Page.human_attribute_name(:published_on) %>
+            <%= tag.th t('admin.actions.all') %>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
       </table>
-    </div>
-
-    <div class="box-footer">
-      <%= paginate @collection %>
     </div>
   </div>
 </div>

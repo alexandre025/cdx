@@ -20,6 +20,8 @@ require 'friendly_id/json_translate'
 require 'devise'
 require 'jbuilder'
 require 'simple_form'
+require 'ajax-datatables-rails'
+require 'ransack'
 
 require 'state_machines-activerecord'
 require 'awesome_nested_set'

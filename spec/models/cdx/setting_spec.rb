@@ -16,7 +16,7 @@ module Cdx
 
     describe '#available_locales' do
       it '<< default_locale' do
-        expect(settings.available_locales).to eq(%w(fr es en))
+        expect(settings.available_locales.sort).to eq(%w(fr es en).sort)
       end
     end
 

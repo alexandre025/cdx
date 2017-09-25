@@ -10,9 +10,9 @@ module Cdx
       g.helper false
     end
 
-    initializer 'cdx.action_controller.include_all_helpers' do |app|
-      app.config.action_controller.include_all_helpers = false
-    end
+    # initializer 'cdx.action_controller.include_all_helpers' do |app|
+    #   app.config.action_controller.include_all_helpers = false
+    # end
 
     initializer 'cdx.assets.precompile', group: :all do |app|
       app.config.assets.precompile += %w[cdx/admin.js cdx/admin.css cdx/*.png cdx/*.jpg ]

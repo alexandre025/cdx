@@ -4,7 +4,7 @@ module Cdx
       def index
         respond_to do |format|
           format.html
-          format.json { render json: Cdx::PageDatatable.new(view_context) }
+          format.json { render json: PageDatatable.new(view_context) }
         end
       end
     end

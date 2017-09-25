@@ -11,3 +11,4 @@ spec/dummy/tmp/
 /spec/dummy/public/assets
 /spec/dummy/.byebug_history
 /coverage
+/spec/dummy/public/uploads

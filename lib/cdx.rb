@@ -10,6 +10,7 @@ require 'toastr-rails'
 require 'emoji_flag'
 
 require 'rails-i18n'
+require 'paperclip'
 require 'kaminari'
 require 'kaminari-i18n'
 require 'friendly_id'

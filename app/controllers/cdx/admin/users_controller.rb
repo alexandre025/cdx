@@ -10,6 +10,10 @@ module Cdx
         end
       end
 
+      def edit
+        @object.avatar ||= Asset.new
+      end
+
       private
 
         def update_without_password

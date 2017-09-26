@@ -26,5 +26,10 @@ module Cdx
     def full_name
       "#{first_name} #{last_name}".strip
     end
+
+    has_one :avatar_attachment, -> { where(name: :avatar) }, as: :record, class_name: 'Attachment', dependent: :destroy
+    has_one :avatar, through: :avatar_attachment, class_name: 'Asset::User::Avatar', source: :asset
+
+    accepts_nested_attributes_for :avatar, allow_destroy: true
   end
 end

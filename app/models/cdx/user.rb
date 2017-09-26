@@ -19,6 +19,10 @@ module Cdx
       email_was
     end
 
+    def avatar_url(style = :thumb)
+      avatar&.attachment_file_name ? avatar.attachment.url(style) : gravatar_url
+    end
+
     def gravatar_url
       "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(email.downcase)}"
     end

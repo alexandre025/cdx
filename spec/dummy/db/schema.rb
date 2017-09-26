@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20170926065706) do
   create_table "cdx_assets", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "file_file_name"
-    t.string "file_content_type"
-    t.integer "file_file_size"
-    t.datetime "file_updated_at"
+    t.string "attachment_file_name"
+    t.string "attachment_content_type"
+    t.integer "attachment_file_size"
+    t.datetime "attachment_updated_at"
   end
 
   create_table "cdx_attachments", force: :cascade do |t|

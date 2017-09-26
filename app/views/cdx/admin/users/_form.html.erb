@@ -7,7 +7,8 @@
       <%= f.input :theme if current_admin_user == f.object %>
       <hr>
       <%= f.fields_for :avatar do |avatar_form| %>
-          <%= avatar_form.input :file, as: :file %>
+          <%= image_tag avatar_form.object.attachment.url %>
+          <%= avatar_form.input :attachment, as: :file %>
       <% end %>
       <hr>
       <h4><%= t('admin.password') %></h4>

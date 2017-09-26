@@ -2,9 +2,9 @@ require 'rails_helper'
 
 RSpec.feature 'Login to admin dashboard', type: :feature do
 
-  let(:user) { create(:cdx_user, password: :feature) }
+  let(:user) { create(:cdx_user, :admin, password: :feature) }
 
-  scenario 'User success to login' do
+  scenario 'success to login' do
     visit '/admin'
 
     fill_in id: 'admin_user_email', with: user.email
@@ -15,7 +15,7 @@ RSpec.feature 'Login to admin dashboard', type: :feature do
     expect(page).to have_text('Dashboard')
   end
 
-  scenario 'User fail to login' do
+  scenario 'fail to login' do
     visit '/admin'
 
     click_button

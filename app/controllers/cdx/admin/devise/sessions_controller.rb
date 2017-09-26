@@ -11,9 +11,18 @@ class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
   # end
 
   # POST /resource/sign_in
-  # def create
-  #   super
-  # end
+  def create
+    self.resource = warden.authenticate!(auth_options)
+    if resource.has_role?(:admin)
+      set_flash_message!(:notice, :signed_in)
+      sign_in(resource_name, resource)
+      yield resource if block_given?
+      respond_with resource, location: after_sign_in_path_for(resource)
+    else
+      flash[:alert] = t('admin.flash.sessions.not_admin')
+      render :new
+    end
+  end
 
   # DELETE /resource/sign_out
   # def destroy
@@ -29,11 +38,11 @@ class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
 
   protected
 
-    def after_sign_out_path_for(resource_or_scope)
-      new_admin_user_session_path
-    end
+  def after_sign_out_path_for(resource_or_scope)
+    new_admin_user_session_path
+  end
 
-    def after_sign_in_path_for(resource_or_scope)
-      admin_root_path
-    end
+  def after_sign_in_path_for(resource_or_scope)
+    admin_root_path
+  end
 end

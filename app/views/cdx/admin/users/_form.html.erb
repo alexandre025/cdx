@@ -4,6 +4,7 @@
       <%= f.input :email, as: :email %>
       <%= f.input :first_name %>
       <%= f.input :last_name %>
+      <%= f.input :roles, collection: Cdx::User::ROLES, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
       <%= f.input :theme if current_admin_user == f.object %>
       <hr>
       <h4><%= t('admin.password') %></h4>

@@ -2,6 +2,8 @@ module Cdx
   class User < ApplicationRecord
     include Cdx::Admin::Resourceable
 
+    ROLES = %w(admin)
+
     # Devise
     # Include default devise modules. Others available are:
     # :confirmable, :lockable, :timeoutable and :omniauthable
@@ -25,6 +27,14 @@ module Cdx
 
     def full_name
       "#{first_name} #{last_name}".strip
+    end
+
+    def admin?
+      has_role?(:admin)
+    end
+
+    def has_role?(role)
+      roles.include? role.to_s
     end
   end
 end

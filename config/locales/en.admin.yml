@@ -62,6 +62,8 @@ en:
           error: "Settings cannot be created"
         clear_cache:
           success: "Cache successfully cleared"
+      sessions:
+        not_admin: "User isn't admin"
     settings:
       clear_cache: "Clear cache"
       cache: "Cache"

@@ -1,6 +1,6 @@
 module Cdx
   class Taxonomy < ApplicationRecord
-    include Cdx::Admin::Resourceable
+    include Cdx::Resourceable
 
     # Associations
     has_many :taxons, dependent: :destroy

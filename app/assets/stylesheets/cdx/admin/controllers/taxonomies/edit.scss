@@ -3,3 +3,13 @@ input {
     color: #0E0E0E !important;
   }
 }
+
+.jstree-proton {
+  .jstree-anchor {
+    white-space: normal;
+    height: auto;
+    width: calc(100% - 22px);
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+}

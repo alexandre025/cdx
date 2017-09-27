@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170926091237) do
 
   create_table "cdx_taxonomies", force: :cascade do |t|
     t.string "name", limit: 45, null: false
+    t.jsonb "available_codes"
     t.text "description"
   end
 

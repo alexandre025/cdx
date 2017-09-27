@@ -9,10 +9,10 @@ Cdx.setup do |config|
   # Admin role should not be removed in order
   # to get access to admin panel
   #
-  # config.user_available_roles = %w(admin)
+  config.user_available_roles = %w(admin moderator)
 
   # Add available codes to taxonomies
   #
-  # config.taxonomy_available_codes = %w(pages)
+  config.taxonomy_available_codes = %w(pages test)
 
 end

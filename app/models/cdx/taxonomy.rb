@@ -16,7 +16,7 @@ module Cdx
     validates :name, presence: true
 
     # Constants
-    AVAILABLE_CODES = %w(pages)
+    AVAILABLE_CODES = Cdx.taxonomy_available_codes.freeze
 
     # Methods
     def content_header_title

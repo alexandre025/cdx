@@ -6,7 +6,7 @@ FactoryGirl.define do
     last_name { Faker::Name.last_name }
 
     trait :admin do
-      roles Cdx::User::ROLES
+      roles Cdx::User::AVAILABLE_ROLES
     end
   end
 end

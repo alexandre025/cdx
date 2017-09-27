@@ -2,7 +2,7 @@ module Cdx
   class User < ApplicationRecord
     include Cdx::Admin::Resourceable
 
-    ROLES = %w(admin)
+    AVAILABLE_ROLES = Cdx.user_available_roles.freeze
 
     # Devise
     # Include default devise modules. Others available are:

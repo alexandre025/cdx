@@ -33,6 +33,12 @@ module Cdx
   mattr_accessor :admin_path
   @@admin_path = 'admin'
 
+  mattr_accessor :taxonomy_available_codes
+  @@taxonomy_available_codes = %w(pages)
+
+  mattr_accessor :user_available_roles
+  @@user_available_roles = %w(admin)
+
   def self.setup
     yield self
   end

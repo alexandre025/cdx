@@ -1,6 +1,6 @@
 module Cdx
   class User < ApplicationRecord
-    include Cdx::Admin::Resourceable
+    include Cdx::Resourceable
 
     AVAILABLE_ROLES = Cdx.user_available_roles.freeze
 
@@ -9,6 +9,12 @@ module Cdx
     # :confirmable, :lockable, :timeoutable and :omniauthable
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
+
+    # Associations
+    has_one :avatar_attachment, -> { where(name: :avatar) }, as: :record, class_name: 'Attachment', dependent: :destroy
+    has_one :avatar, through: :avatar_attachment, class_name: 'Asset::User::Avatar', source: :asset
+
+    accepts_nested_attributes_for :avatar, allow_destroy: true
 
     # Settings
     store_accessor :settings, :theme
@@ -19,6 +25,10 @@ module Cdx
     # Methods
     def content_header_title
       email_was
+    end
+
+    def avatar_url(style = :thumb)
+      avatar&.attachment_file_name ? avatar.attachment.url(style) : gravatar_url
     end
 
     def gravatar_url
@@ -36,5 +46,6 @@ module Cdx
     def has_role?(role)
       roles.include? role.to_s
     end
+
   end
 end

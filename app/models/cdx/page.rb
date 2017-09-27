@@ -1,8 +1,8 @@
 module Cdx
   class Page < ApplicationRecord
-    include Cdx::Admin::Resourceable
-    include Cdx::Admin::Publishable
-    include Cdx::Admin::Taxonomisable::Simple
+    include Cdx::Resourceable
+    include Cdx::Publishable
+    include Cdx::Taxonomisable::Simple
 
     extend FriendlyId
 

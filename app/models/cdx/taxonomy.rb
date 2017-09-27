@@ -1,6 +1,6 @@
 module Cdx
   class Taxonomy < ApplicationRecord
-    include Cdx::Admin::Resourceable
+    include Cdx::Resourceable
 
     # Scopes
     scope :available_for, -> (code) { where('available_codes ? :code', code: code).or(where('available_codes = ? OR available_codes IS NULL', '[""]')) }

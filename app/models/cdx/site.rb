@@ -1,6 +1,6 @@
 module Cdx
   class Site < ApplicationRecord
-    include Cdx::Admin::Resourceable
+    include Cdx::Resourceable
 
     translates :name
 

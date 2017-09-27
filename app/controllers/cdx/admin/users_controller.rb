@@ -10,14 +10,18 @@ module Cdx
         end
       end
 
+      def edit
+        @object.avatar ||= Asset::User::Avatar.new
+      end
+
       private
 
-        def update_without_password
-          if params[:user][:password].blank?
-            params[:user].delete('password')
-            params[:user].delete('password_confirmation')
-          end
+      def update_without_password
+        if params[:user][:password].blank?
+          params[:user].delete('password')
+          params[:user].delete('password_confirmation')
         end
+      end
     end
   end
 end

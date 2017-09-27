@@ -1,0 +1,13 @@
+#nested-asset-form {
+  .nested-fields {
+    .box {
+      height: 250px;
+      .box-body {
+        img {
+          max-width: 100%;
+          max-height: 185px;
+        }
+      }
+    }
+  }
+}

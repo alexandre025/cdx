@@ -1,0 +1,28 @@
+<% if f.object.persisted? %>
+    <div class="nested-fields col-md-2 col-xs-6">
+      <div class="box box-success box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">#<%= f.object.id %></h3>
+          <div class="box-tools pull-right">
+            <%= link_to_remove_association fa_icon(:times), f, class: 'btn btn-box-tool' %>
+          </div>
+        </div>
+        <div class="box-body">
+          <%= image_tag f.object.attachment.url(:thumb), class: 'pull-center' %>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <div class="nested-fields col-md-2 col-xs-6">
+      <div class="box box-warning box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">New image</h3>
+          <div class="box-tools pull-right">
+            <%= link_to_remove_association fa_icon(:times), f, class: 'btn btn-box-tool' %>
+          </div>
+        </div>
+        <%= f.input :attachment, as: :file %>
+      </div>
+    </div>
+<% end %>
+

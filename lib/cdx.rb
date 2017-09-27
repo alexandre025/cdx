@@ -8,7 +8,7 @@ require 'bootstrap-wysihtml5-rails'
 require 'jstree-rails-4'
 require 'toastr-rails'
 require 'emoji_flag'
-
+require 'cocoon'
 require 'rails-i18n'
 require 'paperclip'
 require 'kaminari'
@@ -16,13 +16,11 @@ require 'kaminari-i18n'
 require 'friendly_id'
 require 'json_translate'
 require 'friendly_id/json_translate'
-
 require 'devise'
 require 'jbuilder'
 require 'simple_form'
 require 'ajax-datatables-rails'
 require 'ransack'
-
 require 'state_machines-activerecord'
 require 'awesome_nested_set'
 

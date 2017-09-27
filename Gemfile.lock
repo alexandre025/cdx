@@ -6,6 +6,7 @@ PATH
       awesome_nested_set
       bootstrap-sass (~> 3.3.6)
       bootstrap-wysihtml5-rails (~> 0.3.3.8)
+      cocoon
       devise (~> 4.3.0)
       emoji_flag
       font-awesome-rails (~> 4.7.0.2)
@@ -96,6 +97,7 @@ GEM
     cliver (0.3.2)
     cocaine (0.5.8)
       climate_control (>= 0.0.3, < 1.0)
+    cocoon (1.2.10)
     concurrent-ruby (1.0.5)
     devise (4.3.0)
       bcrypt (~> 3.0)

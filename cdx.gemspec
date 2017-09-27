@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'bootstrap-wysihtml5-rails', '~> 0.3.3.8'
   s.add_dependency 'jstree-rails-4'
   s.add_dependency 'toastr-rails'
-
+  s.add_dependency 'cocoon'
   s.add_dependency 'emoji_flag'
   s.add_dependency 'json_translate'
   s.add_dependency 'devise', '~> 4.3.0'

@@ -46,6 +46,5 @@ module Cdx
     def has_role?(role)
       roles.include? role.to_s
     end
-
   end
 end

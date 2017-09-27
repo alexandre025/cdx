@@ -7,4 +7,3 @@ module Cdx
     end
   end
 end
-

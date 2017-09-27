@@ -26,13 +26,13 @@ module Cdx
 
       private
 
-      def get_raw_records
-        Cdx::User.all
-      end
+        def get_raw_records
+          Cdx::User.all
+        end
 
-      def actions(record)
-        "#{link_to_edit record} #{link_to_delete record}".html_safe
-      end
+        def actions(record)
+          "#{link_to_edit record} #{link_to_delete record}".html_safe
+        end
     end
   end
 end

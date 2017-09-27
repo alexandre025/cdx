@@ -1,7 +1,6 @@
 module Cdx
   module Admin
     module ResourceHelper
-
       def content_header_page_title
         # Work arround with Ransack issue, where all helpers are available
         # even with our initializer : include_all_helpers = false

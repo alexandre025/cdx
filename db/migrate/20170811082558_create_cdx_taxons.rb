@@ -1,7 +1,7 @@
 class CreateCdxTaxons < ActiveRecord::Migration[5.1]
   def change
     create_table :cdx_taxons do |t|
-      t.string :name, limit: 45, null: false
+      t.text :name, null: false
       t.text :description
       t.references :taxonomy, index: true, null: false
       t.references :parent, index: true

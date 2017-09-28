@@ -79,7 +79,7 @@ ActiveRecord::Schema.define(version: 20170926091237) do
   end
 
   create_table "cdx_taxons", force: :cascade do |t|
-    t.text "name", null: false
+    t.string "name", limit: 45, null: false
     t.text "description"
     t.bigint "taxonomy_id", null: false
     t.bigint "parent_id"

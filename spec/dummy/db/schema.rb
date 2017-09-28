@@ -43,8 +43,6 @@ ActiveRecord::Schema.define(version: 20170926091237) do
     t.date "published_on"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "taxon_id"
-    t.index ["taxon_id"], name: "index_cdx_pages_on_taxon_id"
   end
 
   create_table "cdx_settings", force: :cascade do |t|
@@ -116,7 +114,6 @@ ActiveRecord::Schema.define(version: 20170926091237) do
     t.index ["reset_password_token"], name: "index_cdx_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cdx_pages", "cdx_taxons", column: "taxon_id"
   add_foreign_key "cdx_taxon_objects", "cdx_taxons", column: "taxon_id"
   add_foreign_key "cdx_taxons", "cdx_taxonomies", column: "taxonomy_id"
   add_foreign_key "cdx_taxons", "cdx_taxons", column: "parent_id"

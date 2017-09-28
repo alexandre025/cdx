@@ -28,6 +28,7 @@ en:
       publish: "Publish"
       draft: "Draft"
       unpublish: "Unpublish"
+      upload: "Upload a file"
     general: "General"
     avatar: "Avatar"
     online: "Online"

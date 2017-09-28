@@ -1,7 +1,5 @@
 .form-group {
-  .control-label.file {
-    &.file {
-      padding-top: 0px;
+    &.file{
+      display: none;
     }
-  }
 }

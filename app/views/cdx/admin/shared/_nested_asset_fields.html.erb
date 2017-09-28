@@ -26,9 +26,8 @@
           </div>
         </div>
         <div class="box-body">
-          <%= f.input :attachment, as: :file, label: false %>
+          <%= render partial: 'cdx/admin/shared/file_input', locals: {f: f, multiple: 'multiple', style: 'warning', attachment: 'attachment' } %>
         </div>
       </div>
     </div>
 <% end %>
-

@@ -10,7 +10,11 @@
       <h4><%= t('admin.avatar') %></h4>
       <%= f.fields_for :avatar do |avatar_form| %>
         <%= avatar_form.input :attachment, as: :file, wrapper: :horizontal_file_input %>
-        <%= image_tag f.object.avatar_url %>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <%= image_tag f.object.avatar_url %>
+          </div>
+        </div>
       <% end %>
       <hr>
       <h4><%= t('admin.password') %></h4>

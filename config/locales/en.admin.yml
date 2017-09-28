@@ -29,6 +29,7 @@ en:
       draft: "Draft"
       unpublish: "Unpublish"
     general: "General"
+    avatar: "Avatar"
     online: "Online"
     signout: "Sign out"
     profile: "Profile"

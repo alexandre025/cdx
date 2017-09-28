@@ -7,9 +7,10 @@
       <%= f.input :roles, collection: Cdx::User::AVAILABLE_ROLES, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
       <%= f.input :theme if current_admin_user == f.object %>
       <hr>
+      <h4><%= t('admin.avatar') %></h4>
       <%= f.fields_for :avatar do |avatar_form| %>
-          <%= image_tag avatar_form.object.attachment.url %>
-          <%= avatar_form.input :attachment, as: :file %>
+        <%= avatar_form.input :attachment, as: :file, wrapper: :horizontal_file_input %>
+        <%= image_tag f.object.avatar_url %>
       <% end %>
       <hr>
       <h4><%= t('admin.password') %></h4>

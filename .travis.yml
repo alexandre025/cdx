@@ -14,7 +14,7 @@ cache:
 
 before_script:
   - psql -c 'create database cdx_dummy_test;' -U postgres
+  - bin/rails db:migrate RAILS_ENV=test
 
 script:
-  - bundle exec rubocop
   - bundle exec rspec --format doc

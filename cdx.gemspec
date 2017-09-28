@@ -8,16 +8,16 @@ Gem::Specification.new do |s|
   s.name        = 'cdx'
   s.version     = Cdx::VERSION
   s.authors     = ['Alexandre Ferraille']
-  s.email       = ['alexandre.ferraille@opsone.net']
-  s.homepage    = ''
-  s.summary     = 'Summary of Cdx.'
-  s.description = 'Description of Cdx.'
+  s.email       = ['alexandre.ferraille@gmail.com']
+  s.homepage    = 'https://github.com/alexandre025/cdx'
+  s.summary     = 'Cdx is a ready to use admin panel with embedded components.'
+  s.description = 'Cdx is a ready to use admin panel with embedded components.'
   s.license     = 'MIT'
   s.test_files  = Dir['spec/**/*']
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
-  s.add_dependency 'rails', '~> 5.1.2'
+  s.add_dependency 'rails', '~> 5.1'
 
   s.add_dependency 'rails-i18n'
   s.add_dependency 'paperclip', '~> 5.1.0'

@@ -1,0 +1,12 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <%= f.input :name %>
+      <%= f.input :description %>
+      <%= f.input :available_codes, collection: Cdx::Taxonomy::AVAILABLE_CODES.map{ |ac| [t("taxonomies.available_codes.#{ac}"), ac] }, input_html: { class: 'select2-multiple', multiple: true } %>
+      <span class="col-sm-10 col-sm-offset-2"><em><%= t('admin.taxonomies.available_codes_message') %></em></span>
+    </div>
+    <div class="box-footer">
+      <%= link_to_return %>
+      <%= f.button :submit %>
+    </div>
+<% end %>

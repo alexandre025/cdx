@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cdx</title>
+  <%= stylesheet_link_tag 'cdx/admin', media: 'all' %>
+  <%= javascript_include_tag 'cdx/admin' %>
+  <%= csrf_meta_tags %>
+
+  <%= render partial: 'cdx/admin/shared/head' %>
+</head>
+<body id="<%= context_tag %>" class="hold-transition login-page">
+<div class="wrapper">
+
+  <div class="login-box">
+    <div class="login-logo">
+      <a href="#">
+        <b>Admin</b><%= current_settings.acronym %>
+      </a>
+    </div>
+    <div class="login-box-body">
+     <%= yield %>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

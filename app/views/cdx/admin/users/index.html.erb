@@ -1,0 +1,25 @@
+<% render_main_sidebar_menu; render_content_header_breadcrumb %>
+
+<div class="col-md-12">
+  <div class="box">
+
+    <div class="box-header with-border">
+      <%= link_to_new %>
+    </div>
+
+    <div class="box-body">
+      <table id="users-table" data-source="<%= admin_users_path(format: :json) %>" class="table table-bordered table-hover dataTable">
+        <thead>
+          <tr>
+            <%= tag.th Cdx::User.human_attribute_name :email %>
+            <%= tag.th Cdx::User.human_attribute_name :first_name %>
+            <%= tag.th Cdx::User.human_attribute_name :last_name %>
+            <%= tag.th t('admin.actions.all') %>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

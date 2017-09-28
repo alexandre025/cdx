@@ -1,0 +1,34 @@
+<% if f.object.persisted? %>
+    <div class="nested-fields col-lg-2 col-md-3 col-sm-4 col-xs-6">
+      <div class="box box-success box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title">#<%= f.object.id %></h3>
+          <div class="box-tools pull-right">
+            <%= link_to_remove_association fa_icon(:times), f, class: 'btn btn-box-tool' %>
+          </div>
+        </div>
+        <div class="box-body text-center">
+          <% if f.object.image? %>
+              <%= image_tag f.object.attachment.url(:original) %>
+          <% else %>
+            <%# TODO: File icon + filename %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <div class="nested-fields col-lg-2 col-md-3 col-sm-4 col-xs-6">
+      <div class="box box-warning box-solid">
+        <div class="box-header with-border">
+          <h3 class="box-title"><%= t('admin.actions.new') %></h3>
+          <div class="box-tools pull-right">
+            <%= link_to_remove_association fa_icon(:times), f, class: 'btn btn-box-tool' %>
+          </div>
+        </div>
+        <div class="box-body">
+          <%= f.input :attachment, as: :file, label: false %>
+        </div>
+      </div>
+    </div>
+<% end %>
+

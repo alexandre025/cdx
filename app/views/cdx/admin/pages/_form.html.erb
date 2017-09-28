@@ -1,0 +1,12 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <% translated_field f, :title %>
+      <% translated_field(f, :slug, disabled: true) if f.object.persisted? %>
+      <% translated_field f, :content, as: :wysiwyg %>
+    </div>
+
+    <div class="box-footer">
+      <%= link_to_return %>
+      <%= render partial: 'cdx/admin/shared/publishable/form_actions', locals: { f: f } %>
+    </div>
+<% end %>

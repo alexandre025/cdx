@@ -1,0 +1,20 @@
+<% render_main_sidebar_menu; render_content_header_breadcrumb %>
+
+<div class="col-md-12">
+  <div class="box">
+    <div class="box-header with-border">
+      <div class="col-xs-4 col-md-3 col-lg-2">
+        <% select_locale %>
+      </div>
+
+      <span class="pull-right">
+        <small class="label label-info"><%= t("admin.generic_states.#{@object.state}") %></small>
+      </span>
+    </div>
+
+    <%= simple_form_for([:admin, @object], html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |form| %>
+        <%= render partial: 'cdx/admin/pages/form', locals: { f: form } %>
+    <% end %>
+
+  </div>
+</div>

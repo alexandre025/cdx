@@ -1,0 +1,15 @@
+<% if flash[:success] %>
+    <div data-toastr="success"><%= flash[:success] %></div>
+<% end %>
+
+<% if flash[:error] %>
+    <div data-toastr="error"><%= flash[:error] %></div>
+<% end %>
+
+<% if flash[:info] %>
+    <div data-toastr="info"><%= flash[:info] %></div>
+<% end %>
+
+<% if flash[:warning] %>
+    <div data-toastr="warning"><%= flash[:warning] %></div>
+<% end %>

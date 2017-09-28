@@ -1,0 +1,57 @@
+en:
+  activerecord:
+    models:
+      cdx/user:
+        one: User
+        other: Users
+
+      cdx/site:
+        one: Site
+        other: Sites
+
+      cdx/page:
+        one: Page
+        other: Pages
+
+      cdx/taxonomy:
+        one: Taxonomy
+        other: Taxonomies
+
+      cdx/taxon:
+        one: Taxon
+        other: Taxons
+
+      cdx/setting:
+        one: Setting
+        other: Settings
+
+    attributes:
+      cdx/user:
+        email: Email
+        password: Password
+        first_name: First name
+        last_name: Last name
+        full_name: Full name
+        theme: Theme
+
+      cdx/site:
+        name: Name
+        code: Code
+        domain: Domain
+        default : Default ?
+
+      cdx/page:
+        title: Title
+        content: Page content
+        state: State
+        published_on: Published on
+        slug: Slug
+
+      cdx/taxonomy:
+        name: Name
+        description: Description
+
+      cdx/taxon:
+        name: Name
+        description: Description
+        parent: Parent

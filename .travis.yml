@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.3.1
+  - 2.4.0
+
+branches:
+  only:
+    - master
+
+addons:
+  postgresql: '9.5'
+
+cache:
+  bundler: true
+
+script:
+  - bundle exec rubocop
+  - bundle exec rspec --format doc

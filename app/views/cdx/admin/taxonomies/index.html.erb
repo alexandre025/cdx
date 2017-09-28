@@ -1,0 +1,34 @@
+<% render_main_sidebar_menu; render_content_header_breadcrumb %>
+
+<div class="col-md-12">
+  <div class="box">
+
+    <div class="box-header with-border">
+      <%= link_to_new %>
+    </div>
+
+    <div class="box-body">
+      <table class="table table-striped">
+        <tr>
+          <%= tag.th Cdx::Taxonomy.human_attribute_name(:name) %>
+          <%= tag.th Cdx::Taxonomy.human_attribute_name(:description) %>
+          <%= tag.th t('admin.actions.all') %>
+        </tr>
+        <% @collection.each do |object| %>
+            <tr>
+              <%= tag.td object.name %>
+              <%= tag.td object.description %>
+              <td>
+                <%= link_to_edit object %>
+                <%= link_to_delete object %>
+              </td>
+            </tr>
+        <% end %>
+      </table>
+    </div>
+
+    <div class="box-footer">
+      <%= paginate @collection %>
+    </div>
+  </div>
+</div>

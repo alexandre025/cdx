@@ -1,0 +1,23 @@
+<% if defined?(f) %>
+    <div class="box-body">
+      <h4><%= t('admin.general') %></h4>
+      <%= f.input :email, as: :email %>
+      <%= f.input :first_name %>
+      <%= f.input :last_name %>
+      <%= f.input :roles, collection: Cdx::User::AVAILABLE_ROLES, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
+      <%= f.input :theme if current_admin_user == f.object %>
+      <hr>
+      <%= f.fields_for :avatar do |avatar_form| %>
+          <%= image_tag avatar_form.object.attachment.url %>
+          <%= avatar_form.input :attachment, as: :file %>
+      <% end %>
+      <hr>
+      <h4><%= t('admin.password') %></h4>
+      <%= f.input :password, as: :password %>
+      <%= f.input :password_confirmation, as: :password %>
+    </div>
+    <div class="box-footer">
+      <%= link_to_return %>
+      <%= f.button :submit %>
+    </div>
+<% end %>

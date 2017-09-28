@@ -3,7 +3,6 @@
       <% translated_field f, :title %>
       <% translated_field(f, :slug, disabled: true) if f.object.persisted? %>
       <% translated_field f, :content, as: :wysiwyg %>
-      <%= f.association :taxon, collection: Cdx::Taxon.all.map { |t| [t.full_path_tag, t.id] }, input_html: { class: 'select2-simple' } %>
     </div>
 
     <div class="box-footer">

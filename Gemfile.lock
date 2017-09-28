@@ -19,7 +19,7 @@ PATH
       kaminari
       kaminari-i18n (~> 0.4.0)
       paperclip (~> 5.1.0)
-      rails (~> 5.1.2)
+      rails (~> 5.1)
       rails-i18n
       ransack (~> 1.7)
       sass-rails (>= 3.2)

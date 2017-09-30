@@ -11,9 +11,7 @@ module Cdx
            :recoverable, :rememberable, :trackable, :validatable
 
     # Associations
-    has_one :avatar_attachment, -> { where(name: :avatar) }, as: :record, class_name: 'Attachment', dependent: :destroy
-    has_one :avatar, through: :avatar_attachment, class_name: 'Asset::User::Avatar', source: :asset
-
+    has_one :avatar, -> { where(name: :avatar) }, class_name: 'Asset::User::Avatar', as: :record, dependent: :destroy
     accepts_nested_attributes_for :avatar, allow_destroy: true
 
     # Settings

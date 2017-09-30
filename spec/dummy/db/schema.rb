@@ -17,22 +17,15 @@ ActiveRecord::Schema.define(version: 20170926091237) do
   enable_extension "hstore"
 
   create_table "cdx_assets", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "attachment_file_name"
     t.string "attachment_content_type"
     t.integer "attachment_file_size"
     t.datetime "attachment_updated_at"
-  end
-
-  create_table "cdx_attachments", force: :cascade do |t|
-    t.string "name", null: false
-    t.string "record_type", null: false
-    t.bigint "record_id", null: false
-    t.bigint "asset_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["asset_id"], name: "index_cdx_attachments_on_asset_id"
   end
 
   create_table "cdx_pages", force: :cascade do |t|

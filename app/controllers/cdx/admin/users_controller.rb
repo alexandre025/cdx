@@ -10,8 +10,12 @@ module Cdx
         end
       end
 
+      def new
+        @object.build_avatar unless @object.avatar
+      end
+
       def edit
-        @object.avatar ||= Asset::User::Avatar.new
+        @object.build_avatar unless @object.avatar
       end
 
       private

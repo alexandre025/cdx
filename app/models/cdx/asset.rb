@@ -1,6 +1,6 @@
 module Cdx
   class Asset < ApplicationRecord
-    has_many :attachments, dependent: :destroy
+    belongs_to :record, polymorphic: true, optional: true
 
     IMAGE_CONTENT_TYPE = %w(image/jpeg image/jpg image/png image/gif).freeze
 

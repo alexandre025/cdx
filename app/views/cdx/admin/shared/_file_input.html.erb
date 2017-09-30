@@ -1,0 +1,7 @@
+<div class="file-upload file-upload-<%= multiple %>">
+  <label class="btn btn-<%= style %>">
+    <%= f.input attachment, as: :file, label: false %>
+    <%= t 'global.actions.upload' %>
+  </label>
+  <span class="filename text-<%= style %>"></span>
+</div>

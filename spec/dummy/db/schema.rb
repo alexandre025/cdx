@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170926091237) do
+ActiveRecord::Schema.define(version: 20171002130330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20170926091237) do
     t.string "state", limit: 45, null: false
     t.jsonb "content_translations", default: {}, null: false
     t.date "published_on"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "cdx_seos", force: :cascade do |t|
+    t.hstore "meta"
+    t.hstore "og"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -12,8 +12,6 @@
     <% end %>
 
   </div>
-
-
 </div>
 
 <div class="col-md-3">
@@ -23,8 +21,8 @@
     </div>
     <div class="box-body">
       <div class="alert alert-warning">
-        <h4><i class="icon fa fa-warning"></i> Alert!</h4>
-        Warning alert preview. This alert is dismissable.
+        <h4><i class="icon fa fa-warning"></i> <%= t('admin.general.alert')%>!</h4>
+        <%= t('admin.settings.clear_cache_alert') %>
       </div>
       <%= link_to t('admin.settings.clear_cache'), clear_cache_admin_setting_path, data: { remote: true, method: :post, flash: true}, class: 'btn btn-info pull-right' %>
     </div>

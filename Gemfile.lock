@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cdx (0.0.2)
+    cdx (0.0.4)
       ajax-datatables-rails (~> 0.4.0)
       awesome_nested_set
       bootstrap-sass (~> 3.3.6)

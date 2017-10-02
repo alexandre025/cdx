@@ -3,13 +3,13 @@ module Cdx
     include Cdx::Resourceable
 
     # Scopes
-    scope :available_for, -> (code) { where('available_codes ? :code', code: code).or(where('available_codes = ? OR available_codes IS NULL', '[""]')).order(:name) }
+    scope :available_for, -> (code) { where('available_codes ? :code', code: code).or(where('available_codes = ? OR available_codes IS NULL', '[""]')) }
 
     # Callbacks
     after_create :set_root
 
     # Associations
-    has_many :taxons, -> { order('name ASC') }, dependent: :destroy
+    has_many :taxons, dependent: :destroy
     has_one :root, -> { where parent_id: nil }, class_name: 'Cdx::Taxon', dependent: :destroy
 
     # Validators

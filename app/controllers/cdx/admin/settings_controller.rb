@@ -6,7 +6,6 @@ module Cdx
       before_action :load_settings, only: [:edit, :update]
 
       def edit
-        @settings.build_seo unless @settings.seo
       end
 
       def update

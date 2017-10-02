@@ -6,7 +6,7 @@
   </div>
   <div id="seo_module" class="panel-collapse collapse" aria-expanded="false" style="height:0px">
     <div class="box-body">
-      <%= f.fields_for :seo, wrapper: :horizontal_form do |seo_form| %>
+      <%= f.fields_for :seo, (f.object.seo ? f.object.seo : f.object.build_seo), wrapper: :horizontal_form do |seo_form| %>
           <%= seo_form.input :meta_title %>
           <%= seo_form.input :meta_description, as: :text %>
           <%= seo_form.input :meta_keywords %>
@@ -15,7 +15,7 @@
           <%= seo_form.input :og_description, as: :text %>
           <%= seo_form.input :og_keywords %>
           <%= seo_form.input :og_video %>
-          <%= seo_form.fields_for :og_image do |image_form| %>
+          <%= seo_form.fields_for :og_image, (seo_form.object.og_image ? seo_form.object.og_image : seo_form.object.build_og_image) do |image_form| %>
               <div class="form-group">
                 <div class="col-sm-2 control-label string optional">
                   <%= image_form.label :og_image %>

@@ -4,6 +4,40 @@
       <%= f.input :default_theme %>
       <%= f.input :default_locale, collection: locales_options_tags, input_html: { class: 'select2-simple-search' }, include_hidden: false %>
       <%= f.input :available_locales, collection: locales_options_tags, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
+
+
+      <div class="panel box box-primary">
+        <div class="box-header">
+          <h4 class="box-title">
+            <%= link_to t('admin.seo'), '#seo_module', data: { toggle: 'collapse' }, class: %w(collapsed), aria: { expended: false } %>
+          </h4>
+        </div>
+        <div id="seo_module" class="panel-collapse collapse" aria-expanded="false" style="height:0px">
+          <div class="box-body">
+            <%= f.fields_for :seo, wrapper: :horizontal_form do |seo_form| %>
+                <%= seo_form.input :meta_title %>
+                <%= seo_form.input :meta_description, as: :text %>
+                <%= seo_form.input :meta_keywords %>
+                <%= seo_form.input :meta_canonical %>
+                <%= seo_form.input :og_title %>
+                <%= seo_form.input :og_description, as: :text %>
+                <%= seo_form.input :og_keywords %>
+                <%= seo_form.input :og_video %>
+                <%= seo_form.fields_for :og_image do |image_form| %>
+                    <div class="form-group">
+                      <div class="col-sm-2 control-label string optional">
+                        <%= image_form.label :og_image %>
+                      </div>
+                      <div class="col-sm-10">
+                        <%= render partial: 'cdx/admin/shared/file_input', locals: { f: image_form, multiple: '', style: 'info', attachment: 'attachment' } %>
+                      </div>
+                    </div>
+                <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="box-footer">
       <%= f.button :submit %>

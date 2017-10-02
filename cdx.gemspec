@@ -5,15 +5,16 @@ require 'cdx/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'cdx'
-  s.version     = Cdx::VERSION
-  s.authors     = ['Alexandre Ferraille']
-  s.email       = ['alexandre.ferraille@gmail.com']
-  s.homepage    = 'https://github.com/alexandre025/cdx'
-  s.summary     = 'Cdx is a ready to use admin panel with embedded components.'
+  s.name = 'cdx'
+  s.version = Cdx::VERSION
+  s.authors = ['Alexandre Ferraille']
+  s.email = ['alexandre.ferraille@gmail.com']
+  s.homepage = 'https://github.com/alexandre025/cdx'
+  s.summary = 'Cdx is a ready to use admin panel with embedded components.'
   s.description = 'Cdx is a ready to use admin panel with embedded components.'
-  s.license     = 'MIT'
-  s.test_files  = Dir['spec/**/*']
+  s.license = 'MIT'
+  s.test_files = Dir['spec/**/*']
+  s.required_ruby_version = '>= 2.3.1'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 

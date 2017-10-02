@@ -9,6 +9,5 @@ FactoryGirl.define do
     og_keywords { Faker::Lorem.words }
     og_description { Faker::Lorem.paragraph }
     og_video { Faker::Internet.url }
-    association :og_image, factory: :cdx_asset, name: :og_image
   end
 end

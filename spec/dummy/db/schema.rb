@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20171002130330) do
   end
 
   create_table "cdx_seos", force: :cascade do |t|
+    t.string "record_type", null: false
+    t.bigint "record_id", null: false
     t.hstore "meta"
     t.hstore "og"
     t.datetime "created_at", null: false

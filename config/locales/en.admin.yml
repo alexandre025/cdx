@@ -30,6 +30,8 @@ en:
       unpublish: "Unpublish"
       upload: "Upload a file"
     general: "General"
+    alert: "Alert"
+    password: "Password"
     avatar: "Avatar"
     online: "Online"
     signout: "Sign out"
@@ -69,6 +71,7 @@ en:
     settings:
       clear_cache: "Clear cache"
       cache: "Cache"
+      clear_cache_alert: "Clear cache may affect global performances."
 
     taxonomies:
       available_codes:

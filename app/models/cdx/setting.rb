@@ -1,5 +1,10 @@
 module Cdx
   class Setting < ApplicationRecord
+
+    # Associations
+
+    has_one :seo, as: :record, dependent: :destroy
+
     # Validators
 
     validates :acronym, :default_theme, :default_locale, presence: true

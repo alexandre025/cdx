@@ -1,10 +1,6 @@
 module Cdx
   class Setting < ApplicationRecord
-
-    # Associations
-
-    has_one :seo, as: :record, dependent: :destroy
-    accepts_nested_attributes_for :seo, reject_if: :all_blank
+    include Cdx::SeoSupport
 
     # Validators
 

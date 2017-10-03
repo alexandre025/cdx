@@ -1,4 +1,6 @@
 class Cdx::Admin::Devise::ConfirmationsController < Devise::ConfirmationsController
+  include Cdx::ControllerHelpers::Seo
+
   helper Cdx::Admin::BaseHelper
 
   # GET /resource/confirmation/new

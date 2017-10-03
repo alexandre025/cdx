@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cdx</title>
+  <title><%= meta_title %></title>
   <%= stylesheet_link_tag 'cdx/admin', media: 'all' %>
   <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
+
+  <%== seo_data_tags %>
 
   <%= render partial: 'cdx/admin/shared/head' %>
 </head>

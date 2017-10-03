@@ -47,13 +47,13 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'pg', '~> 0.21.0'
   s.add_development_dependency 'rspec-rails', '~> 3.6.0'
-  s.add_development_dependency 'capybara', '~> 2.14.4'
+  s.add_development_dependency 'capybara', '~> 2.15.2'
   s.add_development_dependency 'factory_girl_rails', '~> 4.8.0'
   s.add_development_dependency 'faker', '~> 1.8.4'
   s.add_development_dependency 'rails-controller-testing', '~> 1.0.2'
-  s.add_development_dependency 'byebug', '~> 9.0.6'
-  s.add_development_dependency 'puma', '~> 3.9.1'
-  s.add_development_dependency 'rubocop-rails', '~> 1.0.1'
+  s.add_development_dependency 'byebug', '~> 9.1.0'
+  s.add_development_dependency 'puma', '~> 3.10.0'
+  s.add_development_dependency 'rubocop-rails', '~> 1.1.0'
   s.add_development_dependency 'simplecov', '~> 0.15.0'
   s.add_development_dependency 'poltergeist', '~> 1.16.0'
 end

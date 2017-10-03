@@ -16,6 +16,5 @@ module Cdx
                :og_image,
                to: :seo, allow_nil: true
     end
-
   end
 end

@@ -67,6 +67,5 @@ module Cdx
 
       html += tag.link rel: :canonical, href: canonical_url
     end
-
   end
 end

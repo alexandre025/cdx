@@ -1,6 +1,5 @@
 module Cdx
   class Seo < ApplicationRecord
-
     belongs_to :record, polymorphic: true, optional: true
 
     has_one :og_image, -> { where(name: :og_image) }, class_name: 'Asset::Seo::OgImage', as: :record, dependent: :destroy
@@ -19,6 +18,5 @@ module Cdx
         self['og'][column].present? || self['og'][column] = nil
       end
     end
-
   end
 end

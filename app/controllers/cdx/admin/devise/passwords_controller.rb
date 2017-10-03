@@ -1,4 +1,6 @@
 class Cdx::Admin::Devise::PasswordsController < Devise::PasswordsController
+  include Cdx::ControllerHelpers::Seo
+
   helper Cdx::Admin::BaseHelper
 
   # GET /resource/password/new

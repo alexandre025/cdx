@@ -1,5 +1,7 @@
 module Cdx
   class Setting < ApplicationRecord
+    include Cdx::SeoSupport
+
     # Validators
 
     validates :acronym, :default_theme, :default_locale, presence: true

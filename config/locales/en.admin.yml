@@ -78,3 +78,4 @@ en:
         users: Users
         pages: Pages
       available_codes_message: If this field is empty, all taxonomisable models are considered as availables.
+    seo: "SEO"

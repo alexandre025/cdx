@@ -25,6 +25,10 @@ en:
         one: Setting
         other: Settings
 
+      cdx/seo:
+        one: Seo
+        other: Seo
+
     attributes:
       cdx/user:
         email: Email
@@ -55,3 +59,14 @@ en:
         name: Name
         description: Description
         parent: Parent
+
+      cdx/seo:
+        meta_title: Meta title
+        meta_description: Meta description
+        meta_keywords: Meta keywords
+        meta_canonical: Canonical url
+        og_title: OpenGraph title
+        og_description: OpenGraph description
+        og_keywords: OpenGraph keywords
+        og_video: OpenGraph video url
+        og_image: OpenGraph image

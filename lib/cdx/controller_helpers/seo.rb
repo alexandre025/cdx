@@ -10,7 +10,7 @@ module Cdx
 
       def meta_title
         # Override this methods in your controllers to get a custom title
-        contextual_object.meta_title
+        contextual_record.meta_title
       end
 
       def canonical_url

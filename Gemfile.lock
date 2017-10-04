@@ -8,6 +8,7 @@ PATH
       bootstrap-wysihtml5-rails (~> 0.3.3.8)
       cocoon
       devise (~> 4.3.0)
+      devise-i18n (~> 1.2.0)
       emoji_flag
       font-awesome-rails (~> 4.7.0.2)
       friendly_id (~> 5.2.1)
@@ -106,6 +107,7 @@ GEM
       railties (>= 4.1.0, < 5.2)
       responders
       warden (~> 1.2.3)
+    devise-i18n (1.2.0)
     diff-lcs (1.3)
     docile (1.1.5)
     emoji_flag (0.0.1)

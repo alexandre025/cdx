@@ -2,10 +2,10 @@ module Cdx
   module Admin
     class BaseController < Cdx::ApplicationController
       include Cdx::ControllerHelpers::Seo
+      include Cdx::ControllerHelpers::Settings
+      include Cdx::ControllerHelpers::Locale
 
       layout 'cdx/admin'
-
-      before_action :set_locale
 
       helper_method :meta_title
 
@@ -27,14 +27,10 @@ module Cdx
 
       private
 
-        def set_locale
-          I18n.locale = current_settings.default_locale || I18n.default_locale
-        end
-
-        def flash_message(object, action, context)
-          object_name    = object.class.name.demodulize.downcase
-          flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
-        end
+      def flash_message(object, action, context)
+        object_name    = object.class.name.demodulize.downcase
+        flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
+      end
     end
   end
 end

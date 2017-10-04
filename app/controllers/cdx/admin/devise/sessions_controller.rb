@@ -1,5 +1,7 @@
 class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
   include Cdx::ControllerHelpers::Seo
+  include Cdx::ControllerHelpers::Settings
+  include Cdx::ControllerHelpers::Locale
 
   layout 'cdx/admin_login'
 
@@ -40,11 +42,11 @@ class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
 
   protected
 
-    def after_sign_out_path_for(resource_or_scope)
-      new_admin_user_session_path
-    end
+  def after_sign_out_path_for(resource_or_scope)
+    new_admin_user_session_path
+  end
 
-    def after_sign_in_path_for(resource_or_scope)
-      admin_root_path
-    end
+  def after_sign_in_path_for(resource_or_scope)
+    admin_root_path
+  end
 end

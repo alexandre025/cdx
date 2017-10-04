@@ -44,3 +44,4 @@ end
 require 'cdx/controller_helpers/site'
 require 'cdx/controller_helpers/settings'
 require 'cdx/controller_helpers/seo'
+require 'cdx/controller_helpers/locale'

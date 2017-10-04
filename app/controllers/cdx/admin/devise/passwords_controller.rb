@@ -1,5 +1,9 @@
 class Cdx::Admin::Devise::PasswordsController < Devise::PasswordsController
   include Cdx::ControllerHelpers::Seo
+  include Cdx::ControllerHelpers::Settings
+  include Cdx::ControllerHelpers::Locale
+
+  layout 'cdx/admin_login'
 
   helper Cdx::Admin::BaseHelper
 

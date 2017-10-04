@@ -5,7 +5,7 @@ module Cdx
     subject(:settings) { Setting.current }
 
     describe '#save!' do
-      it { expect(build(:setting).save!).to eq(true) }
+      it { expect(build(:cdx_setting).save!).to eq(true) }
     end
 
     describe '#acronym' do

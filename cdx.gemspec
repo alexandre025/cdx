@@ -37,6 +37,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'emoji_flag'
   s.add_dependency 'json_translate'
   s.add_dependency 'devise', '~> 4.3.0'
+  s.add_dependency 'devise-i18n', '~> 1.2.0'
   s.add_dependency 'simple_form', '~> 3.5.0'
   s.add_dependency 'friendly_id', '~> 5.2.1'
   s.add_dependency 'state_machines-activerecord', '~> 0.5.0'

@@ -1,8 +1,6 @@
 module Cdx
   module Admin
     class BaseController < Cdx::ApplicationController
-      include Cdx::ControllerHelpers::Seo
-      include Cdx::ControllerHelpers::Settings
       include Cdx::ControllerHelpers::Locale
 
       layout 'cdx/admin'

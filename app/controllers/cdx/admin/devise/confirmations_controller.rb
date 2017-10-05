@@ -1,6 +1,4 @@
 class Cdx::Admin::Devise::ConfirmationsController < Devise::ConfirmationsController
-  include Cdx::ControllerHelpers::Seo
-  include Cdx::ControllerHelpers::Settings
   include Cdx::ControllerHelpers::Locale
 
   layout 'cdx/admin_login'

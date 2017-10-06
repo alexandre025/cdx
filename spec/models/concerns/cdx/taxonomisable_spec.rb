@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 module Cdx
-
   Page.class_eval do
     include Taxonomisable::Multiple
   end
@@ -22,6 +21,4 @@ module Cdx
     end
 
   end
-
 end
-

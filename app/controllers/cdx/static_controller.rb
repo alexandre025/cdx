@@ -1,6 +1,5 @@
 module Cdx
   class StaticController < ApplicationController
-
     before_action :load_object, only: :show
 
     # We don't provide routes for this controller, you'll need to define your own routing logic.
@@ -14,9 +13,8 @@ module Cdx
 
     private
 
-    def load_object
-      @object = Page.with_state(:published).friendly.find(params[:id])
-    end
-
+      def load_object
+        @object = Page.with_state(:published).friendly.find(params[:id])
+      end
   end
 end

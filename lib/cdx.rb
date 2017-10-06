@@ -36,6 +36,9 @@ module Cdx
   mattr_accessor :user_available_roles
   @@user_available_roles = %w(admin)
 
+  mattr_accessor :page_available_templates
+  @@page_available_templates = %w(contact)
+
   def self.setup
     yield self
   end

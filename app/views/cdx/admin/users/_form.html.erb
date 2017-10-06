@@ -5,7 +5,7 @@
       <%= f.input :first_name %>
       <%= f.input :last_name %>
       <%= f.input :roles, collection: Cdx::User::AVAILABLE_ROLES, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
-      <%= f.input :theme if current_admin_user == f.object %>
+      <%= f.input :theme, collection: Cdx::Setting::AVAILABLE_THEMES, input_html: { class: 'select2-simple theme-selector' }, include_blank: false if current_admin_user == f.object %>
       <hr>
       <h4><%= t('admin.avatar') %></h4>
       <%= f.fields_for :avatar do |avatar_form| %>

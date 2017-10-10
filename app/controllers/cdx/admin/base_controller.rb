@@ -23,12 +23,22 @@ module Cdx
         end
       end
 
+      def current_ability
+        if try(:current_admin_user)
+          controller_name_segments = params[:controller].split('/')
+          controller_name_segments.pop
+          controller_namespace = controller_name_segments.join('/').camelize
+
+          @current_ability ||= Ability.new(current_admin_user, controller_namespace, Cdx::Site.current)
+        end
+      end
+
       private
 
-        def flash_message(object, action, context)
-          object_name    = object.class.name.demodulize.downcase
-          flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
-        end
+      def flash_message(object, action, context)
+        object_name    = object.class.name.demodulize.downcase
+        flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
+      end
     end
   end
 end

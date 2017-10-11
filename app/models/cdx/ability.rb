@@ -13,19 +13,19 @@ module Cdx
       abilities.delete(ability)
     end
 
-    def initialize(user, controller_namespace, current_site = Cdx::Site.current)
+    def initialize(user, controller_namespace, current_site = Site.current)
       clear_aliased_actions
 
       if controller_namespace == 'Cdx::Admin'
 
         if user.admin?
           can :manage, :all
-
         end
 
       else
 
       end
+
 
       # Define abilities for the passed in user here. For example:
       #

@@ -1,6 +1,7 @@
 module Cdx
   module Admin
     class PagesController < PublishableResourceController
+
       def index
         respond_to do |format|
           format.html

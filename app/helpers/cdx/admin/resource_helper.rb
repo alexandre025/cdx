@@ -31,7 +31,7 @@ module Cdx
 
       def link_to_new(options = {})
         if can? :new, @object.class
-                url = options[:url] || new_object_url
+          url = options[:url] || new_object_url
           options[:class] = 'btn-sm btn-info pull-right'
           link_to url, options do
             fa_icon(:plus) + ' ' + t('admin.actions.new')

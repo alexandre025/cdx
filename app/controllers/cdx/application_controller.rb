@@ -14,6 +14,5 @@ module Cdx
         @current_ability ||= Ability.new(current_user, controller_namespace, Cdx::Site.current)
       end
     end
-
   end
 end

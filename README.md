@@ -1,6 +1,6 @@
 # Cdx
 
-[![Build Status](https://travis-ci.com/alexandre025/cdx.svg?token=in8sSsy4MxZn4XxNavha&branch=master)](https://travis-ci.com/alexandre025/cdx)
+[![Build Status](https://travis-ci.org/alexandre025/cdx.svg?branch=master)](https://travis-ci.org/alexandre025/cdx)
 [![Gem Version](https://badge.fury.io/rb/cdx.svg)](https://badge.fury.io/rb/cdx)
 [![Dependency Status](https://gemnasium.com/badges/github.com/alexandre025/cdx.svg)](https://gemnasium.com/github.com/alexandre025/cdx)
 

@@ -29,14 +29,12 @@ module Cdx
       Ability.abilities.merge(abilities_to_register).each do |clazz|
         merge clazz.new(user, controller_namespace, current_site)
       end
-
     end
 
     private
 
-    def abilities_to_register
-      []
-    end
-
+      def abilities_to_register
+        []
+      end
   end
 end

@@ -35,17 +35,16 @@ module Cdx
 
       private
 
-      def flash_message(object, action, context)
-        object_name    = object.class.name.demodulize.downcase
-        flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
-      end
+        def flash_message(object, action, context)
+          object_name    = object.class.name.demodulize.downcase
+          flash[context] = t("admin.flash.#{object_name}.#{action}.#{context}", default: t("admin.flash.default.#{action}.#{context}", n: object_name.capitalize))
+        end
 
       protected
 
-      def action
-        action_name.to_sym
-      end
-
+        def action
+          action_name.to_sym
+        end
     end
   end
 end

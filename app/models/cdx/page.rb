@@ -2,6 +2,7 @@ module Cdx
   class Page < ApplicationRecord
     include Cdx::Resourceable
     include Cdx::Publishable
+    include Cdx::SeoSupport
 
     extend FriendlyId
 

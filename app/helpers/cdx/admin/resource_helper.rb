@@ -30,38 +30,48 @@ module Cdx
       end
 
       def link_to_new(options = {})
-        url             = options[:url] || new_object_url
-        options[:class] = 'btn-sm btn-info pull-right'
-        link_to url, options do
-          fa_icon(:plus) + ' ' + t('admin.actions.new')
+        if can? :new, @object.class
+          url = options[:url] || new_object_url
+          options[:class] = 'btn-sm btn-info pull-right'
+          link_to url, options do
+            fa_icon(:plus) + ' ' + t('admin.actions.new')
+          end
         end
       end
 
       def link_to_show(resource, options = {})
-        url             = options[:url] || object_url(resource)
-        options[:class] = 'btn-sm btn-success'
-        link_to fa_icon(:eye), url, options
+        if can? :show, resource
+          url             = options[:url] || object_url(resource)
+          options[:class] = 'btn-sm btn-success'
+          link_to fa_icon(:eye), url, options
+        end
       end
 
       def link_to_edit(resource, options = {})
-        url             = options[:url] || edit_object_url(resource)
-        options[:class] = 'btn-sm btn-info'
-        link_to fa_icon(:pencil), url, options
+        if can? :edit, resource
+          url             = options[:url] || edit_object_url(resource)
+          options[:class] = 'btn-sm btn-info'
+          link_to fa_icon(:pencil), url, options
+        end
       end
 
       def link_to_delete(resource, options = {})
-        url                      = options[:url] || object_url(resource)
-        options[:class]          = %w(btn-sm btn-danger)
-        options[:data]           ||= {}
-        options[:data][:method]  ||= :delete
-        options[:data][:confirm] ||= resource&.content_header_title ? t('admin.ujs_confirm.delete', o: resource.content_header_title) : t('admin.ujs_confirm.default')
-        link_to fa_icon(:trash), url, options
+        if can? :destroy, resource
+          url                      = options[:url] || object_url(resource)
+          options[:class]          = %w(btn-sm btn-danger)
+          options[:data]           ||= {}
+          options[:data][:method]  ||= :delete
+          options[:data][:confirm] ||= resource&.content_header_title ? t('admin.ujs_confirm.delete', o: resource.content_header_title) : t('admin.ujs_confirm.default')
+          link_to fa_icon(:trash), url, options
+        end
       end
 
       def link_to_return(options = {})
-        url             = options[:url] || collection_url
-        options[:class] = %w(btn btn-default)
-        link_to t('admin.actions.return'), url, options
+        if can? :index, @object.class
+          url             = options[:url] || collection_url
+          options[:class] = %w(btn btn-default)
+          link_to t('admin.actions.return'), url, options
+        end
       end
     end
   end

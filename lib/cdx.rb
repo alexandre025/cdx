@@ -10,6 +10,7 @@ require 'toastr-rails'
 require 'emoji_flag'
 require 'cocoon'
 require 'rails-i18n'
+require 'cancan'
 require 'paperclip'
 require 'kaminari'
 require 'kaminari-i18n'
@@ -36,6 +37,9 @@ module Cdx
   mattr_accessor :user_available_roles
   @@user_available_roles = %w(admin)
 
+  mattr_accessor :page_available_templates
+  @@page_available_templates = %w(contact)
+
   def self.setup
     yield self
   end
@@ -43,3 +47,5 @@ end
 
 require 'cdx/controller_helpers/site'
 require 'cdx/controller_helpers/settings'
+require 'cdx/controller_helpers/seo'
+require 'cdx/controller_helpers/locale'

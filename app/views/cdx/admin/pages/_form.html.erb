@@ -3,6 +3,9 @@
       <% translated_field f, :title %>
       <% translated_field(f, :slug, disabled: true) if f.object.persisted? %>
       <% translated_field f, :content, as: :wysiwyg %>
+      <%= f.input :template, collection: Cdx.page_available_templates, input_html: { class: %w(select2-simple) } %>
+
+      <%= render partial: 'cdx/admin/shared/seo_form', locals: { f: f } %>
     </div>
 
     <div class="box-footer">

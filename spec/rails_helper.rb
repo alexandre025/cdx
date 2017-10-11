@@ -9,6 +9,7 @@ abort('The Rails environment is running in production mode!') if Rails.env.produ
 require 'rspec/rails'
 require 'factory_girl_rails'
 require 'faker'
+require 'cancan/matchers'
 require 'rails-controller-testing'
 require 'capybara'
 require 'capybara/poltergeist'

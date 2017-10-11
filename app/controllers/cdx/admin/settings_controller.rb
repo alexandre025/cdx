@@ -5,6 +5,8 @@ module Cdx
 
       before_action :load_settings, only: [:edit, :update]
 
+      authorize_resource class: 'Cdx::Setting'
+
       def edit
       end
 

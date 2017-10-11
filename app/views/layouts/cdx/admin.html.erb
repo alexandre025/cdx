@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Cdx</title>
+  <title><%= meta_title %></title>
   <%= stylesheet_link_tag 'cdx/admin', media: 'all' %>
   <%= javascript_include_tag 'cdx/admin' %>
   <%= csrf_meta_tags %>
+
+  <%== seo_data_tags %>
+
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
   <%= render partial: 'cdx/admin/shared/head' %>
 </head>

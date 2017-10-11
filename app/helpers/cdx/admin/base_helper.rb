@@ -8,7 +8,7 @@ module Cdx
       def theme_class
         if current_admin_user&.theme && !current_admin_user.theme.blank?
           "skin-#{current_admin_user.theme}"
-        elsif current_settings
+        elsif current_settings.default_theme
           "skin-#{current_settings.default_theme}"
         else
           'skin-yellow'

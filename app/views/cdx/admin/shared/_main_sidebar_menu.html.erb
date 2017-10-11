@@ -4,10 +4,10 @@
 <%= main_sidebar_menu_simple_item(current_main_tree, :home, :dashboard, admin_root_path, t('admin.main_sidebar.menu.title.dashboard')) %>
 
 <li class="header"><%= t('admin.main_sidebar.menu.title.contents') %></li>
-<%= main_sidebar_menu_simple_item(current_main_tree, :users, :user, admin_users_path, t('activerecord.models.cdx/user.other')) %>
-<%= main_sidebar_menu_simple_item(current_main_tree, :pages, :file, admin_pages_path, t('activerecord.models.cdx/page.other')) %>
-<%= main_sidebar_menu_simple_item(current_main_tree, [:taxonomies, :taxons], :tags, admin_taxonomies_path, t('activerecord.models.cdx/taxonomy.other')) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, :users, :user, admin_users_path, t('activerecord.models.cdx/user.other')) if can?(:index, Cdx::User) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, :pages, :file, admin_pages_path, t('activerecord.models.cdx/page.other')) if can?(:index, Cdx::Page) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, [:taxonomies, :taxons], :tags, admin_taxonomies_path, t('activerecord.models.cdx/taxonomy.other')) if can?(:index, Cdx::Taxonomy) %>
 
 <li class="header"><%= t('admin.main_sidebar.menu.title.parameters') %></li>
-<%= main_sidebar_menu_simple_item(current_main_tree, :sites, :sitemap, admin_sites_path, t('activerecord.models.cdx/site.other')) %>
-<%= main_sidebar_menu_simple_item(current_main_tree, :settings, :wrench, edit_admin_setting_path, t('activerecord.models.cdx/setting.other')) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, :sites, :sitemap, admin_sites_path, t('activerecord.models.cdx/site.other')) if can?(:index, Cdx::Site) %>
+<%= main_sidebar_menu_simple_item(current_main_tree, :settings, :wrench, edit_admin_setting_path, t('activerecord.models.cdx/setting.other')) if can?(:edit, Cdx::Setting) %>

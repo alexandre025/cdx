@@ -13,11 +13,11 @@ module Cdx
 
     describe '#PATCH update' do
       context 'when sucess' do
-        it { expect(patch :update, params: { setting: FactoryGirl.attributes_for(:setting) }).to have_http_status(302) }
+        it { expect(patch :update, params: { setting: FactoryGirl.attributes_for(:cdx_setting) }).to have_http_status(302) }
       end
 
       context 'when failed' do
-        it { expect(patch :update, params: { setting: FactoryGirl.attributes_for(:setting, :wrong_attributes) }).to have_http_status(200) }
+        it { expect(patch :update, params: { setting: FactoryGirl.attributes_for(:cdx_setting, :wrong_attributes) }).to have_http_status(200) }
       end
     end
 

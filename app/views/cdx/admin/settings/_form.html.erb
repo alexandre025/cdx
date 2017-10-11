@@ -1,9 +1,12 @@
 <% if defined?(f) %>
     <div class="box-body">
       <%= f.input :acronym %>
-      <%= f.input :default_theme %>
+      <%= f.input :default_theme, collection: Cdx::Setting::AVAILABLE_THEMES, input_html: { class: 'select2-simple theme-selector' }, include_blank: false %>
       <%= f.input :default_locale, collection: locales_options_tags, input_html: { class: 'select2-simple-search' }, include_hidden: false %>
       <%= f.input :available_locales, collection: locales_options_tags, input_html: { class: 'select2-multiple', multiple: true }, include_hidden: false %>
+
+      <%= render partial: 'cdx/admin/shared/seo_form', locals: { f: f } %>
+
     </div>
     <div class="box-footer">
       <%= f.button :submit %>

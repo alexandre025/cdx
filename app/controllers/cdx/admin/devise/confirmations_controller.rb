@@ -1,4 +1,8 @@
 class Cdx::Admin::Devise::ConfirmationsController < Devise::ConfirmationsController
+  include Cdx::ControllerHelpers::Locale
+
+  layout 'cdx/admin_login'
+
   helper Cdx::Admin::BaseHelper
 
   # GET /resource/confirmation/new

@@ -22,3 +22,5 @@ module Cdx
     end
   end
 end
+
+require 'cdx/routes'

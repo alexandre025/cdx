@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :setting, class: 'Cdx::Setting' do
+  factory :cdx_setting, class: 'Cdx::Setting' do
     acronym 'CDX'
     default_theme 'yellow'
     default_locale 'en'

@@ -15,4 +15,10 @@ Cdx.setup do |config|
   #
   # config.taxonomy_available_codes = %w(pages)
 
+  # Add available templates for pages
+  # Don't forget to add your template in
+  # app/view/cdx/custom/template_name.html.erb
+  # Please refer to Cdx::StaticController for more informations
+  #
+  # config.page_available_templates = %w(contact)
 end

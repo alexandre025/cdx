@@ -5,6 +5,8 @@ module Cdx
 
       before_action :load_resource
 
+      before_action :authorize_admin
+
       helper_method :member_action?, :new_object_url, :edit_object_url, :object_url, :collection_url, :parent_collection_url, :parent_object_url, :edit_parent_object_url
 
       def index
@@ -70,16 +72,21 @@ module Cdx
         def load_resource
           if member_action? # Load member action
             @object ||= load_resource_instance
-            # instance_variable_set("@#{resource.object_name}", @object)
+            authorize! action, @object
+            instance_variable_set("@#{resource.object_name}", @object)
           else # Load collection
             @collection ||= collection
-            # instance_variable_set("@#{controller_name}", @collection)
+            instance_variable_set("@#{controller_name}", @collection)
           end
         end
 
         def collection
           return parent.send(controller_name) if parent_data.present?
-          model_class.where(nil)
+          if model_class.respond_to?(:accessible_by)
+            model_class.accessible_by(current_ability, action)
+          else
+            model_class.where(nil)
+          end
         end
 
         def resource
@@ -89,7 +96,7 @@ module Cdx
         end
 
         def load_resource_instance
-          if new_actions.include? action_name.to_sym
+          if new_actions.include? action
             build_resource
           elsif params[:id]
             find_resource
@@ -120,7 +127,7 @@ module Cdx
         def parent
           if parent_data.present?
             @parent ||= parent_data[:model_class].send(:find_by, parent_data[:find_by].to_s => params["#{resource.model_name}_id"])
-            # instance_variable_set("@#{resource.model_name}", @parent)
+            instance_variable_set("@#{resource.model_name}", @parent)
           else
             nil
           end
@@ -143,7 +150,7 @@ module Cdx
         end
 
         def member_action?
-          !collection_actions.include? action_name.to_sym
+          !collection_actions.include? action
         end
 
         def new_object_url(options = {})
@@ -197,6 +204,10 @@ module Cdx
 
         def location_after_save
           collection_url
+        end
+
+        def authorize_admin
+          authorize! action, model_class
         end
     end
   end

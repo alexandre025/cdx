@@ -1,4 +1,6 @@
 class Cdx::Admin::Devise::SessionsController < Devise::SessionsController
+  include Cdx::ControllerHelpers::Locale
+
   layout 'cdx/admin_login'
 
   helper Cdx::Admin::BaseHelper

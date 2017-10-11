@@ -5,6 +5,8 @@ module Cdx
 
       before_action :load_resource
 
+      before_action :authorize_admin
+
       helper_method :member_action?, :new_object_url, :edit_object_url, :object_url, :collection_url, :parent_collection_url, :parent_object_url, :edit_parent_object_url
 
       def index
@@ -203,6 +205,10 @@ module Cdx
 
       def location_after_save
         collection_url
+      end
+
+      def authorize_admin
+        authorize! action, model_class
       end
     end
   end

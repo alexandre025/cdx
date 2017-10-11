@@ -7,8 +7,6 @@ module Cdx
 
       helper_method :meta_title
 
-      before_action :authorize_admin
-
       def authenticate_admin_user!
         if admin_user_signed_in?
           super
@@ -46,16 +44,6 @@ module Cdx
 
       def action
         action_name.to_sym
-      end
-
-      def authorize_admin
-        record = \
-            if respond_to?(:model_class, true) && model_class
-                               model_class
-            else
-              controller_name.to_sym
-            end
-        authorize! action, record
       end
 
     end

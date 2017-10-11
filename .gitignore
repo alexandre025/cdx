@@ -5,8 +5,6 @@ spec/dummy/db/*.sqlite3
 spec/dummy/db/*.sqlite3-journal
 spec/dummy/log/*.log
 spec/dummy/tmp/
-.idea/
-.DS_Store
 /.byebug_history
 /spec/dummy/public/assets
 /spec/dummy/.byebug_history

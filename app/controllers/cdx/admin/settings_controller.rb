@@ -5,6 +5,8 @@ module Cdx
 
       before_action :load_settings, only: [:edit, :update]
 
+      authorize_resource class: 'Cdx::Setting'
+
       def edit
       end
 
@@ -28,17 +30,17 @@ module Cdx
 
       private
 
-        def setting_params
-          params.require(:setting).permit!
-        end
+      def setting_params
+        params.require(:setting).permit!
+      end
 
-        def load_settings
-          @settings = current_settings
-        end
+      def load_settings
+        @settings = current_settings
+      end
 
-        def location_after_save
-          edit_admin_setting_path
-        end
+      def location_after_save
+        edit_admin_setting_path
+      end
     end
   end
 end

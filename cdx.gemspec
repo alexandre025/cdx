@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails', '~> 5.1'
 
   s.add_dependency 'rails-i18n'
+  s.add_dependency 'cancancan', '~> 2.0.0'
   s.add_dependency 'paperclip', '~> 5.1.0'
   s.add_dependency 'kaminari'
   s.add_dependency 'kaminari-i18n', '~> 0.4.0'

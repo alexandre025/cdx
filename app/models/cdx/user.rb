@@ -37,12 +37,14 @@ module Cdx
       "#{first_name} #{last_name}".strip
     end
 
-    def admin?
-      has_role?(:admin)
-    end
-
     def has_role?(role)
       roles.include? role.to_s
+    end
+
+    Cdx.user_available_roles.each do |role|
+      define_method("is_#{role}?") do
+        has_role?(role)
+      end
     end
   end
 end

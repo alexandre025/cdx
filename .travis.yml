@@ -1,17 +1,21 @@
 language: ruby
 rvm:
   - 2.3.1
-  - 2.4.0
+  - 2.4.2
 
 branches:
   only:
     - master
 
 addons:
+  chrome: stable
   postgresql: '9.5'
 
 cache:
   bundler: true
+
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
 
 before_script:
   - psql -c 'create database cdx_dummy_test;' -U postgres

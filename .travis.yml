@@ -1,3 +1,4 @@
+dist: trusty
 language: ruby
 rvm:
   - 2.3.1
@@ -23,3 +24,4 @@ before_script:
 
 script:
   - bundle exec rspec --format doc
+  - bundle exec rubocop

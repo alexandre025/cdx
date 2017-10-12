@@ -12,13 +12,25 @@ require 'faker'
 require 'cancan/matchers'
 require 'rails-controller-testing'
 require 'capybara'
-require 'capybara/poltergeist'
+require 'selenium/webdriver'
+
+Capybara.register_driver(:headless_chrome) do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: { args: %w[headless disable-gpu] }
+  )
+
+  Capybara::Selenium::Driver.new(
+      app,
+      browser:              :chrome,
+      desired_capabilities: capabilities
+  )
+end
 
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
 
-  Capybara.javascript_driver = :poltergeist
+  Capybara.javascript_driver = :headless_chrome
 
   config.use_transactional_fixtures = true
 
@@ -42,9 +54,10 @@ RSpec.configure do |config|
   Dir[File.join(ENGINE_RAILS_ROOT, 'spec/support/**/*.rb')].each { |f| require f }
 
   config.include Cdx::Engine.routes.url_helpers
+  config.include Support::FeatureMacros, type: :feature
   config.include Devise::Test::ControllerHelpers, type: :controller
   config.include Devise::Test::ControllerHelpers, type: :view
-  config.extend ControllerMacros, type: :controller
+  config.extend Support::ControllerMacros, type: :controller
   config.include Requests::JsonHelpers, type: :controller
 
   [:controller, :view, :request].each do |type|

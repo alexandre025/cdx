@@ -21,7 +21,7 @@ module Cdx
     end
 
     def self.current
-      Setting.first_or_create(acronym: 'CDX', default_theme: AVAILABLE_THEMES.last, default_locale: 'en', available_locales: %w(en fr es))
+      Setting.first_or_create(acronym: 'CDX', default_theme: AVAILABLE_THEMES.last, default_locale: 'en', available_locales: Cdx.available_locales)
     end
   end
 end

@@ -4,6 +4,10 @@ Cdx.setup do |config|
   #
   # config.admin_path = 'admin'
 
+  # Available locales for settings
+  #
+  # config.available_locales = %w(fr en es)
+
   # Add available roles to users
   #
   # Admin role should not be removed in order

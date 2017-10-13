@@ -17,7 +17,7 @@ module Cdx
       end
 
       def locales_options_tags
-        I18n.available_locales.map { |l| ["#{EmojiFlag.new(l)} (#{l})", l] }
+        Cdx.available_locales.map { |l| ["#{EmojiFlag.new(l)} (#{l})", l] }
       end
 
       def available_locales_options_tags

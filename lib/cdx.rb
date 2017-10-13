@@ -31,6 +31,9 @@ module Cdx
   mattr_accessor :admin_path
   @@admin_path = 'admin'
 
+  mattr_accessor :available_locales
+  @@available_locales = %w(fr en es)
+
   mattr_accessor :taxonomy_available_codes
   @@taxonomy_available_codes = %w(pages)
 

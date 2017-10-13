@@ -1,0 +1,89 @@
+fr:
+  admin:
+    generic_states:
+      published: Publié
+      draft: Brouillon
+    content_header:
+      page_title:
+        home_index: Dashboard
+        users_index: Liste des utilisateurs
+        pages_index: Liste des pages
+        sites_index: Liste des sites
+        taxonomies_index: Liste des taxonomies
+        actions:
+          edit: Éditer
+          update: Éditer
+          new: Nouveau
+          create: Nouveau
+          index: Index
+        settings: Paramètres
+      breadcrumb:
+        home_index: Dashboard
+
+    main_sidebar:
+      menu:
+        title:
+          parameters: Paramètres
+          contents: Contenus
+          dashboard: Dashboard
+
+    actions:
+      new: Nouveau
+      return: Retour
+      all: Actions
+      publish: Publier
+      draft: Enregistrer comme brouillon
+      unpublish: Enregistrer comme brouillon
+      upload: Ajouter un fichier
+    general: Général
+    alert: Alerte
+    password: Mot de passe
+    avatar: Avatar
+    online: En ligne
+    signout: Déconnexion
+    profile: Profil
+    custom_validators:
+      must_have_one_default_site: Un site par défaut est requis
+    ujs_confirm:
+      delete: 'Êtes vous sûr de vouloir supprimer : %{o} ?'
+      default: Êtes vous sûr ?
+    flash:
+      default:
+        create:
+          success: "%{n} crée avec succès"
+          error: "%{n} ne peut pas être crée"
+        update:
+          success: "%{n} mis à jour avec succès"
+          error: "%{n} ne peut pas être mis à jour"
+        destroy:
+          success: "%{n} supprimé avec succès"
+          error: "%{n} ne peut pas être supprimé"
+        publish:
+          success: "%{n} publié avec succès"
+          error: "%{n} ne peut pas être publié"
+        unpublish:
+          success: "%{n} a bien été enregistré comme brouillon"
+          error: "%{n} ne peut pas être enregistré comme brouillon"
+
+      settings:
+        update:
+          success: Paramètres mis à jour avec succès
+          error: Impossible de créer les paramètres
+        clear_cache:
+          success: Cache vidé avec succès
+
+      sessions:
+        not_admin: L'utilisateur n'est pas admin
+
+    settings:
+      clear_cache: Vider le cache
+      cache: Cache
+      clear_cache_alert: Vider le cache peut affecter les performances.
+    taxonomies:
+      available_codes:
+        users: Utilisateurs
+        pages: Pages
+      available_codes_message: Si ce champs est vide, tout les models taxonomisables
+        seront considérés comme disponibles.
+
+    seo: SEO

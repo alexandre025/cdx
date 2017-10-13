@@ -1,47 +1,48 @@
 en:
   admin:
     generic_states:
-      published: "Published"
-      draft: "Draft"
+      published: Published
+      draft: Draft
     content_header:
       page_title:
-        home_index: "Dashboard"
+        home_index: Dashboard
         actions:
-          edit: "Edit"
-          update: "Edit"
-          new: "New"
-          create: "New"
-          index: "Index"
-        settings: "Settings"
+          edit: Edit
+          update: Edit
+          new: New
+          create: New
+          index: Index
+        settings: Settings
       breadcrumb:
-        home_index: "Dashboard"
+        home_index: Dashboard
+
     main_sidebar:
       menu:
         title:
-          parameters: "Parameters"
-          contents: "Contents"
-          dashboard: "Dashboard"
-    actions:
-      new: "New"
-      return: "Return"
-      all: "Actions"
-      publish: "Publish"
-      draft: "Draft"
-      unpublish: "Unpublish"
-      upload: "Upload a file"
-    general: "General"
-    alert: "Alert"
-    password: "Password"
-    avatar: "Avatar"
-    online: "Online"
-    signout: "Sign out"
-    profile: "Profile"
-    custom_validators:
-      must_have_one_default_site: "One default site is required"
-    ujs_confirm:
-      delete: "Are you sure you want to delete : %{o} ?"
-      default: "Are you sure ?"
+          parameters: Parameters
+          contents: Contents
+          dashboard: Dashboard
 
+    actions:
+      new: New
+      return: Return
+      all: Actions
+      publish: Publish
+      draft: Draft
+      unpublish: Unpublish
+      upload: Upload a file
+    general: General
+    alert: Alert
+    password: Password
+    avatar: Avatar
+    online: Online
+    signout: Sign out
+    profile: Profile
+    custom_validators:
+      must_have_one_default_site: One default site is required
+    ujs_confirm:
+      delete: 'Are you sure you want to delete : %{o} ?'
+      default: Are you sure ?
     flash:
       default:
         create:
@@ -62,20 +63,23 @@ en:
 
       settings:
         update:
-          success: "Settings successfully updated"
-          error: "Settings cannot be created"
+          success: Settings successfully updated
+          error: Settings cannot be created
         clear_cache:
-          success: "Cache successfully cleared"
-      sessions:
-        not_admin: "User isn't admin"
-    settings:
-      clear_cache: "Clear cache"
-      cache: "Cache"
-      clear_cache_alert: "Clear cache may affect global performances."
+          success: Cache successfully cleared
 
+      sessions:
+        not_admin: User isn't admin
+
+    settings:
+      clear_cache: Clear cache
+      cache: Cache
+      clear_cache_alert: Clear cache may affect global performances.
     taxonomies:
       available_codes:
         users: Users
         pages: Pages
-      available_codes_message: If this field is empty, all taxonomisable models are considered as availables.
-    seo: "SEO"
+      available_codes_message: If this field is empty, all taxonomisable models are
+        considered as availables.
+
+    seo: SEO

@@ -4,27 +4,21 @@ en:
       cdx/user:
         one: User
         other: Users
-
       cdx/site:
         one: Site
         other: Sites
-
       cdx/page:
         one: Page
         other: Pages
-
       cdx/taxonomy:
         one: Taxonomy
         other: Taxonomies
-
       cdx/taxon:
         one: Taxon
         other: Taxons
-
       cdx/setting:
         one: Setting
         other: Settings
-
       cdx/seo:
         one: Seo
         other: Seo
@@ -37,29 +31,28 @@ en:
         last_name: Last name
         full_name: Full name
         theme: Theme
-
+        roles: Roles
+        password_confirmation: Password confirmation
       cdx/site:
         name: Name
         code: Code
         domain: Domain
-        default : Default ?
-
+        default: Default ?
       cdx/page:
         title: Title
         content: Page content
         state: State
         published_on: Published on
         slug: Slug
-
+        template: Template
       cdx/taxonomy:
         name: Name
         description: Description
-
+        available_codes: Available codes
       cdx/taxon:
         name: Name
         description: Description
         parent: Parent
-
       cdx/seo:
         meta_title: Meta title
         meta_description: Meta description
@@ -70,3 +63,29 @@ en:
         og_keywords: OpenGraph keywords
         og_video: OpenGraph video url
         og_image: OpenGraph image
+      cdx/setting:
+        acronym: Acronym
+        default_theme: Default theme
+        default_locale: Default locale
+        available_locales: Available locales
+
+  helpers:
+    submit:
+      user:
+        create: Create user
+        update: Update user
+      page:
+        create: Create page
+        update: Update page
+      taxonomy:
+        create: Create taxonomy
+        update: Update taxonomy
+      taxon:
+        create: Create taxon
+        update: Update taxon
+      site:
+        create: Create site
+        update: Update site
+      setting:
+        create: Create setting
+        update: Update setting

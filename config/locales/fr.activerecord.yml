@@ -1,0 +1,91 @@
+fr:
+  activerecord:
+    models:
+      cdx/user:
+        one: Utilisateur
+        other: Utilisateurs
+      cdx/site:
+        one: Site
+        other: Sites
+      cdx/page:
+        one: Page
+        other: Pages
+      cdx/taxonomy:
+        one: Taxonomie
+        other: Taxonomies
+      cdx/taxon:
+        one: Taxon
+        other: Taxons
+      cdx/setting:
+        one: Paramètre
+        other: Paramètres
+      cdx/seo:
+        one: SEO
+        other: SEO
+
+    attributes:
+      cdx/user:
+        email: Email
+        password: Mot de passe
+        first_name: Prénom
+        last_name: Nom
+        full_name: Nom complet
+        theme: Thème
+        roles: Rôles
+        password_confirmation: Confirmation du mot de passe
+      cdx/site:
+        name: Nom
+        code: Code
+        domain: Domaine
+        default: Site par défaut ?
+      cdx/page:
+        title: Titre
+        content: Contenu
+        state: Statut
+        published_on: Publié le
+        slug: Slug
+        template: Template associé
+      cdx/taxonomy:
+        name: Nom
+        description: Description
+        available_codes: Codes disponibles
+      cdx/taxon:
+        name: Nom
+        description: Description
+        parent: Parent
+      cdx/seo:
+        meta_title: Meta title
+        meta_description: Meta description
+        meta_keywords: Meta keywords
+        meta_canonical: Canonical url
+        og_title: OpenGraph title
+        og_description: OpenGraph description
+        og_keywords: OpenGraph keywords
+        og_video: OpenGraph video url
+        og_image: OpenGraph image
+      cdx/setting:
+        acronym: Acronyme
+        default_theme: Couleur du thème
+        default_locale: Langue par défaut
+        available_locales: Langues disponibles
+
+  helpers:
+    submit:
+      user:
+        create: Créer un utilisateur
+        update: Mettre à jour
+      page:
+        create: Créer une page
+        update: Mettre à jour
+      taxonomy:
+        create: Créer une taxonomie
+        update: Mettre à jour
+      taxon:
+        create: Créer un taxon
+        update: Mettre à jour
+      site:
+        create: Créer un site
+        update: Mettre à jour
+      setting:
+        create: Créer un paramètre
+        update: Mettre à jour

@@ -1,5 +1,8 @@
-dist: trusty
 language: ruby
+
+dist: trusty
+sudo: required
+
 rvm:
   - 2.3.1
   - 2.4.2
@@ -24,6 +27,9 @@ before_install:
   - google-chrome-stable --headless --no-sandbox
 
 before_script:
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
   - psql -c 'create database cdx_dummy_test;' -U postgres
   - bin/rails db:migrate RAILS_ENV=test
 

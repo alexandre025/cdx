@@ -11,7 +11,7 @@ Cdx is a rails 5.1.x engine which provide a ready to use admin panel with some c
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'cdx', github: 'alexandre025/cdx'
+gem 'cdx', '0.0.4'
 ```
 
 And then execute:

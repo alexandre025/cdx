@@ -10,9 +10,8 @@ module Cdx
     devise :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable
 
-    # Associations
-    has_one :avatar, -> { where(name: :avatar) }, class_name: 'Asset::User::Avatar', as: :record, dependent: :destroy
-    accepts_nested_attributes_for :avatar, allow_destroy: true
+    # Assets
+    has_one_attached :avatar, 'Asset::User::Avatar'
 
     # Settings
     store_accessor :settings, :theme

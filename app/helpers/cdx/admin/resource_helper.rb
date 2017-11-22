@@ -24,14 +24,17 @@ module Cdx
             concat tag.li link_to(@parent.content_header_title, edit_parent_object_url)
           end
           concat tag.li link_to(@resource.model_class.model_name.human.pluralize, collection_url)
-          concat tag.li link_to(@object.content_header_title, edit_object_url(@object)) if (member_action? && @object.persisted?)
+          if member_action? && @object.persisted?
+            url = action_name == 'edit' ? edit_object_url(@object) : object_url(@object)
+            concat tag.li link_to(@object.content_header_title, url)
+          end
           concat tag.li t("admin.content_header.page_title.actions.#{action_name}")
         end
       end
 
       def link_to_new(options = {})
         if can? :new, @object.class
-          url = options[:url] || new_object_url
+          url             = options[:url] || new_object_url
           options[:class] = 'btn-sm btn-info pull-right'
           link_to url, options do
             fa_icon(:plus) + ' ' + t('admin.actions.new')
